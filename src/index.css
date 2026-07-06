@@ -3,4 +3,8 @@
 
 @theme {
   --font-sans: "Inter", ui-sans-serif, system-ui, sans-serif;
+  --color-brand-blue: #1B2042;
+  --color-brand-red: #A51D1A;
+  --color-brand-light: #F4E9E9;
+  --color-brand-gray: #757B8B;
 }

@@ -11,7 +11,7 @@ interface DetectorsViewProps {
   onExport: (detectors: Detector[]) => void;
 }
 
-const COLORS = ['#0f172a', '#3b82f6', '#10b981', '#f59e0b', '#ef4444', '#8b5cf6', '#ec4899'];
+const COLORS = ['#0f172a', '#1B2042', '#A51D1A', '#757B8B', '#A51D1A', '#8b5cf6', '#1B2042'];
 
 export function DetectorsView({ detectors, onAdd, onEdit, onDelete, onExport }: DetectorsViewProps) {
   const [searchTerm, setSearchTerm] = useState('');
@@ -60,7 +60,7 @@ export function DetectorsView({ detectors, onAdd, onEdit, onDelete, onExport }: 
       
       <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
         <div className="bg-white p-6 rounded-xl border border-blue-200 shadow-sm">
-          <h3 className="text-sm font-semibold text-blue-800 mb-4">Itens por Prédio (Total)</h3>
+          <h3 className="text-sm font-semibold text-brand-blue mb-4">Itens por Prédio (Total)</h3>
           <div className="h-64">
             {statsByPredio.length > 0 ? (
               <ResponsiveContainer width="100%" height="100%">
@@ -81,7 +81,7 @@ export function DetectorsView({ detectors, onAdd, onEdit, onDelete, onExport }: 
         </div>
 
         <div className="bg-white p-6 rounded-xl border border-blue-200 shadow-sm">
-          <h3 className="text-sm font-semibold text-blue-800 mb-4">Itens por Tipo (Filtro Atual)</h3>
+          <h3 className="text-sm font-semibold text-brand-blue mb-4">Itens por Tipo (Filtro Atual)</h3>
           <div className="h-64">
             {statsByTipo.length > 0 ? (
               <ResponsiveContainer width="100%" height="100%">
@@ -103,10 +103,10 @@ export function DetectorsView({ detectors, onAdd, onEdit, onDelete, onExport }: 
       </div>
 
       <div className="bg-white rounded-xl shadow-sm border border-blue-200 overflow-hidden">
-        <div className="p-4 border-b border-blue-200 bg-blue-50/50 flex flex-col sm:flex-row justify-between items-start sm:items-center gap-4">
-          <div className="flex items-center gap-2 text-blue-800">
+        <div className="p-4 border-b border-blue-200 bg-brand-light/50 flex flex-col sm:flex-row justify-between items-start sm:items-center gap-4">
+          <div className="flex items-center gap-2 text-brand-blue">
             <Radio className="w-5 h-5 text-blue-600" />
-            <h4 className="font-semibold text-blue-800">Detectores e Acionadores</h4>
+            <h4 className="font-semibold text-brand-blue">Detectores e Acionadores</h4>
           </div>
           <div className="flex flex-wrap items-center gap-2 w-full sm:w-auto">
             <select
@@ -132,14 +132,14 @@ export function DetectorsView({ detectors, onAdd, onEdit, onDelete, onExport }: 
             
             <button
               onClick={() => onExport(filtered)}
-              className="flex items-center gap-2 px-3 py-2 bg-blue-700 text-white rounded-md hover:bg-blue-800 transition-colors text-sm font-medium whitespace-nowrap"
+              className="flex items-center gap-2 px-3 py-2 bg-brand-blue text-white rounded-md hover:bg-blue-800 transition-colors text-sm font-medium whitespace-nowrap"
             >
               <Download className="w-4 h-4" />
               Exportar PDF
             </button>
             <button
               onClick={onAdd}
-              className="flex items-center gap-2 px-3 py-2 bg-red-600 text-white rounded-md hover:bg-red-700 transition-colors text-sm font-medium whitespace-nowrap"
+              className="flex items-center gap-2 px-3 py-2 bg-brand-red text-white rounded-md hover:opacity-90 transition-colors text-sm font-medium whitespace-nowrap"
             >
               <PlusCircle className="w-4 h-4" />
               Novo
@@ -149,7 +149,7 @@ export function DetectorsView({ detectors, onAdd, onEdit, onDelete, onExport }: 
 
         <div className="overflow-x-auto">
           <table className="w-full text-left text-sm">
-            <thead className="bg-blue-50 text-blue-500 uppercase text-xs tracking-wider border-b border-blue-200">
+            <thead className="bg-brand-light text-blue-500 uppercase text-xs tracking-wider border-b border-blue-200">
               <tr>
                 <th className="px-6 py-4 font-semibold">Prédio</th>
                 <th className="px-6 py-4 font-semibold">Número</th>
@@ -161,12 +161,12 @@ export function DetectorsView({ detectors, onAdd, onEdit, onDelete, onExport }: 
             </thead>
             <tbody className="divide-y divide-blue-100">
               {filtered.map(det => (
-                <tr key={det.id} className="hover:bg-blue-50/50 transition-colors">
+                <tr key={det.id} className="hover:bg-brand-light/50 transition-colors">
                   <td className="px-6 py-4 whitespace-nowrap text-blue-500 font-medium">{det.predio}</td>
                   <td className="px-6 py-4 whitespace-nowrap text-sm text-blue-600">{det.numero}</td>
-                  <td className="px-6 py-4 whitespace-nowrap text-sm text-blue-800 font-mono tracking-tight">{det.endereco_mac}</td>
+                  <td className="px-6 py-4 whitespace-nowrap text-sm text-brand-blue font-mono tracking-tight">{det.endereco_mac}</td>
                   <td className="px-6 py-4 whitespace-nowrap">
-                    <span className="inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-medium bg-blue-100 text-blue-800">
+                    <span className="inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-medium bg-blue-100 text-brand-blue">
                       {det.tipo}
                     </span>
                   </td>
@@ -176,7 +176,7 @@ export function DetectorsView({ detectors, onAdd, onEdit, onDelete, onExport }: 
                       <button onClick={() => onEdit(det)} className="p-1.5 text-blue-400 hover:text-blue-600 hover:bg-blue-100 rounded transition-colors" title="Editar">
                         <Pencil className="w-4 h-4" />
                       </button>
-                      <button onClick={() => onDelete(det.id)} className="p-1.5 text-red-400 hover:text-red-600 hover:bg-blue-50 rounded transition-colors" title="Excluir">
+                      <button onClick={() => onDelete(det.id)} className="p-1.5 text-red-400 hover:text-brand-red hover:bg-brand-light rounded transition-colors" title="Excluir">
                         <Trash2 className="w-4 h-4" />
                       </button>
                     </div>
@@ -194,7 +194,7 @@ export function DetectorsView({ detectors, onAdd, onEdit, onDelete, onExport }: 
             </tbody>
           </table>
         </div>
-        <div className="px-6 py-3 border-t border-blue-200 bg-blue-50 text-xs text-blue-500 text-right">
+        <div className="px-6 py-3 border-t border-blue-200 bg-brand-light text-xs text-blue-500 text-right">
           Mostrando {filtered.length} de {detectors.length} itens
         </div>
       </div>

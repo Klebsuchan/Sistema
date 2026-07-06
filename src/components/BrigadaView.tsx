@@ -57,8 +57,8 @@ export function BrigadaView({ items, onAdd, onEdit, onDelete, onExport }: Brigad
       <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
         <div className="bg-white rounded-2xl shadow-sm border border-blue-100 p-6 flex flex-col justify-between">
           <div className="flex justify-between items-center mb-6">
-            <h3 className="text-sm font-semibold text-blue-800">Status dos Módulos</h3>
-            <div className="p-2 bg-blue-50 text-blue-600 rounded-lg"><CheckCircle className="w-5 h-5"/></div>
+            <h3 className="text-sm font-semibold text-brand-blue">Status dos Módulos</h3>
+            <div className="p-2 bg-brand-light text-blue-600 rounded-lg"><CheckCircle className="w-5 h-5"/></div>
           </div>
           <div className="h-48">
             {statsStatus.length > 0 ? (
@@ -81,18 +81,18 @@ export function BrigadaView({ items, onAdd, onEdit, onDelete, onExport }: Brigad
 
         <div className="bg-white rounded-2xl shadow-sm border border-blue-100 p-6 flex flex-col justify-between">
           <div className="flex justify-between items-center mb-6">
-            <h3 className="text-sm font-semibold text-blue-800">Total de Brigadistas</h3>
-            <div className="p-2 bg-blue-50 text-blue-600 rounded-lg"><Users className="w-5 h-5"/></div>
+            <h3 className="text-sm font-semibold text-brand-blue">Total de Brigadistas</h3>
+            <div className="p-2 bg-brand-light text-blue-600 rounded-lg"><Users className="w-5 h-5"/></div>
           </div>
           <div>
-            <h3 className="text-4xl font-bold text-blue-900">{filtered.length}</h3>
+            <h3 className="text-4xl font-bold text-brand-blue">{filtered.length}</h3>
             <p className="text-sm text-blue-500 mt-2">Membros listados atualmente</p>
           </div>
         </div>
       </div>
 
       <div className="bg-white rounded-2xl shadow-sm border border-blue-100 overflow-hidden flex flex-col">
-        <div className="p-4 border-b border-blue-100 flex flex-col sm:flex-row gap-4 justify-between items-center bg-blue-50/50">
+        <div className="p-4 border-b border-blue-100 flex flex-col sm:flex-row gap-4 justify-between items-center bg-brand-light/50">
           <div className="flex flex-col sm:flex-row items-center gap-2 w-full sm:w-auto">
             <div className="relative w-full sm:w-80">
               <Search className="absolute left-3 top-1/2 -translate-y-1/2 h-4 w-4 text-blue-400" />
@@ -114,11 +114,11 @@ export function BrigadaView({ items, onAdd, onEdit, onDelete, onExport }: Brigad
           </div>
           
           <div className="flex gap-2 w-full sm:w-auto justify-end">
-            <button onClick={() => onExport(filtered)} className="flex items-center justify-center gap-2 px-4 py-2 bg-white border border-blue-200 text-blue-700 rounded-xl hover:bg-blue-50 transition-colors shadow-sm text-sm font-medium">
+            <button onClick={() => onExport(filtered)} className="flex items-center justify-center gap-2 px-4 py-2 bg-white border border-blue-200 text-brand-blue rounded-xl hover:bg-brand-light transition-colors shadow-sm text-sm font-medium">
               <Download className="h-4 w-4" />
               <span className="hidden sm:inline">Exportar</span>
             </button>
-            <button onClick={onAdd} className="flex items-center justify-center gap-2 px-4 py-2 bg-blue-600 text-white rounded-xl hover:bg-blue-700 transition-colors shadow-sm text-sm font-medium">
+            <button onClick={onAdd} className="flex items-center justify-center gap-2 px-4 py-2 bg-brand-blue text-white rounded-xl hover:bg-brand-blue transition-colors shadow-sm text-sm font-medium">
               <PlusCircle className="h-4 w-4" />
               Novo
             </button>
@@ -128,7 +128,7 @@ export function BrigadaView({ items, onAdd, onEdit, onDelete, onExport }: Brigad
         <div className="overflow-x-auto">
           <table className="w-full text-left border-collapse text-sm min-w-[1000px]">
             <thead>
-              <tr className="bg-blue-50 border-b border-blue-100 text-blue-500">
+              <tr className="bg-brand-light border-b border-blue-100 text-blue-500">
                 <th className="px-6 py-4 font-medium whitespace-nowrap">Nome / Setor</th>
                 <th className="px-6 py-4 font-medium whitespace-nowrap">Cargo / Status Geral</th>
                 <th className="px-6 py-4 font-medium whitespace-nowrap">Frequência (Pres/On)</th>
@@ -139,35 +139,35 @@ export function BrigadaView({ items, onAdd, onEdit, onDelete, onExport }: Brigad
             </thead>
             <tbody className="divide-y divide-blue-100">
               {filtered.map((item) => (
-                <tr key={item.qtd} className="hover:bg-blue-50/50 transition-colors">
+                <tr key={item.qtd} className="hover:bg-brand-light/50 transition-colors">
                   <td className="px-6 py-4">
-                    <div className="font-semibold text-blue-900">{item.nome}</div>
+                    <div className="font-semibold text-brand-blue">{item.nome}</div>
                     <div className="text-xs text-blue-500 mt-0.5">{item.setor}</div>
                   </td>
                   <td className="px-6 py-4">
-                    <div className="font-medium text-blue-800">{item.cargo}</div>
+                    <div className="font-medium text-brand-blue">{item.cargo}</div>
                     <div className={`text-xs mt-1 font-bold ${item.status === 'desligado' ? 'text-blue-500' : 'text-blue-500'}`}>
                       {item.status?.toUpperCase() || 'ATIVO'}
                     </div>
                   </td>
-                  <td className="px-6 py-4 text-blue-700">
+                  <td className="px-6 py-4 text-brand-blue">
                     <div className="text-xs font-semibold text-blue-600">Pres: {item.frequenciaPresencial || 0}</div>
                     <div className="text-xs font-semibold text-blue-600 mt-1">On: {item.frequenciaOnline || 0}</div>
                   </td>
                   <td className="px-6 py-4">
-                    <div className="text-xs font-semibold text-blue-700">Teor: {item.notaTeorica || 0}</div>
-                    <div className="text-xs font-semibold text-blue-700 mt-1">Sist: {item.notaSistema || 0}</div>
+                    <div className="text-xs font-semibold text-brand-blue">Teor: {item.notaTeorica || 0}</div>
+                    <div className="text-xs font-semibold text-brand-blue mt-1">Sist: {item.notaSistema || 0}</div>
                   </td>
                   <td className="px-6 py-4">
                     <div className="flex flex-col gap-1.5 items-start">
                       <span className={`inline-flex px-2 py-0.5 rounded text-[10px] font-bold ${
-                        item.status_modulo === 'CONCLUIDO' ? 'bg-blue-100 text-blue-800' : 
-                        item.status_modulo === 'PENDENTE' ? 'bg-red-100 text-red-800' : 'bg-blue-100 text-blue-800'
+                        item.status_modulo === 'CONCLUIDO' ? 'bg-blue-100 text-brand-blue' : 
+                        item.status_modulo === 'PENDENTE' ? 'bg-red-100 text-red-800' : 'bg-blue-100 text-brand-blue'
                       }`}>
                         Mód: {item.status_modulo || '-'}
                       </span>
                       {item.modulesConcluded && (
-                        <span className="inline-flex px-2 py-0.5 rounded text-[10px] font-bold bg-blue-100 text-blue-800">
+                        <span className="inline-flex px-2 py-0.5 rounded text-[10px] font-bold bg-blue-100 text-brand-blue">
                           Mód. Completos (1-4)
                         </span>
                       )}
@@ -175,10 +175,10 @@ export function BrigadaView({ items, onAdd, onEdit, onDelete, onExport }: Brigad
                   </td>
                   <td className="px-6 py-4 text-right">
                     <div className="flex items-center justify-end gap-2">
-                      <button onClick={() => onEdit(item)} className="p-1.5 text-blue-600 hover:bg-blue-50 rounded-lg transition-colors" title="Editar">
+                      <button onClick={() => onEdit(item)} className="p-1.5 text-blue-600 hover:bg-brand-light rounded-lg transition-colors" title="Editar">
                         <Pencil className="w-4 h-4" />
                       </button>
-                      <button onClick={() => onDelete(item.qtd)} className="p-1.5 text-blue-600 hover:bg-blue-50 rounded-lg transition-colors" title="Excluir">
+                      <button onClick={() => onDelete(item.qtd)} className="p-1.5 text-blue-600 hover:bg-brand-light rounded-lg transition-colors" title="Excluir">
                         <Trash2 className="w-4 h-4" />
                       </button>
                     </div>

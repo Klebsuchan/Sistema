@@ -70,8 +70,8 @@ export function InspecoesAntigasView({ inspecoes, onAdd, onEdit, onDelete, onExp
       <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
         <div className="bg-white rounded-2xl shadow-sm border border-blue-100 p-6 flex flex-col justify-between">
           <div className="flex justify-between items-center mb-6">
-            <h3 className="text-sm font-semibold text-blue-800">Conformidade Geral</h3>
-            <div className="p-2 bg-blue-50 text-blue-600 rounded-lg"><CheckCircle className="w-5 h-5"/></div>
+            <h3 className="text-sm font-semibold text-brand-blue">Conformidade Geral</h3>
+            <div className="p-2 bg-brand-light text-blue-600 rounded-lg"><CheckCircle className="w-5 h-5"/></div>
           </div>
           <div className="h-48">
             {statsConformidade.length > 0 ? (
@@ -96,8 +96,8 @@ export function InspecoesAntigasView({ inspecoes, onAdd, onEdit, onDelete, onExp
 
         <div className="bg-white rounded-2xl shadow-sm border border-blue-100 p-6 flex flex-col justify-between">
           <div className="flex justify-between items-center mb-6">
-            <h3 className="text-sm font-semibold text-blue-800">Inspeções por Prédio</h3>
-            <div className="p-2 bg-blue-50 text-blue-600 rounded-lg"><ClipboardList className="w-5 h-5"/></div>
+            <h3 className="text-sm font-semibold text-brand-blue">Inspeções por Prédio</h3>
+            <div className="p-2 bg-brand-light text-blue-600 rounded-lg"><ClipboardList className="w-5 h-5"/></div>
           </div>
           <div className="h-48">
             {statsPredio.length > 0 ? (
@@ -118,7 +118,7 @@ export function InspecoesAntigasView({ inspecoes, onAdd, onEdit, onDelete, onExp
       </div>
 
       <div className="bg-white rounded-2xl shadow-sm border border-blue-100 overflow-hidden flex flex-col">
-        <div className="p-4 border-b border-blue-100 flex flex-col sm:flex-row gap-4 justify-between items-center bg-blue-50/50">
+        <div className="p-4 border-b border-blue-100 flex flex-col sm:flex-row gap-4 justify-between items-center bg-brand-light/50">
           <div className="flex flex-col sm:flex-row items-center gap-2 w-full sm:w-auto">
             <div className="relative w-full sm:w-64">
               <Search className="absolute left-3 top-1/2 -translate-y-1/2 h-4 w-4 text-blue-400" />
@@ -150,11 +150,11 @@ export function InspecoesAntigasView({ inspecoes, onAdd, onEdit, onDelete, onExp
           </div>
           
           <div className="flex gap-2 w-full sm:w-auto justify-end">
-            <button onClick={() => onExport(filtered)} className="flex items-center justify-center gap-2 px-4 py-2 bg-white border border-blue-200 text-blue-700 rounded-xl hover:bg-blue-50 transition-colors shadow-sm text-sm font-medium">
+            <button onClick={() => onExport(filtered)} className="flex items-center justify-center gap-2 px-4 py-2 bg-white border border-blue-200 text-brand-blue rounded-xl hover:bg-brand-light transition-colors shadow-sm text-sm font-medium">
               <Download className="h-4 w-4" />
               <span className="hidden sm:inline">Exportar</span>
             </button>
-            <button onClick={onAdd} className="flex items-center justify-center gap-2 px-4 py-2 bg-blue-600 text-white rounded-xl hover:bg-blue-700 transition-colors shadow-sm text-sm font-medium">
+            <button onClick={onAdd} className="flex items-center justify-center gap-2 px-4 py-2 bg-brand-blue text-white rounded-xl hover:bg-brand-blue transition-colors shadow-sm text-sm font-medium">
               <PlusCircle className="h-4 w-4" />
               Nova Inspeção
             </button>
@@ -164,7 +164,7 @@ export function InspecoesAntigasView({ inspecoes, onAdd, onEdit, onDelete, onExp
         <div className="overflow-x-auto">
           <table className="w-full text-left border-collapse text-sm min-w-[1000px]">
             <thead>
-              <tr className="bg-blue-50 border-b border-blue-100 text-blue-500">
+              <tr className="bg-brand-light border-b border-blue-100 text-blue-500">
                 <th className="px-6 py-4 font-medium whitespace-nowrap">ID / Data</th>
                 <th className="px-6 py-4 font-medium whitespace-nowrap">Prédio / Local</th>
                 <th className="px-6 py-4 font-medium whitespace-nowrap">Operador / Dispositivo</th>
@@ -175,17 +175,17 @@ export function InspecoesAntigasView({ inspecoes, onAdd, onEdit, onDelete, onExp
             </thead>
             <tbody className="divide-y divide-blue-100">
               {filtered.map((insp) => (
-                <tr key={insp.id} className="hover:bg-blue-50/50 transition-colors">
+                <tr key={insp.id} className="hover:bg-brand-light/50 transition-colors">
                   <td className="px-6 py-4">
                     <div className="font-mono text-xs text-blue-500 mb-1">{insp.id}</div>
-                    <div className="font-medium text-blue-900">{insp.data || '-'}</div>
+                    <div className="font-medium text-brand-blue">{insp.data || '-'}</div>
                   </td>
                   <td className="px-6 py-4">
-                    <div className="font-semibold text-blue-800">{insp.sheet}</div>
+                    <div className="font-semibold text-brand-blue">{insp.sheet}</div>
                     <div className="text-xs text-blue-500 mt-0.5">{insp.local} (Andar: {insp.andar})</div>
                   </td>
                   <td className="px-6 py-4">
-                    <div className="font-medium text-blue-900">{insp.operador || 'Não informado'}</div>
+                    <div className="font-medium text-brand-blue">{insp.operador || 'Não informado'}</div>
                     <div className="text-xs text-blue-500 mt-0.5">Disp: {insp.dispositivo || '-'}</div>
                     {insp.entendeuCorretamente !== undefined && (
                       <div className={`text-xs mt-1 ${insp.entendeuCorretamente ? 'text-blue-600' : 'text-blue-600'}`}>
@@ -196,17 +196,17 @@ export function InspecoesAntigasView({ inspecoes, onAdd, onEdit, onDelete, onExp
                   <td className="px-6 py-4">
                     <div className="flex flex-col gap-1.5 items-start">
                       {insp.conforme && (
-                        <span className="inline-flex items-center gap-1 px-2 py-0.5 rounded text-[10px] font-bold bg-blue-100 text-blue-800">
+                        <span className="inline-flex items-center gap-1 px-2 py-0.5 rounded text-[10px] font-bold bg-blue-100 text-brand-blue">
                           <CheckCircle className="w-3 h-3" /> Conforme
                         </span>
                       )}
                       {insp.nao_conforme && (
-                        <span className="inline-flex items-center gap-1 px-2 py-0.5 rounded text-[10px] font-bold bg-blue-100 text-blue-800">
+                        <span className="inline-flex items-center gap-1 px-2 py-0.5 rounded text-[10px] font-bold bg-blue-100 text-brand-blue">
                           <XCircle className="w-3 h-3" /> Não Conforme
                         </span>
                       )}
                       {insp.status && (
-                        <span className="inline-flex px-2 py-0.5 rounded text-[10px] font-bold bg-blue-100 text-blue-700 border border-blue-200">
+                        <span className="inline-flex px-2 py-0.5 rounded text-[10px] font-bold bg-blue-100 text-brand-blue border border-blue-200">
                           Status: {insp.status}
                         </span>
                       )}
@@ -224,10 +224,10 @@ export function InspecoesAntigasView({ inspecoes, onAdd, onEdit, onDelete, onExp
                   </td>
                   <td className="px-6 py-4 text-right">
                     <div className="flex items-center justify-end gap-2">
-                      <button onClick={() => onEdit(insp)} className="p-1.5 text-blue-600 hover:bg-blue-50 rounded-lg transition-colors" title="Editar">
+                      <button onClick={() => onEdit(insp)} className="p-1.5 text-blue-600 hover:bg-brand-light rounded-lg transition-colors" title="Editar">
                         <Pencil className="w-4 h-4" />
                       </button>
-                      <button onClick={() => onDelete(insp.id)} className="p-1.5 text-blue-600 hover:bg-blue-50 rounded-lg transition-colors" title="Excluir">
+                      <button onClick={() => onDelete(insp.id)} className="p-1.5 text-blue-600 hover:bg-brand-light rounded-lg transition-colors" title="Excluir">
                         <Trash2 className="w-4 h-4" />
                       </button>
                     </div>

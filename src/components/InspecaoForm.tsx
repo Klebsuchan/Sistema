@@ -49,7 +49,7 @@ export function InspecaoForm({ initialData, onSave, onCancel }: InspecaoFormProp
   return (
     <div className="bg-white p-6 rounded-2xl shadow-sm border border-blue-100 max-w-4xl mx-auto">
       <div className="flex items-center justify-between mb-6 border-b border-blue-100 pb-4">
-        <h3 className="text-xl font-bold text-blue-800 flex items-center gap-2">
+        <h3 className="text-xl font-bold text-brand-blue flex items-center gap-2">
           <ClipboardList className="h-5 w-5 text-blue-600" />
           {initialData ? 'Editar Inspeção' : 'Nova Inspeção Mensal'}
         </h3>
@@ -62,90 +62,90 @@ export function InspecaoForm({ initialData, onSave, onCancel }: InspecaoFormProp
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
           
           <div className="space-y-2">
-            <label className="text-sm font-semibold text-blue-700">Data da Inspeção</label>
+            <label className="text-sm font-semibold text-brand-blue">Data da Inspeção</label>
             <input required type="date" value={formData.data} onChange={e => setFormData({ ...formData, data: e.target.value })}
-              className="w-full px-4 py-2 bg-blue-50 border border-blue-200 rounded-xl focus:ring-2 focus:ring-blue-500 focus:border-transparent outline-none" />
+              className="w-full px-4 py-2 bg-brand-light border border-blue-200 rounded-xl focus:ring-2 focus:ring-blue-500 focus:border-transparent outline-none" />
           </div>
 
           <div className="space-y-2">
-            <label className="text-sm font-semibold text-blue-700">Prédio</label>
+            <label className="text-sm font-semibold text-brand-blue">Prédio</label>
             <select required value={formData.sheet} onChange={e => setFormData({ ...formData, sheet: e.target.value, predio: e.target.value })}
-              className="w-full px-4 py-2 bg-blue-50 border border-blue-200 rounded-xl focus:ring-2 focus:ring-blue-500 focus:border-transparent outline-none">
+              className="w-full px-4 py-2 bg-brand-light border border-blue-200 rounded-xl focus:ring-2 focus:ring-blue-500 focus:border-transparent outline-none">
               <option value="" disabled>Selecione...</option>
               {BUILDINGS.map(b => <option key={b} value={b}>{b}</option>)}
             </select>
           </div>
 
           <div className="space-y-2">
-            <label className="text-sm font-semibold text-blue-700">Andar</label>
+            <label className="text-sm font-semibold text-brand-blue">Andar</label>
             <input required type="text" value={formData.andar} onChange={e => setFormData({ ...formData, andar: e.target.value })}
-              className="w-full px-4 py-2 bg-blue-50 border border-blue-200 rounded-xl focus:ring-2 focus:ring-blue-500 focus:border-transparent outline-none" />
+              className="w-full px-4 py-2 bg-brand-light border border-blue-200 rounded-xl focus:ring-2 focus:ring-blue-500 focus:border-transparent outline-none" />
           </div>
 
           <div className="space-y-2">
-            <label className="text-sm font-semibold text-blue-700">Setor / Local</label>
+            <label className="text-sm font-semibold text-brand-blue">Setor / Local</label>
             <input required type="text" value={formData.local} onChange={e => setFormData({ ...formData, local: e.target.value })}
-              className="w-full px-4 py-2 bg-blue-50 border border-blue-200 rounded-xl focus:ring-2 focus:ring-blue-500 focus:border-transparent outline-none" />
+              className="w-full px-4 py-2 bg-brand-light border border-blue-200 rounded-xl focus:ring-2 focus:ring-blue-500 focus:border-transparent outline-none" />
           </div>
 
           <div className="space-y-2">
-            <label className="text-sm font-semibold text-blue-700">Nome do Operador</label>
+            <label className="text-sm font-semibold text-brand-blue">Nome do Operador</label>
             <input required type="text" value={formData.operador} onChange={e => setFormData({ ...formData, operador: e.target.value })}
-              className="w-full px-4 py-2 bg-blue-50 border border-blue-200 rounded-xl focus:ring-2 focus:ring-blue-500 focus:border-transparent outline-none" />
+              className="w-full px-4 py-2 bg-brand-light border border-blue-200 rounded-xl focus:ring-2 focus:ring-blue-500 focus:border-transparent outline-none" />
           </div>
 
           <div className="space-y-2">
-            <label className="text-sm font-semibold text-blue-700">Dispositivo Testado</label>
+            <label className="text-sm font-semibold text-brand-blue">Dispositivo Testado</label>
             <input required type="text" value={formData.dispositivo} onChange={e => setFormData({ ...formData, dispositivo: e.target.value })}
-              className="w-full px-4 py-2 bg-blue-50 border border-blue-200 rounded-xl focus:ring-2 focus:ring-blue-500 focus:border-transparent outline-none" />
+              className="w-full px-4 py-2 bg-brand-light border border-blue-200 rounded-xl focus:ring-2 focus:ring-blue-500 focus:border-transparent outline-none" />
           </div>
 
           <div className="space-y-2 lg:col-span-3">
-            <label className="flex items-center gap-2 cursor-pointer p-3 bg-blue-50 rounded-lg border border-blue-100 hover:bg-blue-50 transition-colors w-fit">
+            <label className="flex items-center gap-2 cursor-pointer p-3 bg-brand-light rounded-lg border border-blue-100 hover:bg-brand-light transition-colors w-fit">
               <input type="checkbox" checked={formData.entendeuCorretamente} onChange={e => setFormData({ ...formData, entendeuCorretamente: e.target.checked })}
                 className="w-4 h-4 rounded text-blue-600 focus:ring-blue-500" />
-              <span className="text-sm text-blue-700 font-medium">Operador entendeu corretamente o que fazer?</span>
+              <span className="text-sm text-brand-blue font-medium">Operador entendeu corretamente o que fazer?</span>
             </label>
           </div>
 
           <div className="space-y-2 lg:col-span-3">
-            <label className="text-sm font-semibold text-blue-700">Quais falhas ocorreram?</label>
+            <label className="text-sm font-semibold text-brand-blue">Quais falhas ocorreram?</label>
             <input type="text" placeholder="Descreva falhas se houveram..." value={formData.falhas} onChange={e => setFormData({ ...formData, falhas: e.target.value })}
-              className="w-full px-4 py-2 bg-blue-50 border border-blue-200 rounded-xl focus:ring-2 focus:ring-blue-500 focus:border-transparent outline-none" />
+              className="w-full px-4 py-2 bg-brand-light border border-blue-200 rounded-xl focus:ring-2 focus:ring-blue-500 focus:border-transparent outline-none" />
           </div>
 
           <div className="space-y-2 lg:col-span-3">
-            <label className="text-sm font-semibold text-blue-700">Observação Geral</label>
+            <label className="text-sm font-semibold text-brand-blue">Observação Geral</label>
             <input type="text" value={formData.observacao} onChange={e => setFormData({ ...formData, observacao: e.target.value })}
-              className="w-full px-4 py-2 bg-blue-50 border border-blue-200 rounded-xl focus:ring-2 focus:ring-blue-500 focus:border-transparent outline-none" />
+              className="w-full px-4 py-2 bg-brand-light border border-blue-200 rounded-xl focus:ring-2 focus:ring-blue-500 focus:border-transparent outline-none" />
           </div>
           
           <div className="space-y-2">
-            <label className="text-sm font-semibold text-blue-700">Conformidade</label>
+            <label className="text-sm font-semibold text-brand-blue">Conformidade</label>
             <div className="flex gap-4 items-center h-10">
               <label className="flex items-center gap-2 cursor-pointer">
                 <input type="radio" checked={formData.conforme} onChange={() => setFormData({ ...formData, conforme: true, nao_conforme: false })}
                   className="text-blue-600 focus:ring-blue-500" />
-                <span className="text-sm text-blue-700">Conforme</span>
+                <span className="text-sm text-brand-blue">Conforme</span>
               </label>
               <label className="flex items-center gap-2 cursor-pointer">
                 <input type="radio" checked={formData.nao_conforme} onChange={() => setFormData({ ...formData, conforme: false, nao_conforme: true })}
                   className="text-blue-600 focus:ring-blue-500" />
-                <span className="text-sm text-blue-700">Não Conforme</span>
+                <span className="text-sm text-brand-blue">Não Conforme</span>
               </label>
             </div>
           </div>
 
           <div className="space-y-2">
-            <label className="text-sm font-semibold text-blue-700">Status O.S</label>
+            <label className="text-sm font-semibold text-brand-blue">Status O.S</label>
             <input type="text" placeholder="Ex: Em andamento" value={formData.status} onChange={e => setFormData({ ...formData, status: e.target.value })}
-              className="w-full px-4 py-2 bg-blue-50 border border-blue-200 rounded-xl focus:ring-2 focus:ring-blue-500 focus:border-transparent outline-none" />
+              className="w-full px-4 py-2 bg-brand-light border border-blue-200 rounded-xl focus:ring-2 focus:ring-blue-500 focus:border-transparent outline-none" />
           </div>
           
           <div className="space-y-2">
-            <label className="text-sm font-semibold text-blue-700">O.S Nº</label>
+            <label className="text-sm font-semibold text-brand-blue">O.S Nº</label>
             <input type="text" value={formData.os} onChange={e => setFormData({ ...formData, os: e.target.value })}
-              className="w-full px-4 py-2 bg-blue-50 border border-blue-200 rounded-xl focus:ring-2 focus:ring-blue-500 focus:border-transparent outline-none" />
+              className="w-full px-4 py-2 bg-brand-light border border-blue-200 rounded-xl focus:ring-2 focus:ring-blue-500 focus:border-transparent outline-none" />
           </div>
 
         </div>
@@ -156,7 +156,7 @@ export function InspecaoForm({ initialData, onSave, onCancel }: InspecaoFormProp
             Cancelar
           </button>
           <button type="submit"
-            className="px-6 py-2.5 text-sm font-semibold text-white bg-blue-600 hover:bg-blue-700 rounded-xl flex items-center gap-2 shadow-sm transition-colors">
+            className="px-6 py-2.5 text-sm font-semibold text-white bg-brand-blue hover:bg-brand-blue rounded-xl flex items-center gap-2 shadow-sm transition-colors">
             <Save className="h-4 w-4" />
             Salvar
           </button>

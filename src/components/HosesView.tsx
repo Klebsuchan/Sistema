@@ -56,7 +56,7 @@ export function HosesView({ hoses, onAdd, onEdit, onDelete, onExport }: HosesVie
     <div className="space-y-6">
       <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
         <div className="bg-white rounded-2xl shadow-sm border border-blue-100 p-6">
-          <h3 className="text-sm font-semibold text-blue-800 mb-4">Mangueiras por Prédio</h3>
+          <h3 className="text-sm font-semibold text-brand-blue mb-4">Mangueiras por Prédio</h3>
           <div className="h-64">
             {metrics.predioData.length > 0 ? (
               <ResponsiveContainer width="100%" height="100%">
@@ -84,7 +84,7 @@ export function HosesView({ hoses, onAdd, onEdit, onDelete, onExport }: HosesVie
           </div>
         </div>
         <div className="bg-white rounded-2xl shadow-sm border border-blue-100 p-6">
-          <h3 className="text-sm font-semibold text-blue-800 mb-4">Quantidade por Tipo</h3>
+          <h3 className="text-sm font-semibold text-brand-blue mb-4">Quantidade por Tipo</h3>
           <div className="h-64">
             {metrics.typeData.length > 0 ? (
               <ResponsiveContainer width="100%" height="100%">
@@ -111,7 +111,7 @@ export function HosesView({ hoses, onAdd, onEdit, onDelete, onExport }: HosesVie
       </div>
 
       <div className="bg-white rounded-2xl shadow-sm border border-blue-100 overflow-hidden flex flex-col">
-        <div className="p-4 border-b border-blue-100 flex flex-col sm:flex-row gap-4 justify-between items-center bg-blue-50/50">
+        <div className="p-4 border-b border-blue-100 flex flex-col sm:flex-row gap-4 justify-between items-center bg-brand-light/50">
           <div className="flex items-center gap-2 w-full sm:w-auto">
             <div className="relative flex-1 sm:w-80">
               <Search className="absolute left-3 top-1/2 -translate-y-1/2 h-4 w-4 text-blue-400" />
@@ -136,14 +136,14 @@ export function HosesView({ hoses, onAdd, onEdit, onDelete, onExport }: HosesVie
           <div className="flex gap-2 w-full sm:w-auto justify-end">
             <button
               onClick={() => onExport(filtered)}
-              className="flex items-center justify-center gap-2 px-4 py-2 bg-white border border-blue-200 text-blue-700 rounded-xl hover:bg-blue-50 transition-colors shadow-sm text-sm font-medium"
+              className="flex items-center justify-center gap-2 px-4 py-2 bg-white border border-blue-200 text-brand-blue rounded-xl hover:bg-brand-light transition-colors shadow-sm text-sm font-medium"
             >
               <Download className="h-4 w-4" />
               <span className="hidden sm:inline">Exportar</span>
             </button>
             <button
               onClick={onAdd}
-              className="flex items-center justify-center gap-2 px-4 py-2 bg-blue-600 text-white rounded-xl hover:bg-blue-700 transition-colors shadow-sm text-sm font-medium"
+              className="flex items-center justify-center gap-2 px-4 py-2 bg-brand-blue text-white rounded-xl hover:bg-brand-blue transition-colors shadow-sm text-sm font-medium"
             >
               <PlusCircle className="h-4 w-4" />
               Nova Mangueira
@@ -154,7 +154,7 @@ export function HosesView({ hoses, onAdd, onEdit, onDelete, onExport }: HosesVie
         <div className="overflow-x-auto">
           <table className="w-full text-left border-collapse text-sm">
             <thead>
-              <tr className="bg-blue-50 border-b border-blue-100 text-blue-500">
+              <tr className="bg-brand-light border-b border-blue-100 text-blue-500">
                 <th className="px-6 py-4 font-medium whitespace-nowrap">Nº / Patrimônio</th>
                 <th className="px-6 py-4 font-medium whitespace-nowrap">Prédio / Localização</th>
                 <th className="px-6 py-4 font-medium whitespace-nowrap">Tipo / Cap.</th>
@@ -166,27 +166,27 @@ export function HosesView({ hoses, onAdd, onEdit, onDelete, onExport }: HosesVie
             </thead>
             <tbody className="divide-y divide-blue-100">
               {filtered.map((h) => (
-                <tr key={h.id} className="hover:bg-blue-50/50 transition-colors">
+                <tr key={h.id} className="hover:bg-brand-light/50 transition-colors">
                   <td className="px-6 py-4">
-                    <div className="font-semibold text-blue-900">{h.num_mangueira}</div>
+                    <div className="font-semibold text-brand-blue">{h.num_mangueira}</div>
                     <div className="text-xs text-blue-500 mt-0.5">{h.patrim}</div>
                   </td>
                   <td className="px-6 py-4">
-                    <div className="font-medium text-blue-800">{h.predio || '-'}</div>
+                    <div className="font-medium text-brand-blue">{h.predio || '-'}</div>
                     <div className="text-xs text-blue-500 mt-0.5">{h.localizacao}</div>
                   </td>
                   <td className="px-6 py-4">
-                    <div className="font-medium text-blue-800">{h.tipo}</div>
+                    <div className="font-medium text-brand-blue">{h.tipo}</div>
                     <div className="text-xs text-blue-500 mt-0.5">{h.cap}</div>
                   </td>
                   <td className="px-6 py-4">
-                    <div className="text-blue-700"><span className="text-xs text-blue-400">Manut:</span> {h.prox_recarga}</div>
-                    <div className="text-blue-700 mt-0.5"><span className="text-xs text-blue-400">Teste:</span> {h.prox_teste}</div>
+                    <div className="text-brand-blue"><span className="text-xs text-blue-400">Manut:</span> {h.prox_recarga}</div>
+                    <div className="text-brand-blue mt-0.5"><span className="text-xs text-blue-400">Teste:</span> {h.prox_teste}</div>
                   </td>
                   <td className="px-6 py-4">
                     <div className="flex flex-col gap-1">
                       {h.retiradoParaRecarga && <span className="inline-block px-2 py-0.5 rounded text-[10px] font-bold bg-red-100 text-red-800">Manutenção (Retirado)</span>}
-                      {h.coberturaNoLocal && <span className="inline-block px-2 py-0.5 rounded text-[10px] font-bold bg-blue-100 text-blue-800">Cobertura Ativa</span>}
+                      {h.coberturaNoLocal && <span className="inline-block px-2 py-0.5 rounded text-[10px] font-bold bg-blue-100 text-brand-blue">Cobertura Ativa</span>}
                     </div>
                   </td>
                   <td className="px-6 py-4">
@@ -201,14 +201,14 @@ export function HosesView({ hoses, onAdd, onEdit, onDelete, onExport }: HosesVie
                     <div className="flex items-center justify-end gap-2">
                       <button 
                         onClick={() => onEdit(h)}
-                        className="p-1.5 text-blue-600 hover:bg-blue-50 rounded-lg transition-colors"
+                        className="p-1.5 text-blue-600 hover:bg-brand-light rounded-lg transition-colors"
                         title="Editar"
                       >
                         <Pencil className="w-4 h-4" />
                       </button>
                       <button 
                         onClick={() => onDelete(h.id)}
-                        className="p-1.5 text-blue-600 hover:bg-blue-50 rounded-lg transition-colors"
+                        className="p-1.5 text-blue-600 hover:bg-brand-light rounded-lg transition-colors"
                         title="Excluir"
                       >
                         <Trash2 className="w-4 h-4" />
@@ -228,8 +228,8 @@ export function HosesView({ hoses, onAdd, onEdit, onDelete, onExport }: HosesVie
           </table>
         </div>
         
-        <div className="p-4 border-t border-blue-100 bg-blue-50 flex items-center justify-between text-xs text-blue-500">
-          <div>Total filtrado: <span className="font-semibold text-blue-900">{filtered.length}</span> mangueiras</div>
+        <div className="p-4 border-t border-blue-100 bg-brand-light flex items-center justify-between text-xs text-blue-500">
+          <div>Total filtrado: <span className="font-semibold text-brand-blue">{filtered.length}</span> mangueiras</div>
           <div className="flex gap-2">
              <span>Acopl.</span>
              <span>Esguicho</span>

@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from 'react';
+import logoHSVP from './logohsvp.png';
 import { Dashboard } from './components/Dashboard';
 import { DataView } from './components/DataView';
 import { EventForm } from './components/EventForm';
@@ -380,19 +381,17 @@ export default function App() {
 
   if (!isAuthenticated) {
     return (
-      <div className="min-h-screen bg-blue-50 font-sans text-blue-900 flex items-center justify-center p-4">
-        <div className="bg-white p-8 rounded-2xl shadow-sm border border-blue-100 max-w-md w-full">
+      <div className="min-h-screen bg-brand-light font-sans text-brand-blue flex items-center justify-center p-4">
+        <div className="bg-white p-8 rounded-2xl shadow-sm border border-brand-light max-w-md w-full">
           <div className="flex justify-center mb-6">
-            <div className="p-3 bg-blue-50 text-red-700 rounded-xl">
-              <ShieldAlert className="h-10 w-10" />
-            </div>
+            <img src={logoHSVP} alt="HSVP Logo" className="h-20 w-auto" />
           </div>
-          <h1 className="text-2xl font-bold text-center text-blue-800 mb-2">Acesso Restrito</h1>
-          <p className="text-center text-blue-500 mb-8">Painel de Ocorrências e Alarmes</p>
+          <h1 className="text-2xl font-bold text-center text-brand-blue mb-2">Acesso Restrito</h1>
+          <p className="text-center text-brand-gray mb-8">Painel de Ocorrências e Alarmes</p>
           
           <form onSubmit={handleLoginSubmit} className="space-y-6">
             <div className="space-y-2">
-              <label className="block text-sm font-medium text-blue-700">Senha de Acesso</label>
+              <label className="block text-sm font-medium text-brand-blue">Senha de Acesso</label>
               <div className="relative">
                 <input
                   type={showPassword ? "text" : "password"}
@@ -400,12 +399,12 @@ export default function App() {
                   onChange={e => { setLoginPassword(e.target.value); setLoginError(false); }}
                   autoFocus
                   placeholder="Digite a senha..."
-                  className="w-full px-4 py-3 border border-blue-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-red-500 pr-12"
+                  className="w-full px-4 py-3 border border-brand-light rounded-lg focus:outline-none focus:ring-2 focus:ring-brand-red pr-12"
                 />
                 <button
                   type="button"
                   onClick={() => setShowPassword(!showPassword)}
-                  className="absolute right-3 top-1/2 -translate-y-1/2 text-blue-400 hover:text-blue-600 focus:outline-none"
+                  className="absolute right-3 top-1/2 -translate-y-1/2 text-brand-gray hover:opacity-80 focus:outline-none"
                 >
                   {showPassword ? (
                     <EyeOff className="h-5 w-5" />
@@ -414,11 +413,11 @@ export default function App() {
                   )}
                 </button>
               </div>
-              {loginError && <p className="text-sm text-red-600 mt-2">Senha incorreta. Tente novamente.</p>}
+              {loginError && <p className="text-sm text-brand-red mt-2">Senha incorreta. Tente novamente.</p>}
             </div>
             <button
               type="submit"
-              className="w-full py-3 px-4 bg-blue-700 hover:bg-blue-800 text-white font-semibold rounded-xl shadow-sm transition-colors flex items-center justify-center gap-2"
+              className="w-full py-3 px-4 bg-brand-blue hover:opacity-90 text-white font-semibold rounded-xl shadow-sm transition-colors flex items-center justify-center gap-2"
             >
               Acessar Painel
             </button>
@@ -429,23 +428,21 @@ export default function App() {
   }
 
   return (
-    <div className="min-h-screen bg-blue-50 font-sans text-blue-900">
+    <div className="min-h-screen bg-brand-light font-sans text-brand-blue">
       
       {/* Top Header */}
-      <header className="bg-blue-700 border-b border-red-800 sticky top-0 z-20 shadow-sm">
+      <header className="bg-brand-blue border-b border-brand-red sticky top-0 z-20 shadow-sm">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           
           {/* Top Row: Title & Actions */}
           <div className="flex items-center justify-between py-3 h-auto sm:h-auto">
             <div className="flex items-center gap-3">
-              <div className="p-2 bg-red-500 text-red-900 rounded-lg shadow-sm">
-                <ShieldAlert className="h-6 w-6" />
-              </div>
+              <div className="bg-white p-1 rounded-lg shadow-sm"><img src={logoHSVP} alt="HSVP" className="h-8 w-auto object-contain" /></div>
               <h1 className="text-lg sm:text-2xl font-bold tracking-tight text-white drop-shadow-md truncate max-w-[180px] sm:max-w-none">Painel de Ocorrências</h1>
             </div>
             
             <div className="flex items-center gap-2">
-              <label className="flex items-center gap-2 bg-blue-100 hover:bg-blue-200 text-blue-800 px-3 py-2 sm:py-2.5 rounded-lg text-sm font-semibold transition-colors cursor-pointer">
+              <label className="flex items-center gap-2 bg-brand-light hover:bg-brand-light text-brand-blue px-3 py-2 sm:py-2.5 rounded-lg text-sm font-semibold transition-colors cursor-pointer">
                 <Upload className="h-4 w-4" />
                 <span className="hidden sm:inline">Restaurar</span>
                 <input type="file" accept=".json" className="hidden" onChange={handleRestore} />
@@ -453,7 +450,7 @@ export default function App() {
               
               <button
                 onClick={handleBackup}
-                className="flex items-center gap-2 bg-blue-600 hover:bg-blue-700 text-white px-3 py-2 sm:py-2.5 rounded-lg text-sm font-semibold transition-colors"
+                className="flex items-center gap-2 bg-brand-blue hover:opacity-90 text-white px-3 py-2 sm:py-2.5 rounded-lg text-sm font-semibold transition-colors"
               >
                 <Database className="h-4 w-4" />
                 <span className="hidden sm:inline">Backup</span>
@@ -462,7 +459,7 @@ export default function App() {
               <button
                 onClick={handleExport}
                 disabled={isExporting}
-                className="flex items-center gap-2 bg-red-500 hover:bg-red-600 text-red-900 px-3 sm:px-5 py-2 sm:py-2.5 rounded-lg text-sm font-semibold transition-colors disabled:opacity-70"
+                className="flex items-center gap-2 bg-brand-red hover:opacity-90 text-white px-3 sm:px-5 py-2 sm:py-2.5 rounded-lg text-sm font-semibold transition-colors disabled:opacity-70"
               >
                 <Download className={`h-4 w-4 ${isExporting ? 'animate-bounce' : ''}`} />
                 <span className="hidden lg:inline">{isExporting ? 'Montando Excel...' : 'Exportar Planilha Excel'}</span>
@@ -473,11 +470,11 @@ export default function App() {
           
           {/* Bottom Row: Navigation Tabs */}
           <div className="hidden sm:flex justify-center pb-3">
-            <div className="flex items-center gap-2 bg-blue-800/60 p-1.5 rounded-xl border border-red-900/30">
+            <div className="flex items-center gap-2 bg-brand-blue/60 p-1.5 rounded-xl border border-brand-blue/30">
               <button
                 onClick={() => setActiveTab('dashboard')}
                 className={`flex items-center gap-2 px-4 py-2 rounded-md text-sm font-medium transition-all ${
-                  activeTab === 'dashboard' ? 'bg-white shadow-sm text-red-700' : 'text-red-100 hover:text-white hover:bg-blue-800/40'
+                  activeTab === 'dashboard' ? 'bg-white shadow-sm text-brand-red' : 'text-brand-light hover:text-white hover:bg-brand-light/20'
                 }`}
               >
                 <LayoutDashboard className="h-4 w-4" />
@@ -486,7 +483,7 @@ export default function App() {
               <button
                 onClick={() => setActiveTab('data')}
                 className={`flex items-center gap-2 px-4 py-2 rounded-md text-sm font-medium transition-all ${
-                  activeTab === 'data' ? 'bg-white shadow-sm text-red-700' : 'text-red-100 hover:text-white hover:bg-blue-800/40'
+                  activeTab === 'data' ? 'bg-white shadow-sm text-brand-red' : 'text-brand-light hover:text-white hover:bg-brand-light/20'
                 }`}
               >
                 <TableProperties className="h-4 w-4" />
@@ -495,7 +492,7 @@ export default function App() {
               <button
                 onClick={() => setActiveTab('extinguishers')}
                 className={`flex items-center gap-2 px-4 py-2 rounded-md text-sm font-medium transition-all ${
-                  (activeTab === 'extinguishers' || activeTab === 'extinguisher_form') ? 'bg-white shadow-sm text-red-700' : 'text-red-100 hover:text-white hover:bg-blue-800/40'
+                  (activeTab === 'extinguishers' || activeTab === 'extinguisher_form') ? 'bg-white shadow-sm text-brand-red' : 'text-brand-light hover:text-white hover:bg-brand-light/20'
                 }`}
               >
                 <Flame className="h-4 w-4" />
@@ -504,7 +501,7 @@ export default function App() {
               <button
                 onClick={() => { setActiveTab('register'); setIsMoreMenuOpen(false); }}
                 className={`flex items-center gap-2 px-4 py-2 rounded-md text-sm font-medium transition-all ${
-                  activeTab === 'register' ? 'bg-white shadow-sm text-red-700' : 'text-red-100 hover:text-white hover:bg-blue-800/40'
+                  activeTab === 'register' ? 'bg-white shadow-sm text-brand-red' : 'text-brand-light hover:text-white hover:bg-brand-light/20'
                 }`}
               >
                 <PlusCircle className="h-4 w-4" />
@@ -515,7 +512,7 @@ export default function App() {
                 <button
                   onClick={() => setIsMoreMenuOpen(!isMoreMenuOpen)}
                   className={`flex items-center gap-2 px-3 py-2 rounded-md text-sm font-medium transition-all ${
-                    ['hoses', 'hose_form', 'detectors', 'detector_form', 'amplifiers', 'amplifier_form', 'inspecoes_antigas', 'brigada', 'faltas_cursos', 'falta_form'].includes(activeTab) ? 'bg-white shadow-sm text-red-700' : 'text-red-100 hover:text-white hover:bg-blue-800/40'
+                    ['hoses', 'hose_form', 'detectors', 'detector_form', 'amplifiers', 'amplifier_form', 'inspecoes_antigas', 'brigada', 'faltas_cursos', 'falta_form'].includes(activeTab) ? 'bg-white shadow-sm text-brand-red' : 'text-brand-light hover:text-white hover:bg-brand-light/20'
                   }`}
                 >
                   <MoreHorizontal className="h-4 w-4" />
@@ -524,11 +521,11 @@ export default function App() {
                 {isMoreMenuOpen && (
                   <>
                     <div className="fixed inset-0 z-10" onClick={() => setIsMoreMenuOpen(false)} />
-                    <div className="absolute right-0 mt-2 w-56 bg-white rounded-md shadow-lg border border-red-100 z-20 py-2 flex flex-col gap-1">
+                    <div className="absolute right-0 mt-2 w-56 bg-white rounded-md shadow-lg border border-brand-light z-20 py-2 flex flex-col gap-1">
                       <button
                         onClick={() => { setActiveTab('hoses'); setIsMoreMenuOpen(false); }}
                         className={`w-full flex items-center gap-2 px-4 py-2 text-sm transition-colors ${
-                          (activeTab === 'hoses' || activeTab === 'hose_form') ? 'bg-blue-50 text-red-700 font-medium' : 'text-blue-600 hover:bg-blue-50 hover:text-red-700'
+                          (activeTab === 'hoses' || activeTab === 'hose_form') ? 'bg-brand-light text-brand-red font-medium' : 'text-brand-gray hover:bg-brand-light hover:text-brand-red'
                         }`}
                       >
                         <Box className="h-4 w-4" /> Mangueiras
@@ -536,7 +533,7 @@ export default function App() {
                       <button
                         onClick={() => { setActiveTab('detectors'); setIsMoreMenuOpen(false); }}
                         className={`w-full flex items-center gap-2 px-4 py-2 text-sm transition-colors ${
-                          (activeTab === 'detectors' || activeTab === 'detector_form') ? 'bg-blue-50 text-red-700 font-medium' : 'text-blue-600 hover:bg-blue-50 hover:text-red-700'
+                          (activeTab === 'detectors' || activeTab === 'detector_form') ? 'bg-brand-light text-brand-red font-medium' : 'text-brand-gray hover:bg-brand-light hover:text-brand-red'
                         }`}
                       >
                         <Radio className="h-4 w-4" /> Detectores
@@ -544,7 +541,7 @@ export default function App() {
                       <button
                         onClick={() => { setActiveTab('amplifiers'); setIsMoreMenuOpen(false); }}
                         className={`w-full flex items-center gap-2 px-4 py-2 text-sm transition-colors ${
-                          (activeTab === 'amplifiers' || activeTab === 'amplifier_form') ? 'bg-blue-50 text-red-700 font-medium' : 'text-blue-600 hover:bg-blue-50 hover:text-red-700'
+                          (activeTab === 'amplifiers' || activeTab === 'amplifier_form') ? 'bg-brand-light text-brand-red font-medium' : 'text-brand-gray hover:bg-brand-light hover:text-brand-red'
                         }`}
                       >
                         <Speaker className="h-4 w-4" /> Amplificadores
@@ -552,7 +549,7 @@ export default function App() {
                       <button
                         onClick={() => { setActiveTab('inspecoes_antigas'); setIsMoreMenuOpen(false); }}
                         className={`w-full flex items-center gap-2 px-4 py-2 text-sm transition-colors ${
-                          activeTab === 'inspecoes_antigas' ? 'bg-blue-50 text-red-700 font-medium' : 'text-blue-600 hover:bg-blue-50 hover:text-red-700'
+                          activeTab === 'inspecoes_antigas' ? 'bg-brand-light text-brand-red font-medium' : 'text-brand-gray hover:bg-brand-light hover:text-brand-red'
                         }`}
                       >
                         <ClipboardList className="h-4 w-4" /> Histórico Inspeções
@@ -560,7 +557,7 @@ export default function App() {
                       <button
                         onClick={() => { setActiveTab('brigada'); setIsMoreMenuOpen(false); }}
                         className={`w-full flex items-center gap-2 px-4 py-2 text-sm transition-colors ${
-                          activeTab === 'brigada' ? 'bg-blue-50 text-red-700 font-medium' : 'text-blue-600 hover:bg-blue-50 hover:text-red-700'
+                          activeTab === 'brigada' ? 'bg-brand-light text-brand-red font-medium' : 'text-brand-gray hover:bg-brand-light hover:text-brand-red'
                         }`}
                       >
                         <Users className="h-4 w-4" /> Brigada EAD
@@ -568,7 +565,7 @@ export default function App() {
                       <button
                         onClick={() => { setActiveTab('faltas_cursos'); setIsMoreMenuOpen(false); }}
                         className={`w-full flex items-center gap-2 px-4 py-2 text-sm transition-colors ${
-                          (activeTab === 'faltas_cursos' || activeTab === 'falta_form') ? 'bg-blue-50 text-red-700 font-medium' : 'text-blue-600 hover:bg-blue-50 hover:text-red-700'
+                          (activeTab === 'faltas_cursos' || activeTab === 'falta_form') ? 'bg-brand-light text-brand-red font-medium' : 'text-brand-gray hover:bg-brand-light hover:text-brand-red'
                         }`}
                       >
                         <CalendarClock className="h-4 w-4" /> Cursos e Faltas
@@ -587,7 +584,7 @@ export default function App() {
         <button
           onClick={() => { setActiveTab('dashboard'); setIsMoreMenuOpen(false); }}
           className={`flex-1 flex justify-center items-center gap-2 px-4 py-3 rounded-lg text-sm font-medium transition-all min-w-[max-content] ${
-            activeTab === 'dashboard' ? 'bg-blue-700 shadow-sm text-white' : 'bg-transparent text-blue-500 hover:text-blue-800'
+            activeTab === 'dashboard' ? 'bg-brand-blue shadow-sm text-white' : 'bg-transparent text-brand-gray hover:opacity-80'
           }`}
         >
           <LayoutDashboard className="h-4 w-4" />
@@ -596,7 +593,7 @@ export default function App() {
         <button
           onClick={() => { setActiveTab('data'); setIsMoreMenuOpen(false); }}
           className={`flex-1 flex justify-center items-center gap-2 px-4 py-3 rounded-lg text-sm font-medium transition-all min-w-[max-content] ${
-            activeTab === 'data' ? 'bg-blue-700 shadow-sm text-white' : 'bg-transparent text-blue-500 hover:text-blue-800'
+            activeTab === 'data' ? 'bg-brand-blue shadow-sm text-white' : 'bg-transparent text-brand-gray hover:opacity-80'
           }`}
         >
           <TableProperties className="h-4 w-4" />
@@ -605,7 +602,7 @@ export default function App() {
         <button
           onClick={() => { setActiveTab('extinguishers'); setIsMoreMenuOpen(false); }}
           className={`flex-1 flex justify-center items-center gap-2 px-4 py-3 rounded-lg text-sm font-medium transition-all min-w-[max-content] ${
-            (activeTab === 'extinguishers' || activeTab === 'extinguisher_form') ? 'bg-blue-700 shadow-sm text-white' : 'bg-transparent text-blue-500 hover:text-blue-800'
+            (activeTab === 'extinguishers' || activeTab === 'extinguisher_form') ? 'bg-brand-blue shadow-sm text-white' : 'bg-transparent text-brand-gray hover:opacity-80'
           }`}
         >
           <Flame className="h-4 w-4" />
@@ -614,7 +611,7 @@ export default function App() {
         <button
           onClick={() => { setActiveTab('register'); setIsMoreMenuOpen(false); }}
           className={`flex-1 flex justify-center items-center gap-2 px-4 py-3 rounded-lg text-sm font-medium transition-all min-w-[max-content] ${
-            activeTab === 'register' ? 'bg-blue-700 shadow-sm text-white' : 'bg-transparent text-blue-500 hover:text-blue-800'
+            activeTab === 'register' ? 'bg-brand-blue shadow-sm text-white' : 'bg-transparent text-brand-gray hover:opacity-80'
           }`}
         >
           <PlusCircle className="h-4 w-4" />
@@ -625,7 +622,7 @@ export default function App() {
           <button
             onClick={() => setIsMoreMenuOpen(!isMoreMenuOpen)}
             className={`flex-1 flex justify-center items-center gap-2 px-4 py-3 rounded-lg text-sm font-medium transition-all min-w-[max-content] ${
-              ['hoses', 'hose_form', 'detectors', 'detector_form', 'amplifiers', 'amplifier_form', 'inspecoes_antigas', 'brigada', 'faltas_cursos', 'falta_form'].includes(activeTab) ? 'bg-blue-700 shadow-sm text-white' : 'bg-transparent text-blue-500 hover:text-blue-800'
+              ['hoses', 'hose_form', 'detectors', 'detector_form', 'amplifiers', 'amplifier_form', 'inspecoes_antigas', 'brigada', 'faltas_cursos', 'falta_form'].includes(activeTab) ? 'bg-brand-blue shadow-sm text-white' : 'bg-transparent text-brand-gray hover:opacity-80'
             }`}
           >
             <MoreHorizontal className="h-4 w-4" />
@@ -656,7 +653,7 @@ export default function App() {
             {activeTab === 'falta_form' && (editingFalta ? 'Editar Registro de Falta/Curso' : 'Novo Registro de Falta/Curso')}
             {activeTab === 'register' && 'Cadastrar Nova Ocorrência'}
           </h2>
-          <p className="mt-2 text-blue-500">
+          <p className="mt-2 text-brand-gray">
             {activeTab === 'dashboard' && 'Análise estatística e acompanhamento de chamados baseado na sua Planilha de Eventos.'}
             {activeTab === 'data' && 'Verifique as informações tabulares exportáveis que refletem a aba original do seu PDF / Excel.'}
             {activeTab === 'extinguishers' && 'Verifique a listagem e os vencimentos dos extintores mapeados no hospital.'}
@@ -935,7 +932,7 @@ export default function App() {
         
         {/* Modais */}
         {editingEvent && (
-          <div className="fixed inset-0 bg-blue-950/80 backdrop-blur-sm z-50 flex items-center justify-center p-4 overflow-y-auto">
+          <div className="fixed inset-0 bg-black/80 backdrop-blur-sm z-50 flex items-center justify-center p-4 overflow-y-auto">
             <div className="relative w-full max-w-3xl my-8">
               <EventForm 
                 initialData={editingEvent} 
@@ -947,32 +944,32 @@ export default function App() {
         )}
       </main>
 
-      <footer className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8 mt-12 border-t border-blue-200">
+      <footer className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8 mt-12 border-t border-brand-light">
         <div className="flex flex-col items-center justify-center gap-2">
           <a 
             href="https://portfolio-braian-three.vercel.app/" 
             target="_blank" 
             rel="noopener noreferrer"
-            className="text-blue-400 hover:text-red-600 text-sm font-medium transition-colors"
+            className="text-brand-gray hover:text-brand-red text-sm font-medium transition-colors"
           >
             Desenvolvedor Braian Kmdc
           </a>
-          <p className="text-xs text-blue-400">© 2026 FireSafe Hub - Sistema de Gestão de Prevenção</p>
+          <p className="text-xs text-brand-gray">© 2026 FireSafe Hub - Sistema de Gestão de Prevenção</p>
         </div>
       </footer>
 
       {/* Mobile More Menu Overlay (Rendered outside overflow containers) */}
       {isMoreMenuOpen && (
         <div className="md:hidden">
-          <div className="fixed inset-0 z-40 bg-blue-900/20 backdrop-blur-sm" onClick={() => setIsMoreMenuOpen(false)} />
-          <div className="fixed bottom-0 left-0 right-0 bg-white rounded-t-2xl shadow-2xl border-t border-blue-200 z-50 py-2 px-3 pb-8 flex flex-col gap-1 max-h-[85vh] overflow-y-auto">
+          <div className="fixed inset-0 z-40 bg-black/20 backdrop-blur-sm" onClick={() => setIsMoreMenuOpen(false)} />
+          <div className="fixed bottom-0 left-0 right-0 bg-white rounded-t-2xl shadow-2xl border-t border-brand-light z-50 py-2 px-3 pb-8 flex flex-col gap-1 max-h-[85vh] overflow-y-auto">
             <div className="flex justify-center pt-2 pb-4 w-full" onClick={() => setIsMoreMenuOpen(false)}>
-              <div className="w-12 h-1.5 bg-blue-300 rounded-full" />
+              <div className="w-12 h-1.5 bg-brand-light rounded-full" />
             </div>
             <button
               onClick={() => { setActiveTab('hoses'); setIsMoreMenuOpen(false); }}
               className={`w-full flex items-center gap-3 px-4 py-3.5 text-base rounded-xl transition-colors ${
-                (activeTab === 'hoses' || activeTab === 'hose_form') ? 'bg-blue-50 text-blue-700 font-medium' : 'text-blue-700 hover:bg-blue-50 hover:text-blue-700'
+                (activeTab === 'hoses' || activeTab === 'hose_form') ? 'bg-brand-light text-brand-blue font-medium' : 'text-brand-blue hover:bg-brand-light hover:opacity-80'
               }`}
             >
               <Box className="h-5 w-5" /> Mangueiras
@@ -980,7 +977,7 @@ export default function App() {
             <button
               onClick={() => { setActiveTab('detectors'); setIsMoreMenuOpen(false); }}
               className={`w-full flex items-center gap-3 px-4 py-3.5 text-base rounded-xl transition-colors ${
-                (activeTab === 'detectors' || activeTab === 'detector_form') ? 'bg-blue-50 text-blue-700 font-medium' : 'text-blue-700 hover:bg-blue-50 hover:text-blue-700'
+                (activeTab === 'detectors' || activeTab === 'detector_form') ? 'bg-brand-light text-brand-blue font-medium' : 'text-brand-blue hover:bg-brand-light hover:opacity-80'
               }`}
             >
               <Radio className="h-5 w-5" /> Detectores
@@ -988,7 +985,7 @@ export default function App() {
             <button
               onClick={() => { setActiveTab('amplifiers'); setIsMoreMenuOpen(false); }}
               className={`w-full flex items-center gap-3 px-4 py-3.5 text-base rounded-xl transition-colors ${
-                (activeTab === 'amplifiers' || activeTab === 'amplifier_form') ? 'bg-blue-50 text-blue-700 font-medium' : 'text-blue-700 hover:bg-blue-50 hover:text-blue-700'
+                (activeTab === 'amplifiers' || activeTab === 'amplifier_form') ? 'bg-brand-light text-brand-blue font-medium' : 'text-brand-blue hover:bg-brand-light hover:opacity-80'
               }`}
             >
               <Speaker className="h-5 w-5" /> Amplificadores
@@ -996,7 +993,7 @@ export default function App() {
             <button
               onClick={() => { setActiveTab('inspecoes_antigas'); setIsMoreMenuOpen(false); }}
               className={`w-full flex items-center gap-3 px-4 py-3.5 text-base rounded-xl transition-colors ${
-                activeTab === 'inspecoes_antigas' ? 'bg-blue-50 text-blue-700 font-medium' : 'text-blue-700 hover:bg-blue-50 hover:text-blue-700'
+                activeTab === 'inspecoes_antigas' ? 'bg-brand-light text-brand-blue font-medium' : 'text-brand-blue hover:bg-brand-light hover:opacity-80'
               }`}
             >
               <ClipboardList className="h-5 w-5" /> Histórico Inspeções
@@ -1004,7 +1001,7 @@ export default function App() {
             <button
               onClick={() => { setActiveTab('brigada'); setIsMoreMenuOpen(false); }}
               className={`w-full flex items-center gap-3 px-4 py-3.5 text-base rounded-xl transition-colors ${
-                activeTab === 'brigada' ? 'bg-blue-50 text-blue-700 font-medium' : 'text-blue-700 hover:bg-blue-50 hover:text-blue-700'
+                activeTab === 'brigada' ? 'bg-brand-light text-brand-blue font-medium' : 'text-brand-blue hover:bg-brand-light hover:opacity-80'
               }`}
             >
               <Users className="h-5 w-5" /> Brigada EAD
@@ -1012,7 +1009,7 @@ export default function App() {
             <button
               onClick={() => { setActiveTab('faltas_cursos'); setIsMoreMenuOpen(false); }}
               className={`w-full flex items-center gap-3 px-4 py-3.5 text-base rounded-xl transition-colors ${
-                (activeTab === 'faltas_cursos' || activeTab === 'falta_form') ? 'bg-blue-50 text-blue-700 font-medium' : 'text-blue-700 hover:bg-blue-50 hover:text-blue-700'
+                (activeTab === 'faltas_cursos' || activeTab === 'falta_form') ? 'bg-brand-light text-brand-blue font-medium' : 'text-brand-blue hover:bg-brand-light hover:opacity-80'
               }`}
             >
               <CalendarClock className="h-5 w-5" /> Cursos e Faltas

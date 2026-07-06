@@ -31,8 +31,8 @@ export function FaltaForm({ initialData, onSave, onCancel }: FaltaFormProps) {
 
   return (
     <div className="bg-white rounded-xl shadow-sm border border-blue-200 overflow-hidden max-w-2xl mx-auto">
-      <div className="p-4 border-b border-blue-200 bg-blue-50 flex justify-between items-center">
-        <h3 className="text-lg font-semibold text-blue-800">
+      <div className="p-4 border-b border-blue-200 bg-brand-light flex justify-between items-center">
+        <h3 className="text-lg font-semibold text-brand-blue">
           {initialData ? 'Editar Registro de Falta/Presença' : 'Novo Registro de Falta/Presença'}
         </h3>
         <button onClick={onCancel} className="text-blue-400 hover:text-blue-600 transition-colors">
@@ -43,7 +43,7 @@ export function FaltaForm({ initialData, onSave, onCancel }: FaltaFormProps) {
       <form onSubmit={handleSubmit} className="p-4 sm:p-6 space-y-6">
         <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
           <div className="space-y-2 lg:col-span-2">
-            <label className="block text-sm font-medium text-blue-700">Módulo</label>
+            <label className="block text-sm font-medium text-brand-blue">Módulo</label>
             <select value={formData.modulo || "Brigada de incêndio"} onChange={e => setFormData({ ...formData, modulo: e.target.value as any })}
               className="w-full px-3 py-2 border border-blue-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500">
               <option value="Brigada de incêndio">Brigada de incêndio</option>
@@ -51,7 +51,7 @@ export function FaltaForm({ initialData, onSave, onCancel }: FaltaFormProps) {
             </select>
           </div>
           <div className="space-y-2">
-            <label className="block text-sm font-medium text-blue-700">Data do Curso</label>
+            <label className="block text-sm font-medium text-brand-blue">Data do Curso</label>
             <input
               type="text"
               required
@@ -63,7 +63,7 @@ export function FaltaForm({ initialData, onSave, onCancel }: FaltaFormProps) {
           </div>
           
           <div className="space-y-2">
-            <label className="block text-sm font-medium text-blue-700">Quantidade / ID Seq.</label>
+            <label className="block text-sm font-medium text-brand-blue">Quantidade / ID Seq.</label>
             <input
               type="text"
               className="w-full px-3 py-2 border border-blue-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500"
@@ -73,7 +73,7 @@ export function FaltaForm({ initialData, onSave, onCancel }: FaltaFormProps) {
           </div>
 
           <div className="space-y-2 md:col-span-2">
-            <label className="block text-sm font-medium text-blue-700">Nome do Colaborador(a)</label>
+            <label className="block text-sm font-medium text-brand-blue">Nome do Colaborador(a)</label>
             <input
               type="text"
               required
@@ -84,7 +84,7 @@ export function FaltaForm({ initialData, onSave, onCancel }: FaltaFormProps) {
           </div>
 
           <div className="space-y-2">
-            <label className="block text-sm font-medium text-blue-700">Nº Crachá</label>
+            <label className="block text-sm font-medium text-brand-blue">Nº Crachá</label>
             <input
               type="text"
               className="w-full px-3 py-2 border border-blue-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500"
@@ -94,7 +94,7 @@ export function FaltaForm({ initialData, onSave, onCancel }: FaltaFormProps) {
           </div>
 
           <div className="space-y-2">
-            <label className="block text-sm font-medium text-blue-700">Setor</label>
+            <label className="block text-sm font-medium text-brand-blue">Setor</label>
             <input
               type="text"
               className="w-full px-3 py-2 border border-blue-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500"
@@ -104,7 +104,7 @@ export function FaltaForm({ initialData, onSave, onCancel }: FaltaFormProps) {
           </div>
 
           <div className="space-y-2">
-            <label className="block text-sm font-medium text-blue-700">Data de Disponibilidade (Remarcação)</label>
+            <label className="block text-sm font-medium text-brand-blue">Data de Disponibilidade (Remarcação)</label>
             <input
               type="text"
               placeholder="Ex: 09/04/26"
@@ -115,7 +115,7 @@ export function FaltaForm({ initialData, onSave, onCancel }: FaltaFormProps) {
           </div>
 
           <div className="space-y-2 md:col-span-2">
-            <label className="block text-sm font-medium text-blue-700">Observação / Situação</label>
+            <label className="block text-sm font-medium text-brand-blue">Observação / Situação</label>
             <input
               type="text"
               placeholder="Ex: 2º falta, Faltou, Não compareceu, 1 e 2 módulo"
@@ -130,13 +130,13 @@ export function FaltaForm({ initialData, onSave, onCancel }: FaltaFormProps) {
           <button
             type="button"
             onClick={onCancel}
-            className="px-4 py-2 border border-blue-300 text-blue-700 rounded-md hover:bg-blue-50 transition-colors"
+            className="px-4 py-2 border border-blue-300 text-brand-blue rounded-md hover:bg-brand-light transition-colors"
           >
             Cancelar
           </button>
           <button
             type="submit"
-            className="px-4 py-2 bg-blue-700 text-white rounded-md hover:bg-blue-800 transition-colors flex items-center gap-2"
+            className="px-4 py-2 bg-brand-blue text-white rounded-md hover:bg-blue-800 transition-colors flex items-center gap-2"
           >
             <Save className="h-4 w-4" />
             Salvar Registro

@@ -37,8 +37,8 @@ export function DetectorForm({ initialData, onSave, onCancel }: DetectorFormProp
 
   return (
     <div className="bg-white rounded-xl shadow-sm border border-blue-200 overflow-hidden">
-      <div className="border-b border-blue-200 px-4 sm:px-6 py-4 flex justify-between items-center bg-blue-50/50">
-        <h3 className="font-semibold text-blue-800">
+      <div className="border-b border-blue-200 px-4 sm:px-6 py-4 flex justify-between items-center bg-brand-light/50">
+        <h3 className="font-semibold text-brand-blue">
           {initialData ? 'EDITAR DETECTOR/ACIONADOR' : 'NOVO DETECTOR/ACIONADOR'}
         </h3>
         <button onClick={onCancel} className="text-blue-400 hover:text-blue-600 transition-colors">
@@ -50,7 +50,7 @@ export function DetectorForm({ initialData, onSave, onCancel }: DetectorFormProp
         <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
           
           <div className="space-y-2">
-            <label className="text-sm font-medium text-blue-700">Nº / Item</label>
+            <label className="text-sm font-medium text-brand-blue">Nº / Item</label>
             <input
               type="text"
               required
@@ -61,7 +61,7 @@ export function DetectorForm({ initialData, onSave, onCancel }: DetectorFormProp
           </div>
 
           <div className="space-y-2">
-            <label className="text-sm font-medium text-blue-700">Endereço MAC</label>
+            <label className="text-sm font-medium text-brand-blue">Endereço MAC</label>
             <input
               type="text"
               required
@@ -72,7 +72,7 @@ export function DetectorForm({ initialData, onSave, onCancel }: DetectorFormProp
           </div>
 
           <div className="space-y-2">
-            <label className="text-sm font-medium text-blue-700">Tipo</label>
+            <label className="text-sm font-medium text-brand-blue">Tipo</label>
             <input
               type="text"
               required
@@ -83,7 +83,7 @@ export function DetectorForm({ initialData, onSave, onCancel }: DetectorFormProp
           </div>
           
           <div className="space-y-2">
-            <label className="text-sm font-medium text-blue-700">Prédio</label>
+            <label className="text-sm font-medium text-brand-blue">Prédio</label>
             <select
               className="w-full px-3 py-2 border border-blue-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500"
               value={formData.predio}
@@ -97,7 +97,7 @@ export function DetectorForm({ initialData, onSave, onCancel }: DetectorFormProp
           </div>
 
           <div className="space-y-2 md:col-span-2">
-            <label className="text-sm font-medium text-blue-700">Localização</label>
+            <label className="text-sm font-medium text-brand-blue">Localização</label>
             <input
               type="text"
               required
@@ -113,13 +113,13 @@ export function DetectorForm({ initialData, onSave, onCancel }: DetectorFormProp
           <button
             type="button"
             onClick={onCancel}
-            className="px-4 py-2 border border-blue-300 text-blue-700 rounded-md hover:bg-blue-50 font-medium transition-colors"
+            className="px-4 py-2 border border-blue-300 text-brand-blue rounded-md hover:bg-brand-light font-medium transition-colors"
           >
             Cancelar
           </button>
           <button
             type="submit"
-            className="px-4 py-2 bg-blue-700 text-white rounded-md hover:bg-blue-800 font-medium flex items-center gap-2 transition-colors"
+            className="px-4 py-2 bg-brand-blue text-white rounded-md hover:bg-blue-800 font-medium flex items-center gap-2 transition-colors"
           >
             <Save className="w-4 h-4" />
             Salvar

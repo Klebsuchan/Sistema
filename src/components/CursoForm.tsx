@@ -33,8 +33,8 @@ export function CursoForm({ initialData, onSave, onCancel }: CursoFormProps) {
 
   return (
     <div className="bg-white rounded-xl shadow-sm border border-blue-200 overflow-hidden max-w-2xl mx-auto">
-      <div className="p-4 border-b border-blue-200 bg-blue-50 flex justify-between items-center">
-        <h3 className="text-lg font-semibold text-blue-800">
+      <div className="p-4 border-b border-blue-200 bg-brand-light flex justify-between items-center">
+        <h3 className="text-lg font-semibold text-brand-blue">
           {initialData ? 'Editar Agenda de Curso' : 'Nova Agenda de Curso'}
         </h3>
         <button onClick={onCancel} className="text-blue-400 hover:text-blue-600 transition-colors">
@@ -45,7 +45,7 @@ export function CursoForm({ initialData, onSave, onCancel }: CursoFormProps) {
       <form onSubmit={handleSubmit} className="p-4 sm:p-6 space-y-6">
         <div className="space-y-4">
           <div className="space-y-2">
-            <label className="block text-sm font-medium text-blue-700">Quantidade (ID)</label>
+            <label className="block text-sm font-medium text-brand-blue">Quantidade (ID)</label>
             <input
               type="text"
               className="w-full px-3 py-2 border border-blue-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500"
@@ -55,9 +55,9 @@ export function CursoForm({ initialData, onSave, onCancel }: CursoFormProps) {
           </div>
 
           <div className="border-t border-blue-100 pt-4 grid grid-cols-1 md:grid-cols-2 gap-4">
-            <h4 className="md:col-span-2 text-sm font-bold text-blue-800">Integração</h4>
+            <h4 className="md:col-span-2 text-sm font-bold text-brand-blue">Integração</h4>
             <div className="space-y-2">
-              <label className="block text-sm font-medium text-blue-700">Data Integração</label>
+              <label className="block text-sm font-medium text-brand-blue">Data Integração</label>
               <input
                 type="text"
                 placeholder="Ex: 07/01/2026"
@@ -67,7 +67,7 @@ export function CursoForm({ initialData, onSave, onCancel }: CursoFormProps) {
               />
             </div>
             <div className="space-y-2">
-              <label className="block text-sm font-medium text-blue-700">Dia Integração</label>
+              <label className="block text-sm font-medium text-brand-blue">Dia Integração</label>
               <input
                 type="text"
                 placeholder="Ex: Quarta-feira"
@@ -79,9 +79,9 @@ export function CursoForm({ initialData, onSave, onCancel }: CursoFormProps) {
           </div>
 
           <div className="border-t border-blue-100 pt-4 grid grid-cols-1 md:grid-cols-3 gap-4">
-            <h4 className="md:col-span-3 text-sm font-bold text-blue-800">Brigada</h4>
+            <h4 className="md:col-span-3 text-sm font-bold text-brand-blue">Brigada</h4>
             <div className="space-y-2">
-              <label className="block text-sm font-medium text-blue-700">Data Brigada</label>
+              <label className="block text-sm font-medium text-brand-blue">Data Brigada</label>
               <input
                 type="text"
                 className="w-full px-3 py-2 border border-blue-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500"
@@ -90,7 +90,7 @@ export function CursoForm({ initialData, onSave, onCancel }: CursoFormProps) {
               />
             </div>
             <div className="space-y-2">
-              <label className="block text-sm font-medium text-blue-700">Dia Brigada</label>
+              <label className="block text-sm font-medium text-brand-blue">Dia Brigada</label>
               <input
                 type="text"
                 className="w-full px-3 py-2 border border-blue-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500"
@@ -99,7 +99,7 @@ export function CursoForm({ initialData, onSave, onCancel }: CursoFormProps) {
               />
             </div>
             <div className="space-y-2">
-              <label className="block text-sm font-medium text-blue-700">Turno Brigada</label>
+              <label className="block text-sm font-medium text-brand-blue">Turno Brigada</label>
               <input
                 type="text"
                 className="w-full px-3 py-2 border border-blue-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500"
@@ -110,9 +110,9 @@ export function CursoForm({ initialData, onSave, onCancel }: CursoFormProps) {
           </div>
 
           <div className="border-t border-blue-100 pt-4 grid grid-cols-1 md:grid-cols-3 gap-4">
-            <h4 className="md:col-span-3 text-sm font-bold text-blue-800">Primeiros Socorros</h4>
+            <h4 className="md:col-span-3 text-sm font-bold text-brand-blue">Primeiros Socorros</h4>
             <div className="space-y-2">
-              <label className="block text-sm font-medium text-blue-700">Data 1º Socorros</label>
+              <label className="block text-sm font-medium text-brand-blue">Data 1º Socorros</label>
               <input
                 type="text"
                 className="w-full px-3 py-2 border border-blue-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500"
@@ -121,7 +121,7 @@ export function CursoForm({ initialData, onSave, onCancel }: CursoFormProps) {
               />
             </div>
             <div className="space-y-2">
-              <label className="block text-sm font-medium text-blue-700">Dia 1º Socorros</label>
+              <label className="block text-sm font-medium text-brand-blue">Dia 1º Socorros</label>
               <input
                 type="text"
                 className="w-full px-3 py-2 border border-blue-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500"
@@ -130,7 +130,7 @@ export function CursoForm({ initialData, onSave, onCancel }: CursoFormProps) {
               />
             </div>
             <div className="space-y-2">
-              <label className="block text-sm font-medium text-blue-700">Turno 1º Socorros</label>
+              <label className="block text-sm font-medium text-brand-blue">Turno 1º Socorros</label>
               <input
                 type="text"
                 className="w-full px-3 py-2 border border-blue-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500"
@@ -145,13 +145,13 @@ export function CursoForm({ initialData, onSave, onCancel }: CursoFormProps) {
           <button
             type="button"
             onClick={onCancel}
-            className="px-4 py-2 border border-blue-300 text-blue-700 rounded-md hover:bg-blue-50 transition-colors"
+            className="px-4 py-2 border border-blue-300 text-brand-blue rounded-md hover:bg-brand-light transition-colors"
           >
             Cancelar
           </button>
           <button
             type="submit"
-            className="px-4 py-2 bg-blue-700 text-white rounded-md hover:bg-blue-800 transition-colors flex items-center gap-2"
+            className="px-4 py-2 bg-brand-blue text-white rounded-md hover:bg-blue-800 transition-colors flex items-center gap-2"
           >
             <Save className="h-4 w-4" />
             Salvar Registro

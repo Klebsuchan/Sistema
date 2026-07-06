@@ -20,14 +20,14 @@ export function FaltasDatasView({ faltas, cursoDatas, onAddFalta, onEditFalta, o
       
       {/* Cursos */}
       <div className="bg-white rounded-2xl shadow-sm border border-blue-100 overflow-hidden">
-        <div className="p-6 border-b border-blue-100 bg-blue-50 flex justify-between items-center">
-          <h3 className="text-lg font-bold text-blue-800 flex items-center gap-2">
+        <div className="p-6 border-b border-blue-100 bg-brand-light flex justify-between items-center">
+          <h3 className="text-lg font-bold text-brand-blue flex items-center gap-2">
             <CalendarClock className="h-5 w-5 text-blue-600" />
             Agenda dos Cursos (Integração, Brigada e 1º Socorros)
           </h3>
           <button
             onClick={onAddCurso}
-            className="flex items-center gap-2 bg-blue-600 text-white px-4 py-2 rounded-xl text-sm font-semibold hover:bg-blue-700 transition-colors shadow-sm"
+            className="flex items-center gap-2 bg-brand-blue text-white px-4 py-2 rounded-xl text-sm font-semibold hover:bg-brand-blue transition-colors shadow-sm"
           >
             <PlusCircle className="h-4 w-4" />
             Novo Agendamento
@@ -35,7 +35,7 @@ export function FaltasDatasView({ faltas, cursoDatas, onAddFalta, onEditFalta, o
         </div>
         <div className="overflow-x-auto">
           <table className="w-full text-left text-sm text-blue-600">
-            <thead className="bg-white border-b border-blue-100 text-blue-700 font-semibold">
+            <thead className="bg-white border-b border-blue-100 text-brand-blue font-semibold">
               <tr>
                 <th className="px-6 py-4">Qtd</th>
                 <th className="px-6 py-4">Integração (Data/Dia)</th>
@@ -47,31 +47,31 @@ export function FaltasDatasView({ faltas, cursoDatas, onAddFalta, onEditFalta, o
             </thead>
             <tbody className="divide-y divide-blue-50">
               {cursoDatas.map((curso) => (
-                <tr key={curso.id} className="hover:bg-blue-50/50 transition-colors">
-                  <td className="px-6 py-4 font-medium text-blue-900">{curso.qtd}</td>
+                <tr key={curso.id} className="hover:bg-brand-light/50 transition-colors">
+                  <td className="px-6 py-4 font-medium text-brand-blue">{curso.qtd}</td>
                   <td className="px-6 py-4">
-                    <div className="font-semibold text-blue-800">{curso.data_integ}</div>
+                    <div className="font-semibold text-brand-blue">{curso.data_integ}</div>
                     <div className="text-xs text-blue-500">{curso.dia_integ}</div>
                   </td>
                   <td className="px-6 py-4">
-                    <div className="font-semibold text-blue-800">{curso.data_brigada}</div>
+                    <div className="font-semibold text-brand-blue">{curso.data_brigada}</div>
                     <div className="text-xs text-blue-500">{curso.dia_brigada} • {curso.turno_brigada}</div>
                   </td>
                   <td className="px-6 py-4">
-                    <div className="font-semibold text-blue-800">{curso.data_socorros}</div>
+                    <div className="font-semibold text-brand-blue">{curso.data_socorros}</div>
                     <div className="text-xs text-blue-500">{curso.dia_socorros}</div>
                   </td>
                   <td className="px-6 py-4">
-                    <span className="inline-flex px-2.5 py-1 rounded-full text-xs font-semibold bg-blue-50 text-blue-700">
+                    <span className="inline-flex px-2.5 py-1 rounded-full text-xs font-semibold bg-brand-light text-brand-blue">
                       {curso.data_integ.split('/')[1] || '-'} - {'-'}
                     </span>
                   </td>
                   <td className="px-6 py-4 text-right">
                     <div className="flex items-center justify-end gap-2">
-                      <button onClick={() => onEditCurso(curso)} className="p-1.5 text-blue-600 hover:bg-blue-50 rounded-lg transition-colors" title="Editar">
+                      <button onClick={() => onEditCurso(curso)} className="p-1.5 text-blue-600 hover:bg-brand-light rounded-lg transition-colors" title="Editar">
                         <Edit2 className="w-4 h-4" />
                       </button>
-                      <button onClick={() => onDeleteCurso(curso.id)} className="p-1.5 text-blue-600 hover:bg-blue-50 rounded-lg transition-colors" title="Excluir">
+                      <button onClick={() => onDeleteCurso(curso.id)} className="p-1.5 text-blue-600 hover:bg-brand-light rounded-lg transition-colors" title="Excluir">
                         <Trash2 className="w-4 h-4" />
                       </button>
                     </div>
@@ -90,14 +90,14 @@ export function FaltasDatasView({ faltas, cursoDatas, onAddFalta, onEditFalta, o
 
       {/* Faltas */}
       <div className="bg-white rounded-2xl shadow-sm border border-blue-100 overflow-hidden">
-        <div className="p-6 border-b border-blue-100 bg-blue-50 flex justify-between items-center">
-          <h3 className="text-lg font-bold text-blue-800 flex items-center gap-2">
+        <div className="p-6 border-b border-blue-100 bg-brand-light flex justify-between items-center">
+          <h3 className="text-lg font-bold text-brand-blue flex items-center gap-2">
             <CalendarX className="h-5 w-5 text-blue-600" />
             Faltas Registradas
           </h3>
           <button
             onClick={onAddFalta}
-            className="flex items-center gap-2 bg-blue-600 text-white px-4 py-2 rounded-xl text-sm font-semibold hover:bg-blue-700 transition-colors shadow-sm"
+            className="flex items-center gap-2 bg-brand-blue text-white px-4 py-2 rounded-xl text-sm font-semibold hover:bg-brand-blue transition-colors shadow-sm"
           >
             <PlusCircle className="h-4 w-4" />
             Registrar Falta
@@ -105,7 +105,7 @@ export function FaltasDatasView({ faltas, cursoDatas, onAddFalta, onEditFalta, o
         </div>
         <div className="overflow-x-auto">
           <table className="w-full text-left text-sm text-blue-600">
-            <thead className="bg-white border-b border-blue-100 text-blue-700 font-semibold">
+            <thead className="bg-white border-b border-blue-100 text-brand-blue font-semibold">
               <tr>
                 <th className="px-6 py-4">Qtd / Data</th>
                 <th className="px-6 py-4">Colaborador / Crachá</th>
@@ -117,31 +117,31 @@ export function FaltasDatasView({ faltas, cursoDatas, onAddFalta, onEditFalta, o
             </thead>
             <tbody className="divide-y divide-blue-50">
               {faltas.map((falta) => (
-                <tr key={falta.id} className="hover:bg-blue-50/50 transition-colors">
+                <tr key={falta.id} className="hover:bg-brand-light/50 transition-colors">
                   <td className="px-6 py-4">
                     <div className="font-mono text-xs text-blue-500 mb-1">#{falta.qtd}</div>
-                    <div className="font-semibold text-blue-900">{falta.data}</div>
+                    <div className="font-semibold text-brand-blue">{falta.data}</div>
                   </td>
                   <td className="px-6 py-4">
-                    <div className="font-semibold text-blue-800">{falta.nome}</div>
+                    <div className="font-semibold text-brand-blue">{falta.nome}</div>
                     <div className="text-xs text-blue-500 mt-0.5">{falta.cracha}</div>
                   </td>
-                  <td className="px-6 py-4 font-medium text-blue-700">{falta.setor}</td>
+                  <td className="px-6 py-4 font-medium text-brand-blue">{falta.setor}</td>
                   <td className="px-6 py-4">
-                    <span className={`inline-flex px-2 py-0.5 rounded text-xs font-bold ${falta.modulo === '1º Socorros' ? 'bg-red-100 text-red-800' : 'bg-blue-100 text-blue-800'}`}>
+                    <span className={`inline-flex px-2 py-0.5 rounded text-xs font-bold ${falta.modulo === '1º Socorros' ? 'bg-red-100 text-red-800' : 'bg-blue-100 text-brand-blue'}`}>
                       {falta.modulo || 'Brigada de incêndio'}
                     </span>
                   </td>
                   <td className="px-6 py-4">
-                    <div className="font-medium text-blue-800">{falta.data_disp}</div>
+                    <div className="font-medium text-brand-blue">{falta.data_disp}</div>
                     {falta.observacao && <div className="text-xs text-blue-500 mt-0.5 italic">{falta.observacao}</div>}
                   </td>
                   <td className="px-6 py-4 text-right">
                     <div className="flex items-center justify-end gap-2">
-                      <button onClick={() => onEditFalta(falta)} className="p-1.5 text-blue-600 hover:bg-blue-50 rounded-lg transition-colors" title="Editar">
+                      <button onClick={() => onEditFalta(falta)} className="p-1.5 text-blue-600 hover:bg-brand-light rounded-lg transition-colors" title="Editar">
                         <Edit2 className="w-4 h-4" />
                       </button>
-                      <button onClick={() => onDeleteFalta(falta.id)} className="p-1.5 text-blue-600 hover:bg-blue-50 rounded-lg transition-colors" title="Excluir">
+                      <button onClick={() => onDeleteFalta(falta.id)} className="p-1.5 text-blue-600 hover:bg-brand-light rounded-lg transition-colors" title="Excluir">
                         <Trash2 className="w-4 h-4" />
                       </button>
                     </div>
