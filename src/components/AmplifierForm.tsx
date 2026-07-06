@@ -1,0 +1,108 @@
+import React, { useState, useEffect } from 'react';
+import { Amplifier } from '../data_amplificadores';
+import { Save, X, Radio } from 'lucide-react';
+
+interface AmplifierFormProps {
+  initialData?: Amplifier | null;
+  onSave: (amp: Amplifier) => void;
+  onCancel: () => void;
+}
+
+export function AmplifierForm({ initialData, onSave, onCancel }: AmplifierFormProps) {
+  const [formData, setFormData] = useState<Partial<Amplifier>>({
+    codigo_mac: '',
+    status: 'online/sincronizado',
+    grupo: '',
+    localizacao: '',
+    data_hora: '',
+    quantidade: 1
+  });
+
+  useEffect(() => {
+    if (initialData) {
+      setFormData({
+        ...initialData,
+        quantidade: initialData.quantidade ?? 1
+      });
+    }
+  }, [initialData]);
+
+  const handleSubmit = (e: React.FormEvent) => {
+    e.preventDefault();
+    const newAmp: Amplifier = {
+      ...formData,
+      id: initialData?.id || `AMP-${Date.now()}`
+    } as Amplifier;
+    onSave(newAmp);
+  };
+
+  return (
+    <div className="bg-white p-6 rounded-2xl shadow-sm border border-blue-100 max-w-2xl mx-auto">
+      <div className="flex items-center justify-between mb-6 border-b border-blue-100 pb-4">
+        <h3 className="text-xl font-bold text-blue-800 flex items-center gap-2">
+          <Radio className="h-5 w-5 text-blue-600" />
+          {initialData ? 'Editar Amplificador' : 'Novo Amplificador'}
+        </h3>
+        <button onClick={onCancel} className="text-blue-400 hover:text-blue-600 transition-colors">
+          <X className="h-6 w-6" />
+        </button>
+      </div>
+
+      <form onSubmit={handleSubmit} className="space-y-6">
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+          <div className="space-y-2">
+            <label className="text-sm font-semibold text-blue-700">Código MAC</label>
+            <input required type="text" value={formData.codigo_mac} onChange={e => setFormData({ ...formData, codigo_mac: e.target.value })}
+              className="w-full px-4 py-2 bg-blue-50 border border-blue-200 rounded-xl focus:ring-2 focus:ring-blue-500 focus:border-transparent outline-none" />
+          </div>
+          
+          <div className="space-y-2">
+            <label className="text-sm font-semibold text-blue-700">Status</label>
+            <select value={formData.status} onChange={e => setFormData({ ...formData, status: e.target.value })}
+              className="w-full px-4 py-2 bg-blue-50 border border-blue-200 rounded-xl focus:ring-2 focus:ring-blue-500 focus:border-transparent outline-none">
+              <option value="online/sincronizado">Online / Sincronizado</option>
+              <option value="offline">Offline</option>
+              <option value="erro">Erro</option>
+            </select>
+          </div>
+
+          <div className="space-y-2">
+            <label className="text-sm font-semibold text-blue-700">Grupo</label>
+            <input required type="text" value={formData.grupo} onChange={e => setFormData({ ...formData, grupo: e.target.value })}
+              className="w-full px-4 py-2 bg-blue-50 border border-blue-200 rounded-xl focus:ring-2 focus:ring-blue-500 focus:border-transparent outline-none" />
+          </div>
+
+          <div className="space-y-2">
+            <label className="text-sm font-semibold text-blue-700">Localização</label>
+            <input required type="text" value={formData.localizacao} onChange={e => setFormData({ ...formData, localizacao: e.target.value })}
+              className="w-full px-4 py-2 bg-blue-50 border border-blue-200 rounded-xl focus:ring-2 focus:ring-blue-500 focus:border-transparent outline-none" />
+          </div>
+
+          <div className="space-y-2">
+            <label className="text-sm font-semibold text-blue-700">Data / Hora</label>
+            <input required type="text" placeholder="DD/MM/AAAA HH:MM" value={formData.data_hora} onChange={e => setFormData({ ...formData, data_hora: e.target.value })}
+              className="w-full px-4 py-2 bg-blue-50 border border-blue-200 rounded-xl focus:ring-2 focus:ring-blue-500 focus:border-transparent outline-none" />
+          </div>
+
+          <div className="space-y-2">
+            <label className="text-sm font-semibold text-blue-700">Quantidade de Itens</label>
+            <input required type="number" min="0" value={formData.quantidade} onChange={e => setFormData({ ...formData, quantidade: Number(e.target.value) })}
+              className="w-full px-4 py-2 bg-blue-50 border border-blue-200 rounded-xl focus:ring-2 focus:ring-blue-500 focus:border-transparent outline-none" />
+          </div>
+        </div>
+
+        <div className="flex justify-end gap-3 pt-6 border-t border-blue-100">
+          <button type="button" onClick={onCancel}
+            className="px-6 py-2.5 text-sm font-semibold text-blue-600 bg-blue-100 hover:bg-blue-200 rounded-xl transition-colors">
+            Cancelar
+          </button>
+          <button type="submit"
+            className="px-6 py-2.5 text-sm font-semibold text-white bg-blue-600 hover:bg-blue-700 rounded-xl flex items-center gap-2 shadow-sm transition-colors">
+            <Save className="h-4 w-4" />
+            Salvar
+          </button>
+        </div>
+      </form>
+    </div>
+  );
+}

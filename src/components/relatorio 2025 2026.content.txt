@@ -1,0 +1,263 @@
+BA TERIA  BAIXA    Detector de Fumaça      000.101.040.073       3.ONCOLOGIA        08/06/2026 18:55:14
+BA TERIA  BAIXA    Detector de Fumaça      000.101.040.073       3.ONCOLOGIA        08/06/2026 19:25:42
+BA TERIA  BAIXA    Detector de Fumaça      000.101.040.073       3.ONCOLOGIA        08/06/2026 19:56:09
+BA TERIA  BAIXA    Detector de Fumaça      000.101.040.073       3.ONCOLOGIA        08/06/2026 20:26:37
+BA TERIA  BAIXA    Detector de Fumaça      000.101.040.073       3.ONCOLOGIA        08/06/2026 20:57:07
+BA TERIA  BAIXA    Detector de Fumaça      000.101.040.073       3.ONCOLOGIA        08/06/2026 21:27:32
+BA TERIA  BAIXA    Detector de Fumaça      000.101.040.073       3.ONCOLOGIA        08/06/2026 21:58:03
+BA TERIA  BAIXA    Detector de Fumaça      000.101.040.073       3.ONCOLOGIA        08/06/2026 22:28:30
+BA TERIA  BAIXA    Detector de Fumaça      000.101.040.073       3.ONCOLOGIA        08/06/2026 22:58:54
+BA TERIA  BAIXA    Detector de Fumaça      000.101.040.073       3.ONCOLOGIA        09/06/2026 00:30:19
+BA TERIA  BAIXA    Detector de Fumaça      000.101.040.073       3.ONCOLOGIA        09/06/2026 01:00:43
+BA TERIA  BAIXA    Detector de Fumaça      000.101.040.073       3.ONCOLOGIA        09/06/2026 01:31:11
+BA TERIA  BAIXA    Detector de Fumaça      000.101.040.073       3.ONCOLOGIA        09/06/2026 02:32:06
+BA TERIA  BAIXA    Detector de Fumaça      000.101.040.073       3.ONCOLOGIA        09/06/2026 03:02:35
+BA TERIA  BAIXA    Detector de Fumaça      000.101.040.073       3.ONCOLOGIA        09/06/2026 03:33:00
+BA TERIA  BAIXA    Detector de Fumaça      000.101.040.073       3.ONCOLOGIA        09/06/2026 04:03:27
+BA TERIA  BAIXA    Detector de Fumaça      000.101.040.073       3.ONCOLOGIA        09/06/2026 04:33:54
+BA TERIA  BAIXA    Detector de Fumaça      000.101.040.073       3.ONCOLOGIA        09/06/2026 05:04:22
+BA TERIA  BAIXA    Detector de Fumaça      000.101.040.073       3.ONCOLOGIA        09/06/2026 06:05:18
+BA TERIA  BAIXA    Detector de Fumaça      000.101.040.073       3.ONCOLOGIA        09/06/2026 06:35:45
+BA TERIA  BAIXA    Detector de Fumaça      000.101.040.073       3.ONCOLOGIA        09/06/2026 07:06:12
+BA TERIA  BAIXA    Detector de Fumaça      000.101.040.073       3.ONCOLOGIA        09/06/2026 07:36:42
+BA TERIA  BAIXA    Detector de Fumaça      000.101.040.073       3.ONCOLOGIA        09/06/2026 08:07:06
+BA TERIA  BAIXA    Detector de Fumaça      000.101.040.073       3.ONCOLOGIA        09/06/2026 08:37:33
+BA TERIA  BAIXA    Detector de Fumaça      000.101.040.073       3.ONCOLOGIA        09/06/2026 09:07:58
+BA TERIA  BAIXA    Detector de Fumaça      000.101.040.073       3.ONCOLOGIA        09/06/2026 09:38:28
+BA TERIA  BAIXA    Detector de Fumaça      000.101.040.073       3.ONCOLOGIA        09/06/2026 10:08:56
+BA TERIA  BAIXA    Detector de Fumaça      000.101.040.073       3.ONCOLOGIA        09/06/2026 10:39:21
+BA TERIA  BAIXA    Detector de Fumaça      000.101.040.073       3.ONCOLOGIA        09/06/2026 11:09:51
+BA TERIA  BAIXA    Detector de Fumaça      000.101.040.073       3.ONCOLOGIA        09/06/2026 11:40:20
+BA TERIA  BAIXA    Detector de Fumaça      000.101.040.073       3.ONCOLOGIA        09/06/2026 12:10:47
+BA TERIA  BAIXA    Detector de Fumaça      000.101.040.073       3.ONCOLOGIA        09/06/2026 12:41:15
+BA TERIA  BAIXA    Detector de Fumaça      000.101.040.073       3.ONCOLOGIA        09/06/2026 13:11:40
+BA TERIA  BAIXA    Detector de Fumaça      000.101.040.073       3.ONCOLOGIA        09/06/2026 13:42:07
+BA TERIA  BAIXA    Detector de Fumaça      000.101.040.073       3.ONCOLOGIA        09/06/2026 14:12:35
+BA TERIA  BAIXA    Detector de Fumaça      000.101.040.073       3.ONCOLOGIA        09/06/2026 14:43:04
+BA TERIA  BAIXA    Detector de Fumaça      000.101.040.073       3.ONCOLOGIA        09/06/2026 15:44:02
+REMOVIDO       Detector de Fumaça      000.101.040.073       3.ONCOLOGIA        09/06/2026 15:53:10
+Ocorrência            Descrição              I.D.            Localização             Data/Hora
+Todas                 Todos               Todos
+Ocorrência                        Grupo                     Periférico
+15:58:35
+Data da Emissão: 16/06/2026 -
+até 16/06/2026
+Período Selecionado: De 07/05/2025
+Registros Encontrados: 244
+Usuário: admin123
+Relatório de Eventos
+----------------Page (0) Break----------------
+BA TERIA  BAIXA    Detector de Fumaça      000.101.040.070      SS.F ARM.INTERNA       03/06/2026 05:17:20
+BA TERIA  BAIXA    Detector de Fumaça      000.101.040.063     SS ARQUIVO RAIOX       03/06/2026 05:20:53
+BA TERIA  BAIXA    Detector de Fumaça      000.101.041.024        10.BOX.02       03/06/2026 05:44:00
+BA TERIA  BAIXA    Detector de Fumaça      000.101.040.070      SS.F ARM.INTERNA       03/06/2026 05:47:17
+BA TERIA  BAIXA    Detector de Fumaça      000.101.040.063     SS ARQUIVO RAIOX       03/06/2026 05:49:47
+BA TERIA  BAIXA    Detector de Fumaça      000.101.040.058        SS.DMI        03/06/2026 05:59:45
+BA TERIA  BAIXA    Detector de Fumaça      000.101.041.024        10.BOX.02       03/06/2026 06:14:14
+BA TERIA  BAIXA    Detector de Fumaça      000.101.040.070      SS.F ARM.INTERNA       03/06/2026 06:17:15
+BA TERIA  BAIXA    Detector de Fumaça      000.101.040.063     SS ARQUIVO RAIOX       03/06/2026 06:18:41
+BA TERIA  BAIXA    Detector de Fumaça      000.101.040.058        SS.DMI        03/06/2026 06:29:39
+BA TERIA  BAIXA    Detector de Fumaça      000.101.041.024        10.BOX.02       03/06/2026 06:44:28
+BA TERIA  BAIXA    Detector de Fumaça      000.101.040.070      SS.F ARM.INTERNA       03/06/2026 06:47:13
+BA TERIA  BAIXA    Detector de Fumaça      000.101.040.063     SS ARQUIVO RAIOX       03/06/2026 06:47:33
+BA TERIA  BAIXA    Detector de Fumaça      000.101.040.058        SS.DMI        03/06/2026 06:59:33
+BA TERIA  BAIXA    Detector de Fumaça      000.101.041.024        10.BOX.02       03/06/2026 07:14:41
+BA TERIA  BAIXA    Detector de Fumaça      000.101.040.058        SS.DMI        03/06/2026 08:59:10
+REMOVIDO       Detector de Fumaça      000.101.040.070      SS.F ARM.INTERNA       03/06/2026 09:12:40
+BA TERIA  BAIXA    Detector de Fumaça      000.101.041.024        10.BOX.02       03/06/2026 09:15:38
+REMOVIDO       Detector de Fumaça      000.101.040.058        SS.DMI        03/06/2026 09:17:03
+REMOVIDO       Detector de Fumaça      000.101.041.024        10.BOX.02       03/06/2026 09:28:11
+BA TERIA  BAIXA    Detector de Fumaça      000.101.040.073       3.ONCOLOGIA        07/06/2026 21:05:50
+BA TERIA  BAIXA    Detector de Fumaça      000.101.040.073       3.ONCOLOGIA        07/06/2026 21:36:15
+BA TERIA  BAIXA    Detector de Fumaça      000.101.040.073       3.ONCOLOGIA        07/06/2026 22:06:43
+BA TERIA  BAIXA    Detector de Fumaça      000.101.040.073       3.ONCOLOGIA        07/06/2026 22:37:11
+BA TERIA  BAIXA    Detector de Fumaça      000.101.040.073       3.ONCOLOGIA        07/06/2026 23:07:41
+BA TERIA  BAIXA    Detector de Fumaça      000.101.040.073       3.ONCOLOGIA        08/06/2026 00:08:35
+BA TERIA  BAIXA    Detector de Fumaça      000.101.040.073       3.ONCOLOGIA        08/06/2026 00:38:59
+BA TERIA  BAIXA    Detector de Fumaça      000.101.040.073       3.ONCOLOGIA        08/06/2026 01:39:54
+BA TERIA  BAIXA    Detector de Fumaça      000.101.040.073       3.ONCOLOGIA        08/06/2026 02:10:26
+BA TERIA  BAIXA    Detector de Fumaça      000.101.040.073       3.ONCOLOGIA        08/06/2026 02:40:47
+BA TERIA  BAIXA    Detector de Fumaça      000.101.040.073       3.ONCOLOGIA        08/06/2026 03:11:17
+BA TERIA  BAIXA    Detector de Fumaça      000.101.040.073       3.ONCOLOGIA        08/06/2026 03:41:41
+BA TERIA  BAIXA    Detector de Fumaça      000.101.040.073       3.ONCOLOGIA        08/06/2026 04:12:08
+BA TERIA  BAIXA    Detector de Fumaça      000.101.040.073       3.ONCOLOGIA        08/06/2026 04:42:35
+BA TERIA  BAIXA    Detector de Fumaça      000.101.040.073       3.ONCOLOGIA        08/06/2026 05:13:02
+BA TERIA  BAIXA    Detector de Fumaça      000.101.040.073       3.ONCOLOGIA        08/06/2026 05:43:33
+BA TERIA  BAIXA    Detector de Fumaça      000.101.040.073       3.ONCOLOGIA        08/06/2026 06:13:59
+BA TERIA  BAIXA    Detector de Fumaça      000.101.040.073       3.ONCOLOGIA        08/06/2026 06:44:23
+BA TERIA  BAIXA    Detector de Fumaça      000.101.040.073       3.ONCOLOGIA        08/06/2026 07:14:54
+BA TERIA  BAIXA    Detector de Fumaça      000.101.040.073       3.ONCOLOGIA        08/06/2026 07:45:18
+BA TERIA  BAIXA    Detector de Fumaça      000.101.040.073       3.ONCOLOGIA        08/06/2026 08:46:12
+BA TERIA  BAIXA    Detector de Fumaça      000.101.040.073       3.ONCOLOGIA        08/06/2026 10:17:24
+BA TERIA  BAIXA    Detector de Fumaça      000.101.040.073       3.ONCOLOGIA        08/06/2026 10:47:52
+BA TERIA  BAIXA    Detector de Fumaça      000.101.040.073       3.ONCOLOGIA        08/06/2026 11:18:19
+BA TERIA  BAIXA    Detector de Fumaça      000.101.040.073       3.ONCOLOGIA        08/06/2026 11:48:46
+BA TERIA  BAIXA    Detector de Fumaça      000.101.040.073       3.ONCOLOGIA        08/06/2026 12:19:16
+BA TERIA  BAIXA    Detector de Fumaça      000.101.040.073       3.ONCOLOGIA        08/06/2026 12:49:41
+BA TERIA  BAIXA    Detector de Fumaça      000.101.040.073       3.ONCOLOGIA        08/06/2026 13:20:09
+BA TERIA  BAIXA    Detector de Fumaça      000.101.040.073       3.ONCOLOGIA        08/06/2026 13:50:37
+BA TERIA  BAIXA    Detector de Fumaça      000.101.040.073       3.ONCOLOGIA        08/06/2026 14:21:05
+BA TERIA  BAIXA    Detector de Fumaça      000.101.040.073       3.ONCOLOGIA        08/06/2026 15:22:01
+BA TERIA  BAIXA    Detector de Fumaça      000.101.040.073       3.ONCOLOGIA        08/06/2026 15:52:28
+BA TERIA  BAIXA    Detector de Fumaça      000.101.040.073       3.ONCOLOGIA        08/06/2026 16:22:55
+BA TERIA  BAIXA    Detector de Fumaça      000.101.040.073       3.ONCOLOGIA        08/06/2026 16:53:23
+BA TERIA  BAIXA    Detector de Fumaça      000.101.040.073       3.ONCOLOGIA        08/06/2026 17:23:52
+BA TERIA  BAIXA    Detector de Fumaça      000.101.040.073       3.ONCOLOGIA        08/06/2026 17:54:21
+BA TERIA  BAIXA    Detector de Fumaça      000.101.040.073       3.ONCOLOGIA        08/06/2026 18:24:46
+Ocorrência            Descrição              I.D.            Localização             Data/Hora
+----------------Page (1) Break----------------
+BA TERIA  BAIXA    Detector de Fumaça      000.101.040.063     SS ARQUIVO RAIOX       02/06/2026 20:40:41
+BA TERIA  BAIXA    Detector de Fumaça      000.101.040.070      SS.F ARM.INTERNA       02/06/2026 20:48:00
+BA TERIA  BAIXA    Detector de Fumaça      000.101.040.058        SS.DMI        02/06/2026 21:01:25
+BA TERIA  BAIXA    Detector de Fumaça      000.101.040.063     SS ARQUIVO RAIOX       02/06/2026 21:09:35
+BA TERIA  BAIXA    Detector de Fumaça      000.101.041.024        10.BOX.02       02/06/2026 21:10:11
+BA TERIA  BAIXA    Detector de Fumaça      000.101.040.070      SS.F ARM.INTERNA       02/06/2026 21:17:58
+BA TERIA  BAIXA    Detector de Fumaça      000.101.040.058        SS.DMI        02/06/2026 21:31:20
+BA TERIA  BAIXA    Detector de Fumaça      000.101.040.063     SS ARQUIVO RAIOX       02/06/2026 21:38:29
+BA TERIA  BAIXA    Detector de Fumaça      000.101.041.024        10.BOX.02       02/06/2026 21:40:25
+BA TERIA  BAIXA    Detector de Fumaça      000.101.040.070      SS.F ARM.INTERNA       02/06/2026 21:47:56
+BA TERIA  BAIXA    Detector de Fumaça      000.101.040.058        SS.DMI        02/06/2026 22:01:14
+BA TERIA  BAIXA    Detector de Fumaça      000.101.041.024        10.BOX.02       02/06/2026 22:10:39
+BA TERIA  BAIXA    Detector de Fumaça      000.101.040.058        SS.DMI        02/06/2026 22:31:09
+BA TERIA  BAIXA    Detector de Fumaça      000.101.040.063     SS ARQUIVO RAIOX       02/06/2026 22:36:17
+BA TERIA  BAIXA    Detector de Fumaça      000.101.041.024        10.BOX.02       02/06/2026 22:40:53
+BA TERIA  BAIXA    Detector de Fumaça      000.101.040.058        SS.DMI        02/06/2026 23:01:04
+BA TERIA  BAIXA    Detector de Fumaça      000.101.040.070      SS.F ARM.INTERNA       02/06/2026 23:17:48
+BA TERIA  BAIXA    Detector de Fumaça      000.101.040.058        SS.DMI        02/06/2026 23:30:58
+BA TERIA  BAIXA    Detector de Fumaça      000.101.040.063     SS ARQUIVO RAIOX       02/06/2026 23:34:05
+BA TERIA  BAIXA    Detector de Fumaça      000.101.041.024        10.BOX.02       02/06/2026 23:41:21
+BA TERIA  BAIXA    Detector de Fumaça      000.101.040.063     SS ARQUIVO RAIOX       03/06/2026 00:02:59
+BA TERIA  BAIXA    Detector de Fumaça      000.101.041.024        10.BOX.02       03/06/2026 00:11:34
+BA TERIA  BAIXA    Detector de Fumaça      000.101.040.070      SS.F ARM.INTERNA       03/06/2026 00:17:44
+BA TERIA  BAIXA    Detector de Fumaça      000.101.040.058        SS.DMI        03/06/2026 00:30:47
+BA TERIA  BAIXA    Detector de Fumaça      000.101.040.063     SS ARQUIVO RAIOX       03/06/2026 00:31:53
+BA TERIA  BAIXA    Detector de Fumaça      000.101.041.024        10.BOX.02       03/06/2026 00:41:47
+BA TERIA  BAIXA    Detector de Fumaça      000.101.040.070      SS.F ARM.INTERNA       03/06/2026 00:47:41
+BA TERIA  BAIXA    Detector de Fumaça      000.101.040.058        SS.DMI        03/06/2026 01:00:42
+BA TERIA  BAIXA    Detector de Fumaça      000.101.041.024        10.BOX.02       03/06/2026 01:12:01
+BA TERIA  BAIXA    Detector de Fumaça      000.101.040.070      SS.F ARM.INTERNA       03/06/2026 01:17:39
+BA TERIA  BAIXA    Detector de Fumaça      000.101.040.063     SS ARQUIVO RAIOX       03/06/2026 01:29:41
+BA TERIA  BAIXA    Detector de Fumaça      000.101.040.058        SS.DMI        03/06/2026 01:30:36
+BA TERIA  BAIXA    Detector de Fumaça      000.101.041.024        10.BOX.02       03/06/2026 01:42:15
+BA TERIA  BAIXA    Detector de Fumaça      000.101.040.063     SS ARQUIVO RAIOX       03/06/2026 01:58:35
+BA TERIA  BAIXA    Detector de Fumaça      000.101.040.058        SS.DMI        03/06/2026 02:00:30
+BA TERIA  BAIXA    Detector de Fumaça      000.101.041.024        10.BOX.02       03/06/2026 02:12:28
+BA TERIA  BAIXA    Detector de Fumaça      000.101.040.070      SS.F ARM.INTERNA       03/06/2026 02:17:34
+BA TERIA  BAIXA    Detector de Fumaça      000.101.040.063     SS ARQUIVO RAIOX       03/06/2026 02:27:30
+BA TERIA  BAIXA    Detector de Fumaça      000.101.040.058        SS.DMI        03/06/2026 02:30:25
+BA TERIA  BAIXA    Detector de Fumaça      000.101.041.024        10.BOX.02       03/06/2026 02:42:41
+BA TERIA  BAIXA    Detector de Fumaça      000.101.040.070      SS.F ARM.INTERNA       03/06/2026 02:47:32
+BA TERIA  BAIXA    Detector de Fumaça      000.101.040.058        SS.DMI        03/06/2026 03:00:19
+BA TERIA  BAIXA    Detector de Fumaça      000.101.041.024        10.BOX.02       03/06/2026 03:12:54
+BA TERIA  BAIXA    Detector de Fumaça      000.101.040.070      SS.F ARM.INTERNA       03/06/2026 03:17:33
+BA TERIA  BAIXA    Detector de Fumaça      000.101.040.063     SS ARQUIVO RAIOX       03/06/2026 03:25:17
+BA TERIA  BAIXA    Detector de Fumaça      000.101.040.058        SS.DMI        03/06/2026 03:30:13
+BA TERIA  BAIXA    Detector de Fumaça      000.101.041.024        10.BOX.02       03/06/2026 03:43:10
+BA TERIA  BAIXA    Detector de Fumaça      000.101.040.070      SS.F ARM.INTERNA       03/06/2026 03:47:27
+BA TERIA  BAIXA    Detector de Fumaça      000.101.040.058        SS.DMI        03/06/2026 04:00:08
+BA TERIA  BAIXA    Detector de Fumaça      000.101.041.024        10.BOX.02       03/06/2026 04:13:22
+BA TERIA  BAIXA    Detector de Fumaça      000.101.040.070      SS.F ARM.INTERNA       03/06/2026 04:17:25
+BA TERIA  BAIXA    Detector de Fumaça      000.101.040.063     SS ARQUIVO RAIOX       03/06/2026 04:23:06
+BA TERIA  BAIXA    Detector de Fumaça      000.101.040.058        SS.DMI        03/06/2026 04:30:02
+BA TERIA  BAIXA    Detector de Fumaça      000.101.041.024        10.BOX.02       03/06/2026 04:43:34
+BA TERIA  BAIXA    Detector de Fumaça      000.101.040.070      SS.F ARM.INTERNA       03/06/2026 04:47:22
+BA TERIA  BAIXA    Detector de Fumaça      000.101.040.063     SS ARQUIVO RAIOX       03/06/2026 04:51:59
+BA TERIA  BAIXA    Detector de Fumaça      000.101.041.024        10.BOX.02       03/06/2026 05:13:47
+Ocorrência            Descrição              I.D.            Localização             Data/Hora
+----------------Page (2) Break----------------
+BA TERIA  BAIXA    Detector de Fumaça      000.101.040.058        SS.DMI        02/06/2026 11:03:09
+BA TERIA  BAIXA    Detector de Fumaça      000.101.040.058        SS.DMI        02/06/2026 11:33:03
+BA TERIA  BAIXA    Detector de Fumaça      000.101.041.024        10.BOX.02       02/06/2026 11:35:40
+BA TERIA  BAIXA    Detector de Fumaça      000.101.040.063     SS ARQUIVO RAIOX       02/06/2026 12:00:17
+BA TERIA  BAIXA    Detector de Fumaça      000.101.040.058        SS.DMI        02/06/2026 12:02:58
+BA TERIA  BAIXA    Detector de Fumaça      000.101.041.024        10.BOX.02       02/06/2026 12:05:54
+BA TERIA  BAIXA    Detector de Fumaça      000.101.040.063     SS ARQUIVO RAIOX       02/06/2026 12:29:11
+BA TERIA  BAIXA    Detector de Fumaça      000.101.041.024        10.BOX.02       02/06/2026 12:36:08
+BA TERIA  BAIXA    Detector de Fumaça      000.101.040.070      SS.F ARM.INTERNA       02/06/2026 12:48:36
+BA TERIA  BAIXA    Detector de Fumaça      000.101.040.058        SS.DMI        02/06/2026 13:02:48
+BA TERIA  BAIXA    Detector de Fumaça      000.101.041.024        10.BOX.02       02/06/2026 13:06:22
+BA TERIA  BAIXA    Detector de Fumaça      000.101.041.024        10.BOX.02       02/06/2026 13:36:37
+BA TERIA  BAIXA    Detector de Fumaça      000.101.040.070      SS.F ARM.INTERNA       02/06/2026 13:48:32
+BA TERIA  BAIXA    Detector de Fumaça      000.101.040.063     SS ARQUIVO RAIOX       02/06/2026 13:55:58
+BA TERIA  BAIXA    Detector de Fumaça      000.101.040.058        SS.DMI        02/06/2026 14:02:37
+BA TERIA  BAIXA    Detector de Fumaça      000.101.041.024        10.BOX.02       02/06/2026 14:06:51
+BA TERIA  BAIXA    Detector de Fumaça      000.101.040.070      SS.F ARM.INTERNA       02/06/2026 14:18:30
+BA TERIA  BAIXA    Detector de Fumaça      000.101.040.058        SS.DMI        02/06/2026 14:32:32
+BA TERIA  BAIXA    Detector de Fumaça      000.101.041.024        10.BOX.02       02/06/2026 14:37:05
+BA TERIA  BAIXA    Detector de Fumaça      000.101.040.063     SS ARQUIVO RAIOX       02/06/2026 14:53:48
+BA TERIA  BAIXA    Detector de Fumaça      000.101.040.058        SS.DMI        02/06/2026 15:02:27
+BA TERIA  BAIXA    Detector de Fumaça      000.101.041.024        10.BOX.02       02/06/2026 15:07:19
+BA TERIA  BAIXA    Detector de Fumaça      000.101.040.070      SS.F ARM.INTERNA       02/06/2026 15:18:25
+BA TERIA  BAIXA    Detector de Fumaça      000.101.040.063     SS ARQUIVO RAIOX       02/06/2026 15:22:44
+BA TERIA  BAIXA    Detector de Fumaça      000.101.040.058        SS.DMI        02/06/2026 15:32:22
+BA TERIA  BAIXA    Detector de Fumaça      000.101.041.024        10.BOX.02       02/06/2026 15:37:34
+BA TERIA  BAIXA    Detector de Fumaça      000.101.040.063     SS ARQUIVO RAIOX       02/06/2026 15:51:38
+BA TERIA  BAIXA    Detector de Fumaça      000.101.040.058        SS.DMI        02/06/2026 16:02:18
+BA TERIA  BAIXA    Detector de Fumaça      000.101.041.024        10.BOX.02       02/06/2026 16:07:48
+BA TERIA  BAIXA    Detector de Fumaça      000.101.040.070      SS.F ARM.INTERNA       02/06/2026 16:18:21
+BA TERIA  BAIXA    Detector de Fumaça      000.101.040.063     SS ARQUIVO RAIOX       02/06/2026 16:20:32
+BA TERIA  BAIXA    Detector de Fumaça      000.101.040.058        SS.DMI        02/06/2026 16:32:12
+BA TERIA  BAIXA    Detector de Fumaça      000.101.041.024        10.BOX.02       02/06/2026 16:38:03
+BA TERIA  BAIXA    Detector de Fumaça      000.101.040.063     SS ARQUIVO RAIOX       02/06/2026 16:49:28
+BA TERIA  BAIXA    Detector de Fumaça      000.101.040.058        SS.DMI        02/06/2026 17:02:07
+BA TERIA  BAIXA    Detector de Fumaça      000.101.041.024        10.BOX.02       02/06/2026 17:08:17
+BA TERIA  BAIXA    Detector de Fumaça      000.101.040.063     SS ARQUIVO RAIOX       02/06/2026 17:18:21
+BA TERIA  BAIXA    Detector de Fumaça      000.101.041.024        10.BOX.02       02/06/2026 17:38:34
+BA TERIA  BAIXA    Detector de Fumaça      000.101.040.070      SS.F ARM.INTERNA       02/06/2026 17:48:14
+BA TERIA  BAIXA    Detector de Fumaça      000.101.040.058        SS.DMI        02/06/2026 18:02:00
+BA TERIA  BAIXA    Detector de Fumaça      000.101.041.024        10.BOX.02       02/06/2026 18:08:45
+BA TERIA  BAIXA    Detector de Fumaça      000.101.040.070      SS.F ARM.INTERNA       02/06/2026 18:18:14
+BA TERIA  BAIXA    Detector de Fumaça      000.101.041.024        10.BOX.02       02/06/2026 18:38:59
+BA TERIA  BAIXA    Detector de Fumaça      000.101.040.063     SS ARQUIVO RAIOX       02/06/2026 18:45:04
+BA TERIA  BAIXA    Detector de Fumaça      000.101.040.070      SS.F ARM.INTERNA       02/06/2026 18:48:09
+BA TERIA  BAIXA    Detector de Fumaça      000.101.041.024        10.BOX.02       02/06/2026 19:09:17
+BA TERIA  BAIXA    Detector de Fumaça      000.101.040.070      SS.F ARM.INTERNA       02/06/2026 19:18:07
+BA TERIA  BAIXA    Detector de Fumaça      000.101.040.058        SS.DMI        02/06/2026 19:31:41
+BA TERIA  BAIXA    Detector de Fumaça      000.101.041.024        10.BOX.02       02/06/2026 19:39:29
+BA TERIA  BAIXA    Detector de Fumaça      000.101.040.063     SS ARQUIVO RAIOX       02/06/2026 19:42:53
+BA TERIA  BAIXA    Detector de Fumaça      000.101.040.070      SS.F ARM.INTERNA       02/06/2026 19:48:05
+BA TERIA  BAIXA    Detector de Fumaça      000.101.040.058        SS.DMI        02/06/2026 20:01:38
+BA TERIA  BAIXA    Detector de Fumaça      000.101.041.024        10.BOX.02       02/06/2026 20:09:42
+BA TERIA  BAIXA    Detector de Fumaça      000.101.040.063     SS ARQUIVO RAIOX       02/06/2026 20:11:47
+BA TERIA  BAIXA    Detector de Fumaça      000.101.040.070      SS.F ARM.INTERNA       02/06/2026 20:18:03
+BA TERIA  BAIXA    Detector de Fumaça      000.101.040.058        SS.DMI        02/06/2026 20:31:31
+BA TERIA  BAIXA    Detector de Fumaça      000.101.041.024        10.BOX.02       02/06/2026 20:39:56
+Ocorrência            Descrição              I.D.            Localização             Data/Hora
+----------------Page (3) Break----------------
+BA TERIA  BAIXA    Detector de Fumaça      000.101.041.024        10.BOX.02       29/05/2026 10:19:32
+BA TERIA  BAIXA    Detector de Fumaça      000.101.041.024        10.BOX.02       29/05/2026 10:49:44
+BA TERIA  BAIXA    Detector de Fumaça      000.101.040.070      SS.F ARM.INTERNA       29/05/2026 10:56:37
+BA TERIA  BAIXA    Detector de Fumaça      000.101.040.063     SS ARQUIVO RAIOX       29/05/2026 11:11:36
+BA TERIA  BAIXA    Detector de Fumaça      000.101.041.024        10.BOX.02       29/05/2026 11:20:00
+BA TERIA  BAIXA    Detector de Fumaça      000.101.040.070      SS.F ARM.INTERNA       29/05/2026 11:26:35
+BA TERIA  BAIXA    Detector de Fumaça      000.101.040.063     SS ARQUIVO RAIOX       29/05/2026 11:40:31
+BA TERIA  BAIXA    Detector de Fumaça      000.101.041.024        10.BOX.02       29/05/2026 11:50:15
+BA TERIA  BAIXA    Detector de Fumaça      000.101.040.070      SS.F ARM.INTERNA       29/05/2026 11:56:36
+BA TERIA  BAIXA    Detector de Fumaça      000.101.040.063     SS ARQUIVO RAIOX       29/05/2026 12:09:27
+BA TERIA  BAIXA    Detector de Fumaça      000.101.041.024        10.BOX.02       29/05/2026 12:20:30
+BA TERIA  BAIXA    Detector de Fumaça      000.101.041.024        10.BOX.02       29/05/2026 12:50:47
+BA TERIA  BAIXA    Detector de Fumaça      000.101.040.070      SS.F ARM.INTERNA       29/05/2026 12:56:32
+BA TERIA  BAIXA    Detector de Fumaça      000.101.040.063     SS ARQUIVO RAIOX       29/05/2026 13:07:17
+BA TERIA  BAIXA    Detector de Fumaça      000.101.041.024        10.BOX.02       29/05/2026 13:21:01
+BA TERIA  BAIXA    Detector de Fumaça      000.101.040.070      SS.F ARM.INTERNA       29/05/2026 13:26:28
+BA TERIA  BAIXA    Detector de Fumaça      000.101.040.063     SS ARQUIVO RAIOX       29/05/2026 13:36:10
+BA TERIA  BAIXA    Detector de Fumaça      000.101.041.024        10.BOX.02       29/05/2026 13:51:17
+BA TERIA  BAIXA    Detector de Fumaça      000.101.040.070      SS.F ARM.INTERNA       29/05/2026 13:56:25
+BA TERIA  BAIXA    Detector de Fumaça      000.101.040.063     SS ARQUIVO RAIOX       29/05/2026 14:05:05
+BA TERIA  BAIXA    Detector de Fumaça      000.101.041.024        10.BOX.02       29/05/2026 14:51:50
+BA TERIA  BAIXA    Detector de Fumaça      000.101.040.070      SS.F ARM.INTERNA       29/05/2026 14:56:23
+BA TERIA  BAIXA    Detector de Fumaça      000.101.040.063     SS ARQUIVO RAIOX       29/05/2026 15:02:55
+BA TERIA  BAIXA    Detector de Fumaça      000.101.041.024        10.BOX.02       29/05/2026 15:22:02
+BA TERIA  BAIXA    Detector de Fumaça      000.101.040.070      SS.F ARM.INTERNA       29/05/2026 15:26:19
+BA TERIA  BAIXA    Detector de Fumaça      000.101.040.063     SS ARQUIVO RAIOX       29/05/2026 15:31:50
+BA TERIA  BAIXA    Detector de Fumaça      000.101.041.024        10.BOX.02       29/05/2026 15:52:16
+BA TERIA  BAIXA    Detector de Fumaça      000.101.041.024        10.BOX.02       02/06/2026 09:04:29
+BA TERIA  BAIXA    Detector de Fumaça      000.101.040.070      SS.F ARM.INTERNA       02/06/2026 09:48:49
+BA TERIA  BAIXA    Detector de Fumaça      000.101.040.058        SS.DMI        02/06/2026 10:03:18
+BA TERIA  BAIXA    Detector de Fumaça      000.101.041.024        10.BOX.02       02/06/2026 10:04:58
+BA TERIA  BAIXA    Detector de Fumaça      000.101.040.058        SS.DMI        02/06/2026 10:33:12
+BA TERIA  BAIXA    Detector de Fumaça      000.101.040.063     SS ARQUIVO RAIOX       02/06/2026 10:33:33
+BA TERIA  BAIXA    Detector de Fumaça      000.101.040.070      SS.F ARM.INTERNA       02/06/2026 10:48:44
+BA TERIA  BAIXA    Detector de Fumaça      000.101.040.063     SS ARQUIVO RAIOX       02/06/2026 11:02:27
+Ocorrência            Descrição              I.D.            Localização             Data/Hora
+----------------Page (4) Break----------------

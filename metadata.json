@@ -1,0 +1,8 @@
+{
+  "name": "Gerador de Dashboard e Relatórios Excel 2",
+  "description": "Automatize dados com visualização de KPIs e exportação de Excel estruturado com fórmulas.",
+  "requestFramePermissions": [],
+  "majorCapabilities": [
+    "MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"
+  ]
+}

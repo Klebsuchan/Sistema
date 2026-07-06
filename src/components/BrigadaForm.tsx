@@ -1,0 +1,160 @@
+import React, { useState, useEffect } from 'react';
+import { BrigadaItem } from '../data_brigada';
+import { Save, X, User } from 'lucide-react';
+
+interface BrigadaFormProps {
+  initialData?: BrigadaItem | null;
+  onSave: (item: BrigadaItem) => void;
+  onCancel: () => void;
+}
+
+export function BrigadaForm({ initialData, onSave, onCancel }: BrigadaFormProps) {
+  const [formData, setFormData] = useState<Partial<BrigadaItem>>({
+    qtd: 0,
+    nome: '',
+    setor: '',
+    cargo: '',
+    situacao: 'INSCRITO',
+    status_prova: '',
+    status_modulo: '',
+    aproveitamento: '',
+    frequencia: '',
+    observacao: '',
+    modulesConcluded: false,
+    frequenciaPresencial: 0,
+    frequenciaOnline: 0,
+    status: 'ativo',
+    notaTeorica: 0,
+    notaSistema: 0
+  });
+
+  useEffect(() => {
+    if (initialData) {
+      setFormData({
+        ...initialData,
+        modulesConcluded: initialData.modulesConcluded ?? false,
+        frequenciaPresencial: initialData.frequenciaPresencial ?? 0,
+        frequenciaOnline: initialData.frequenciaOnline ?? 0,
+        status: initialData.status || 'ativo',
+        notaTeorica: initialData.notaTeorica ?? 0,
+        notaSistema: initialData.notaSistema ?? 0
+      });
+    }
+  }, [initialData]);
+
+  const handleSubmit = (e: React.FormEvent) => {
+    e.preventDefault();
+    onSave(formData as BrigadaItem);
+  };
+
+  return (
+    <div className="bg-white p-6 rounded-2xl shadow-sm border border-blue-100 max-w-4xl mx-auto">
+      <div className="flex items-center justify-between mb-6 border-b border-blue-100 pb-4">
+        <h3 className="text-xl font-bold text-blue-800 flex items-center gap-2">
+          <User className="h-5 w-5 text-blue-600" />
+          {initialData ? 'Editar Brigadista' : 'Novo Brigadista'}
+        </h3>
+        <button onClick={onCancel} className="text-blue-400 hover:text-blue-600 transition-colors">
+          <X className="h-6 w-6" />
+        </button>
+      </div>
+
+      <form onSubmit={handleSubmit} className="space-y-6">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+          <div className="space-y-2 lg:col-span-2">
+            <label className="text-sm font-semibold text-blue-700">Nome</label>
+            <input required type="text" value={formData.nome} onChange={e => setFormData({ ...formData, nome: e.target.value })}
+              className="w-full px-4 py-2 bg-blue-50 border border-blue-200 rounded-xl focus:ring-2 focus:ring-blue-500 focus:border-transparent outline-none" />
+          </div>
+
+          <div className="space-y-2">
+            <label className="text-sm font-semibold text-blue-700">Status Geral</label>
+            <select value={formData.status} onChange={e => setFormData({ ...formData, status: e.target.value as any })}
+              className="w-full px-4 py-2 bg-blue-50 border border-blue-200 rounded-xl focus:ring-2 focus:ring-blue-500 focus:border-transparent outline-none">
+              <option value="ativo">Ativo</option>
+              <option value="desligado">Desligado</option>
+            </select>
+          </div>
+          
+          <div className="space-y-2">
+            <label className="text-sm font-semibold text-blue-700">Setor</label>
+            <input required type="text" value={formData.setor} onChange={e => setFormData({ ...formData, setor: e.target.value })}
+              className="w-full px-4 py-2 bg-blue-50 border border-blue-200 rounded-xl focus:ring-2 focus:ring-blue-500 focus:border-transparent outline-none" />
+          </div>
+
+          <div className="space-y-2">
+            <label className="text-sm font-semibold text-blue-700">Cargo</label>
+            <input required type="text" value={formData.cargo} onChange={e => setFormData({ ...formData, cargo: e.target.value })}
+              className="w-full px-4 py-2 bg-blue-50 border border-blue-200 rounded-xl focus:ring-2 focus:ring-blue-500 focus:border-transparent outline-none" />
+          </div>
+
+          <div className="space-y-2">
+            <label className="text-sm font-semibold text-blue-700">Situação Curso</label>
+            <input type="text" value={formData.situacao} onChange={e => setFormData({ ...formData, situacao: e.target.value })}
+              className="w-full px-4 py-2 bg-blue-50 border border-blue-200 rounded-xl focus:ring-2 focus:ring-blue-500 focus:border-transparent outline-none" />
+          </div>
+
+          <div className="space-y-2">
+            <label className="text-sm font-semibold text-blue-700">Frequência Presencial (Horas/% )</label>
+            <input type="number" value={formData.frequenciaPresencial} onChange={e => setFormData({ ...formData, frequenciaPresencial: Number(e.target.value) })}
+              className="w-full px-4 py-2 bg-blue-50 border border-blue-200 rounded-xl focus:ring-2 focus:ring-blue-500 focus:border-transparent outline-none" />
+          </div>
+
+          <div className="space-y-2">
+            <label className="text-sm font-semibold text-blue-700">Frequência Online (Horas/% )</label>
+            <input type="number" value={formData.frequenciaOnline} onChange={e => setFormData({ ...formData, frequenciaOnline: Number(e.target.value) })}
+              className="w-full px-4 py-2 bg-blue-50 border border-blue-200 rounded-xl focus:ring-2 focus:ring-blue-500 focus:border-transparent outline-none" />
+          </div>
+          
+          <div className="space-y-2">
+            <label className="text-sm font-semibold text-blue-700">Nota Teórica</label>
+            <input type="number" step="0.1" value={formData.notaTeorica} onChange={e => setFormData({ ...formData, notaTeorica: Number(e.target.value) })}
+              className="w-full px-4 py-2 bg-blue-50 border border-blue-200 rounded-xl focus:ring-2 focus:ring-blue-500 focus:border-transparent outline-none" />
+          </div>
+          
+          <div className="space-y-2">
+            <label className="text-sm font-semibold text-blue-700">Nota Sistema (Prática)</label>
+            <input type="number" step="0.1" value={formData.notaSistema} onChange={e => setFormData({ ...formData, notaSistema: Number(e.target.value) })}
+              className="w-full px-4 py-2 bg-blue-50 border border-blue-200 rounded-xl focus:ring-2 focus:ring-blue-500 focus:border-transparent outline-none" />
+          </div>
+
+          <div className="space-y-2">
+            <label className="text-sm font-semibold text-blue-700">Status Módulo</label>
+            <select value={formData.status_modulo} onChange={e => setFormData({ ...formData, status_modulo: e.target.value })}
+              className="w-full px-4 py-2 bg-blue-50 border border-blue-200 rounded-xl focus:ring-2 focus:ring-blue-500 focus:border-transparent outline-none">
+              <option value="CONCLUIDO">Concluído</option>
+              <option value="PENDENTE">Pendente</option>
+              <option value="">Não iniciado</option>
+            </select>
+          </div>
+          
+          <div className="space-y-2 lg:col-span-3">
+            <label className="flex items-center gap-2 cursor-pointer p-3 bg-blue-50 rounded-lg border border-blue-100 hover:bg-blue-50 transition-colors w-fit">
+              <input type="checkbox" checked={formData.modulesConcluded} onChange={e => setFormData({ ...formData, modulesConcluded: e.target.checked })}
+                className="w-4 h-4 rounded text-blue-600 focus:ring-blue-500" />
+              <span className="text-sm text-blue-700 font-medium">Todos Módulos Concluídos (Mód 1 a 4)</span>
+            </label>
+          </div>
+
+          <div className="space-y-2 lg:col-span-3">
+            <label className="text-sm font-semibold text-blue-700">Observação</label>
+            <input type="text" value={formData.observacao} onChange={e => setFormData({ ...formData, observacao: e.target.value })}
+              className="w-full px-4 py-2 bg-blue-50 border border-blue-200 rounded-xl focus:ring-2 focus:ring-blue-500 focus:border-transparent outline-none" />
+          </div>
+        </div>
+
+        <div className="flex justify-end gap-3 pt-6 border-t border-blue-100">
+          <button type="button" onClick={onCancel}
+            className="px-6 py-2.5 text-sm font-semibold text-blue-600 bg-blue-100 hover:bg-blue-200 rounded-xl transition-colors">
+            Cancelar
+          </button>
+          <button type="submit"
+            className="px-6 py-2.5 text-sm font-semibold text-white bg-blue-600 hover:bg-blue-700 rounded-xl flex items-center gap-2 shadow-sm transition-colors">
+            <Save className="h-4 w-4" />
+            Salvar
+          </button>
+        </div>
+      </form>
+    </div>
+  );
+}

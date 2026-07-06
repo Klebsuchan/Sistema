@@ -1,0 +1,725 @@
+03/06/2026    Andar    Vest.Fem.   13h00( Alame Falso)    FALSE
+Cd 04 
+03/06/2026     Cd    Sub.Solo 03     11h27  12h00       TRUE
+03/06/2026   rad 6 and    C.infec2        08h30       FALSE
+03/06/2026   rad 6 and    C.infec2    07h08 07h36 08h06     TRUE
+03/06/2026   rad 6 and    C.infec2                   TRUE
+02/06/2026   rad 6 and    C.infec2                   TRUE
+02/06/2026   posto 09   Quarto 916                   FALSE
+02/06/2026   Posto 09    Quarto 916                   FALSE
+02/06/2026   Posto 02    Quarto119                  FALSE
+01/06/2026    UPF     Cons04                    TRUE
+Data     ANDAR      Sala/Setor      identificar o local)      baixa
+PRÉDIO E      Quarto/      ocasionou / Removido       Bateria 
+LOCAL        tentar identificar oque 
+os horários/ Fumaça 
+baixa registrar apenas 
+                 (Bateria 
+                                                         
+                                                                                                 
+MOTIVO DO DISPARO                                                                                                   
+----------------Page (0) Break----------------
+09/06/2026  Hemd      Copa        07h03  08h00  11h00     TRUE
+########   Posto 11   a         15h06            FALSE
+Presc.Obstétric
+########   Lancheria          4)              FALSE
+12h54 (Alarme Falso 
+########   Posto 12   Quarto 309     17h16 (Nebulização)     FALSE
+########   Posto 06   Quarto 255     09h02 (chuveiro)       FALSE
+########   Posto 07   Quarto 232     06h25 (nebulização)     FALSE
+########   MANUT    ELÉTRICA 01    16H36            FALSE
+########   Posto 05   Quarto 271     16h09            FALSE
+########   Posto 02   Quarto 119     Falso)            FALSE
+11h09 ( Alarme 
+########   rad 6 and  Sl Ens 03     Treinamento)         FALSE
+10h08 (Teste 
+########   Posto 06   Quarto 255     09h08 (Chuveiro)       FALSE
+########   Posto 02   Quarto 119     08h02 (Alarme Falso)     FALSE
+########   Posto 12   Quarto 311     17h20            FALSE
+########   Posto 14   Quarto 476     08h00            FALSE
+########   Posto 14   Quarto 476       04h30 05h30      TRUE
+01h30 02h30 03h30 
+22h30 23h30 00h30 
+20h10 20h30 21h30 
+########   Andar     (Comando)                   17h08     FALSE
+CD 10      SL. Reunião 
+03/06/2026     pia   Sub.Solo 01        16h33       FALSE
+Radiotera
+03/06/2026     CD     Sub.Solo 03    (Equip.Removido)      TRUE
+15h46 
+13h24 13h52 15h16 
+----------------Page (1) Break----------------
+FALSE
+FALSE
+FALSE
+FALSE
+FALSE
+FALSE
+FALSE
+FALSE
+FALSE
+FALSE
+FALSE
+FALSE
+FALSE
+FALSE
+FALSE
+FALSE
+FALSE
+FALSE
+FALSE
+FALSE
+FALSE
+FALSE
+FALSE
+FALSE
+FALSE
+FALSE
+FALSE
+FALSE
+FALSE
+FALSE
+FALSE
+FALSE
+FALSE
+########   p.8Andar   Ma.Dig       16h37 17H37 18h07      TRUE
+Radiotera
+########   Hemod.    Copa        14h42(removido)       TRUE
+14h30 
+----------------Page (2) Break----------------
+FALSE
+FALSE
+FALSE
+FALSE
+FALSE
+FALSE
+FALSE
+FALSE
+FALSE
+FALSE
+FALSE
+FALSE
+FALSE
+FALSE
+FALSE
+FALSE
+FALSE
+FALSE
+FALSE
+FALSE
+FALSE
+FALSE
+FALSE
+FALSE
+FALSE
+FALSE
+FALSE
+FALSE
+FALSE
+FALSE
+FALSE
+FALSE
+FALSE
+FALSE
+----------------Page (3) Break----------------
+TRUE      FALSE     TRUE     Evanete      Alef      PARABÉNS 
+TRUE      FALSE     FALSE    Evanete               CERTA
+INFORMAÇÃO 
+TRUE      TRUE      FALSE    Evanete               CERTA
+INFORMAÇÃO 
+TRUE      FALSE     FALSE    Evanete               CERTA
+INFORMAÇÃO 
+TRUE      FALSE     FALSE    Franciele             CERTA
+INFORMAÇÃO 
+TRUE      FALSE     FALSE    Franciele             CERTA
+INFORMAÇÃO 
+TRUE      FALSE     TRUE    Franciele   Jessica     PARABÉNS 
+TRUE      FALSE     TRUE    Franciele     e        ERRO
+ca/Franciel
+Tec.veroni
+TRUE      FALSE     TRUE     Evanete      Alef      PARABÉNS 
+TRUE      TRUE      FALSE    Michele               CERTA
+INFORMAÇÃO 
+Geral    o removido    de fumaça   na portaria   atendeu       E HT09)
+Reset     Equipament     Disparo    quem fica      que     CORRETA DO HT07 
+(HT7) de   circulante      (ATUAÇÃO 
+Nome      (HT9)       BOMBEIRO 
+Guarda     SUPERVISÃO DO 
+Nome do 
+----------------Page (4) Break----------------
+TRUE     FALSE    FALSE   Evanete           INFORMAÇÃO CERTA
+TRUE             TRUE    Luciane   Helton    PARABÉNS 
+TRUE     FALSE     TRUE    Luciane   -omo     PARABÉNS 
+TRUE     FALSE     TRUE    Evanete    Alef     PARABÉNS 
+TRUE     FALSE     TRUE    Luciane   Roberto    PARABÉNS 
+TRUE     FALSE     TRUE    Michele    Fernando   PARABÉNS 
+TRUE     FALSE     TRUE    Luciane   Ma\ara    PARABÉNS 
+TRUE     FALSE     TRUE    Luciane   Ma\ara    PARABÉNS 
+TRUE     FALSE     TRUE    Evanete    Luciano   PARABÉNS 
+TRUE     FALSE     TRUE    Evanete    Elisa    PARABÉNS 
+TRUE     FALSE    FALSE   Evanete    Michele   PARABÉNS 
+TRUE     FALSE     TRUE    Evanete    Larissa   PARABÉNS 
+TRUE     FALSE     TRUE    Luciane   Everton   PARABÉNS 
+TRUE     TRUE     FALSE   Evanete           INFORMAÇÃO CERTA
+TRUE     FALSE    FALSE   Michele           INFORMAÇÃO CERTA
+TRUE     FALSE     TRUE        Luciane       Helton PARABÉNS 
+TRUE      FALSE     TRUE     Luciane    Helton       CERTA
+INFORMAÇÃO 
+TRUE      TRUE      FALSE    Luciane              CERTA
+INFORMAÇÃO 
+----------------Page (5) Break----------------
+FALSE    FALSE    FALSE
+FALSE    FALSE    FALSE
+FALSE    FALSE    FALSE
+FALSE    FALSE    FALSE
+FALSE    FALSE    FALSE
+FALSE    FALSE    FALSE
+FALSE    FALSE    FALSE
+FALSE    FALSE    FALSE
+FALSE    FALSE    FALSE
+FALSE    FALSE    FALSE
+FALSE    FALSE    FALSE
+FALSE    FALSE    FALSE
+FALSE    FALSE    FALSE
+FALSE    FALSE    FALSE
+FALSE    FALSE    FALSE
+FALSE    FALSE    FALSE
+FALSE    FALSE    FALSE
+FALSE    FALSE    FALSE
+FALSE    FALSE    FALSE
+FALSE    FALSE    FALSE
+FALSE    FALSE    FALSE
+FALSE    FALSE    FALSE
+FALSE    FALSE    FALSE
+FALSE    FALSE    FALSE
+FALSE    FALSE    FALSE
+FALSE    FALSE    FALSE
+FALSE    FALSE    FALSE
+FALSE    FALSE    FALSE
+FALSE    FALSE    FALSE
+FALSE    FALSE    FALSE
+FALSE    FALSE    FALSE
+FALSE    FALSE    FALSE
+FALSE    FALSE    FALSE
+TRUE     FALSE    FALSE   Luciane          INFORMAÇÃO CERTA
+TRUE     TRUE     FALSE   Luciane          INFORMAÇÃO CERTA
+----------------Page (6) Break----------------
+FALSE    FALSE    FALSE
+FALSE    FALSE    FALSE
+FALSE    FALSE    FALSE
+FALSE    FALSE    FALSE
+FALSE    FALSE    FALSE
+FALSE    FALSE    FALSE
+FALSE    FALSE    FALSE
+FALSE    FALSE    FALSE
+FALSE    FALSE    FALSE
+FALSE    FALSE    FALSE
+FALSE    FALSE    FALSE
+FALSE    FALSE    FALSE
+FALSE    FALSE    FALSE
+FALSE    FALSE    FALSE
+FALSE    FALSE    FALSE
+FALSE    FALSE    FALSE
+FALSE    FALSE    FALSE
+FALSE    FALSE    FALSE
+FALSE    FALSE    FALSE
+FALSE    FALSE    FALSE
+FALSE    FALSE    FALSE
+FALSE    FALSE    FALSE
+FALSE    FALSE    FALSE
+FALSE    FALSE    FALSE
+FALSE    FALSE    FALSE
+FALSE    FALSE    FALSE
+FALSE    FALSE    FALSE
+FALSE    FALSE    FALSE
+FALSE    FALSE    FALSE
+FALSE    FALSE    FALSE
+FALSE    FALSE    FALSE
+FALSE    FALSE    FALSE
+FALSE    FALSE    FALSE
+FALSE    FALSE    FALSE
+----------------Page (7) Break----------------
+COMUNICAÇÃO          O.S    S/ NECESSIDADE DE ATIVIDADEDE ATENDIMENTO
+NÃO ABRIR                 S/ NECESSIDADE 
+EQUIPAMENTO       ABRIU O.S ?   REALIZAR TROCA DE BATERIA   O.S
+RETAUROU        NINGUÉM                 NEM RECEBIDA A 
+ATÉ O MOMENTO 
+NÃO ATENDIDA 
+EQUIPAMENTO       ABRIU O.S ?   REALIZAR TROCA DE BATERIAAVISO DA O.S
+RETAUROU        NINGUÉM                  RECEBEMOS 
+MAS, NÃO 
+FOI ATENDIDA 
+EQUIPAMENTO       REPETIDO     S/ NECESSIDADE DE ATIVIDADEREPETIDO
+RETAUROU 
+EQUIPAMENTO       REPETIDO     S/ NECESSIDADE DE ATIVIDADEREPETIDO
+RETAUROU 
+EQUIPAMENTO       ABRIU O.S ?   REALIZAR TROCA DE BATERIA   O.S
+RETAUROU        NINGUÉM                 NEM RECEBIDA A 
+ATÉ O MOMENTO 
+NÃO ATENDIDA 
+COMUNICAÇÃO        REPETIDO     S/ NECESSIDADE DE ATIVIDADEDE ATENDIMENTO
+S/ NECESSIDADE 
+ERRADO           O.S    S/ NECESSIDADE DE ATIVIDADEDE ATENDIMENTO
+NÃO ABRIR                 S/ NECESSIDADE 
+COMUNICAÇÃO          O.S    S/ NECESSIDADE DE ATIVIDADEDE ATENDIMENTO
+NÃO ABRIR                 S/ NECESSIDADE 
+EQUIPAMENTO       ABRIU O.S ?   BATERIA         AVISO DA O.S
+RETAUROU        NINGUÉM      TROCA DE         RECEBEMOS 
+REALIZAR          MAS, NÃO 
+FOI ATENDIDA 
+SEGUIU              DO EVENTO       INCENDIO       MANUTENÇÃO?
+QUAL PROTOCOLO        ATENDIMENTO        CONTRA           PELA 
+APÓS       PRVENÇÃO        E FOI ATENDIDA 
+DECISÃO      DISPOSITIVO DE     FOI ABERTA A (O.S)  
+NO       RESULTADO FINAL 
+SER REALIZADA 
+NECESSÁRIA A 
+ATIVIDADE 
+----------------Page (8) Break----------------
+RETAUROU EQUIPAMENTO   NINGUÉM ABRIU O.S ?REALIZAR TROCA DE BATERIANÃO ATENDIDA ATÉ O MOMENTO NEM RECEBIDA A O.S
+COMUNICAÇÃO       NÃO ABRIR O.S  S/ NECESSIDADE DE ATIVIDADES/ NECESSIDADE DE ATENDIMENTO
+COMUNICAÇÃO       NÃO ABRIR O.S  S/ NECESSIDADE DE ATIVIDADES/ NECESSIDADE DE ATENDIMENTO
+COMUNICAÇÃO       NÃO ABRIR O.S  S/ NECESSIDADE DE ATIVIDADES/ NECESSIDADE DE ATENDIMENTO
+COMUNICAÇÃO       NÃO ABRIR O.S  S/ NECESSIDADE DE ATIVIDADES/ NECESSIDADE DE ATENDIMENTO
+COMUNICAÇÃO       NÃO ABRIR O.S  S/ NECESSIDADE DE ATIVIDADES/ NECESSIDADE DE ATENDIMENTO
+COMUNICAÇÃO       NÃO ABRIR O.S  S/ NECESSIDADE DE ATIVIDADES/ NECESSIDADE DE ATENDIMENTO
+COMUNICAÇÃO       NÃO ABRIR O.S  S/ NECESSIDADE DE ATIVIDADES/ NECESSIDADE DE ATENDIMENTO
+COMUNICAÇÃO       NÃO ABRIR O.S  S/ NECESSIDADE DE ATIVIDADES/ NECESSIDADE DE ATENDIMENTO
+COMUNICAÇÃO       NÃO ABRIR O.S  S/ NECESSIDADE DE ATIVIDADES/ NECESSIDADE DE ATENDIMENTO
+COMUNICAÇÃO       NÃO ABRIR O.S  S/ NECESSIDADE DE ATIVIDADES/ NECESSIDADE DE ATENDIMENTO
+COMUNICAÇÃO       NÃO ABRIR O.S  S/ NECESSIDADE DE ATIVIDADES/ NECESSIDADE DE ATENDIMENTO
+COMUNICAÇÃO       NÃO ABRIR O.S  S/ NECESSIDADE DE ATIVIDADES/ NECESSIDADE DE ATENDIMENTO
+RETAUROU EQUIPAMENTO   NINGUÉM ABRIU O.S ?REALIZAR TROCA DE BATERIAFOI ATENDIDA MAS, NÃO RECEBEMOS AVISO DA O.S
+RETAUROU EQUIPAMENTO   NINGUÉM ABRIU O.S ?REALIZAR TROCA DE BATERIANÃO ATENDIDA ATÉ O MOMENTO NEM RECEBIDA A O.S
+COMUNICAÇÃO      NÃO ABRIR O.S  S/ NECESSIDADE DE ATIVIDADES/ NECESSIDADE DE ATENDIMENTO
+EQUIPAMENTO          O.S    S/ NECESSIDADE DE ATIVIDADEDE ATENDIMENTO
+RETAUROU        NÃO ABRIR                 S/ NECESSIDADE 
+EQUIPAMENTO   NINGUÉM ABRIU O.S ?  REALIZAR TROCA DE BATERIAAVISO DA O.S
+RETAUROU                              RECEBEMOS 
+MAS, NÃO 
+FOI ATENDIDA 
+----------------Page (9) Break----------------
+RETAUROU EQUIPAMENTO   NINGUÉM ABRIU O.S ?REALIZAR TROCA DE BATERIANÃO ATENDIDA ATÉ O MOMENTO NEM RECEBIDA A O.S
+RETAUROU EQUIPAMENTO   NINGUÉM ABRIU O.S ?REALIZAR TROCA DE BATERIAFOI ATENDIDA MAS, NÃO RECEBEMOS AVISO DA O.S
+----------------Page (10) Break----------------
+
+----------------Page (11) Break----------------
+
+----------------Page (12) Break----------------
+NÃO ATENDIDA ATÉ O MOMENTO NEM RECEBIDA A O.S
+S/ NECESSIDADE DE ATENDIMENTO
+S/ NECESSIDADE DE ATENDIMENTO
+S/ NECESSIDADE DE ATENDIMENTO
+S/ NECESSIDADE DE ATENDIMENTO
+S/ NECESSIDADE DE ATENDIMENTO
+S/ NECESSIDADE DE ATENDIMENTO
+S/ NECESSIDADE DE ATENDIMENTO
+S/ NECESSIDADE DE ATENDIMENTO
+S/ NECESSIDADE DE ATENDIMENTO
+S/ NECESSIDADE DE ATENDIMENTO
+S/ NECESSIDADE DE ATENDIMENTO
+S/ NECESSIDADE DE ATENDIMENTO
+FOI ATENDIDA MAS, NÃO RECEBEMOS AVISO DA O.S
+NÃO ATENDIDA ATÉ O MOMENTO NEM RECEBIDA A O.S
+S/ NECESSIDADE DE ATENDIMENTO
+----------------Page (13) Break----------------
+NÃO ATENDIDA ATÉ O MOMENTO NEM RECEBIDA A O.S
+FOI ATENDIDA MAS, NÃO RECEBEMOS AVISO DA O.S
+----------------Page (14) Break----------------
+09/02/26             ?      CD            5º andar   510
+Posto 15 Q. 
+02/02/26             ?      CD            7º Andar   710
+Posto 17 Q. 
+02/02/26             ?      CD            2º andar   Sala exa.04
+02/02/26             ?      CD            2º andar   Sala exa.01
+02/02/26             ?      CD            2º andar   Sala exa.03
+27/01/26             ?      CD            7º andar   714
+Posto 17 Q. 
+12/01/26             ?      CD            9º andar   Q.910
+Posto 19 
+12/01/26             ?      CD            4º andar   paciente
+vestiario 
+12/01/26             ?      CD            4º andar   leito1
+CTI cardio 
+13/02/26             ?      CD            4º andar   CTI cardio 
+17/01/26             ?      CD            4º andar   CTI cardio 
+12/02/26             ?      CD            3º Andar   UTI Pediatrica
+13/02/26             ?      CD            4º andar   UTI cardio 
+15/01/26             ?      CD            4º andar   CTI cardio 
+12/01/26             ?      CD            4º andar   CTI cardio 2
+28/02/26             ?      CD            8º Andar   Q. 816
+12/01/26             ?      CD            8º andar   Quarto 815
+12/01/26             ?      CD            8º andar   Quarto 813
+12/01/26             ?      CD            8º andar   Posto 18
+12/01/26             ?      CD            10º andar  Hemodinamica 
+28/02/26             ?      CD            6º andar   P16 Sla lanche
+29/01/26             ?      CD            10º andar  Hemodinamica 
+19/01/26             ?      CD            10º andar  Hemodinamica 
+07/01/26             ?      CD            1º andar   Densitome
+20/02/26             ?      CD            1º andar   PORT. 
+07/01/26             ?      CD            9º andar   POSTO 19 Q.910
+CENTRO DE 
+INFORMAÇÕES      Quem abriu a       RAD/CD/PA        A         Sla. Quarto, 
+DATA DE        RESPONSÁVEL      PRÉDIOS          ANDAR      SETOR 
+----------------Page (15) Break----------------
+12/01/26             ?      PA            1º andar   édic. Pedi
+Emerg.Presc.M
+12/01/26             ?      PA            1º andar   pedi
+Emerg.sala. 
+18/02/26             ?      PA            1º andar   ente
+Emerg.Q.Resid
+12/01/26             ?      PA            1º andar   arela3
+Emerg.sala.am
+12/01/26             ?      PA            1º andar   sala de lanche
+Hemodialise 
+02/02/26             ?      PA            1º andar   Oficina
+Hemod. 
+18/02/26             ?      PA            1º andar   Masculina
+Posto 01 Obs. 
+07/01/26             ?      PA            3º andar   Q.287
+POSTO 8 
+18/02/26             ?      PA            3º andar   ?
+SANI.COLETA
+13/02/26             ?      PA            3º andar   Q.270
+POSTO 5 
+08/02/26             ?      PA            3º andar   Q.264
+POSTO 5 
+?      ANTIGO
+PRÉDIO 
+?      CD 
+?      CD 
+?      CD 
+02/02/26             ?      CD            2º andar   atendimento
+Sala de 
+----------------Page (16) Break----------------
+19/01/26             ?      PA            4º andar   Utilidade
+Posto 14 Sala 
+18/02/26             ?      PA            3º andar   287
+Posto 08 Q. 
+02/02/26             ?      PA            1º andar   Consultorio 14 
+UPF 
+19/01/25             ?      PA            4º Andar   Obstétrico
+Cent. 
+19/01/26             ?      PA            3º andar   Posto 12 Q
+28/02/26             ?      PA            4º andar   P11 Q 440
+10/01/26             ?      PA            4º andar   Posto 11
+12/01/26             ?      PA            1º andar   Almoxarifado
+12/01/26             ?      PA            3º andar   quarto 296
+Posto 08 
+12/01/26             ?      PA - CES        1º andar   espera 2
+ sala de 
+12/01/26             ?      PA            1º       ossea
+Desitometria 
+23/01/26             ?      PA            1º       pia
+UPF/Radiotera
+Corredor 
+19/01/26             ?      PA            1º       RX 1
+----------------Page (17) Break----------------
+15/01/26             ?      PA            5º Andar   Bomba
+Cópia Chave 
+19/01/26             ?      PA - CES        1º Andar   Consult. 14
+13/02/26             ?      PA - CES        1º Andar   Consult. 18
+09/02/26             ?      PA - CES        1º Andar   Consult. 17
+15/01/26             ?      PA            5º Andar   Bombas
+12/01/26             ?      PA            3º Andar   Posto 08 
+19/01/26             ?      PA            2º Andar   03 
+esquina Posto 
+Corredor 
+24/02/26             ?      PA            2º Andar   Ant. P02
+19/01/26             ?      PA            2º Andar   Posto 03 
+15/01/26             ?      PA            5º Andar   CTI Central
+13/02/26             ?      PA            2º Andar   UTI Cirurgica
+08/02/26             ?      PA            5º Andar   CTI Central
+13/01/26             ?      PA            5º Andar   CTI Central
+----------------Page (18) Break----------------
+12/01/26             ?      RAD           1º andar   secret 2
+07/01/26             ?      RAD           7º andar    GER. RH
+?      A
+RADIOTERAPI
+?
+?
+o                ?      PA - CES        1º Andar   Consul 16
+Monitorament                                        C. Espec 
+o                ?      PA - CES        1º Andar   Consul 12
+Monitorament                                        C. Espec 
+o                ?      PA - CES        1º Andar   Consul 17
+Monitorament                                        C. Espec 
+o                ?      PA            Térreo     Amarela 3
+Monitorament                                        Emerg SL 
+o                ?      PA            3º andar   quarto 270
+Monitorament                                        posto 05 
+02/02/26             ?      PA            2º Andar   RX DMI
+13/02/26             ?      PA            ?       Soton 11
+02/02/26             ?      PA            2º Andar   Lancheria
+02/02/26             ?      PA            1º Andar   Substação
+02/02/26             ?      PA            1º Andar   odontologia
+UPF 
+26/02/20             ?      PA            1º Andar   Manutenção
+09/02/26             ?      PA - CES        1º Andar   Consultório 12
+12/01/26             ?      PA - CES        1º Andar   Analise Clinica
+11/01/26             ?      PA - CES        1º Andar   Recepção
+----------------Page (19) Break----------------
+17/01/26             ?      RAD           7º Andar   Sesmt
+18/02/26             ?      RAD           3º Andar   CTI. Inter
+15/01/26             ?      RAD           10º Andar  Hemodinamica
+25/10/25             ?      RAD           10º Andar  Hemodinamica
+05/08/25             ?      RAD           10º Andar  Hemodinamica
+19/01/26             ?      RAD           4º Andar   Q438
+Maternidade 
+15/01/26             ?      RAD           Subsolo   Depósito
+15/01/26             ?      RAD           Subsolo   Depósito
+15/01/26             ?      RAD           9º Andar   Monitoramento
+12/01/26             ?      RAD           7º Andar   Geren. RH
+12/01/26             ?      RAD           7º andar   Administração
+12/01/26             ?      RAD           1º andar   proced.
+Quimio. sala 
+12/01/26             ?      RAD           7º andar   ambulatorio
+19/01/26             ?      RAD           5º andar   Recepção
+12/01/26             ?      RAD           5º andar   sangue
+banco de 
+----------------Page (20) Break----------------
+?      RAD
+?      RAD
+02/02/26             ?      RAD           7º andar   01
+Departamento 
+02/02/26             ?      RAD           Térreo     Camara clara
+02/02/26             ?      RAD           Térreo     02/ onco
+Consultório 
+02/02/26             ?      RAD           8º andar   Medicina Fetal
+18/02/26             ?      RAD           8º andar   Int. Laud
+----------------Page (21) Break----------------
+Sensores    101,049,119   971890           9/2/26            C=09/02/26
+R=09/02/26        
+Sensores    101,051,096   970640
+Sensores    101,047,071   970636
+Sensores    101,049,120   970631
+Sensores    101,049,077   970627
+Sensores    101,052,050   ?              28/01            C=28/01/26
+R=28/01/26        
+Sensores    ?          965273           16/01/26           C=16/01/26
+R=16/01/26        
+Sensores    101,049,111   965327           17/01/26           C=17/00/26
+R=17/01/26        
+Sensores    101,049,075   965324           17/01/26           C=17/00/26
+R=17/01/26        
+Sensores    101,078,087   973482           08/02/26       R=20/02/26            
+Sensores    101,045,124   956846
+Eletro Imã   X          973229
+Sensores    101,047,063   973483
+Sensores    ?          966663           21/01/26       R=21/01/26        
+Sensores    101,047,049   965323           17/01/26       R=17/01/26        
+Sensores    101,051,123   977132
+Sensores    101,047,029   965304           21/01/26       R=17/01/26        
+Sensores    101,052,072   965,245          16/01/26       R=12/01/26        
+Sensores    101,052,040   965,283          16/01/26       R=16/01/26        
+Sensores    101,051,046   956,855
+Sensores    101,052,021   977,134
+Sensores    ?          967,109          24/01/26       R=24/01/26        
+Sensores    ?          967,107          24/01/26       R=24/01/26        
+Sensores    101,047,066   963888
+CENTRAL    x          975223
+Sensores    101,052,101   963872           16/1/26       R=16/01/26        
+Detector    ID DO        Nº DA (OS)        CONCERTO       REMOVIDOS 
+Dispositiv  000.XXX.XX    XXXXXX         DATA DO       Data da 
+----------------Page (22) Break----------------
+Sensores    ?          965,296          16/01/26           C=16/01/26
+R=16/01/26        
+Sensores    101,078,113   965,285          16/01/26           C=16/01/26
+R=16/01/26        
+Sensores    101,078,118   974,596          19/02/26       C=19/02/26
+       
+R=19/02/26           
+Sensores    101,078,103   965,285          15/01/26       C=03/02/26
+       
+R=03/02/26           
+Sensores    101,050,056   965,243          16/01/26           C=16/01/26
+R=16/01/26        
+Sensores    101,044,069   970,589
+Sensores    101,078,112   974,602          18/02/26       C=18/02/26
+       
+R=18/02/26           
+Sensores    101,049,080
+Sensores    101,044,072   974605           18/2/26       C=18/02/26
+       
+R=18/02/26           
+Sensores    101,048,104   973487           20/2/26           C=20/02/26
+R=20/02/26        
+Sensores    101,048,073   ?              8/2/26            C=08/02/26
+R=08/02/26        
+Sensores    101,047,054   970635
+----------------Page (23) Break----------------
+Sensores    101,049,023   ?
+Sensores    101,048,112   974570           23/02/26           C=23/02/26
+R=23/02/26        
+Sensores    101,044,021   970625
+Sensores    101,045,027   967111           24/01/26           C=24/01/26
+R=24/01/26        
+Sensores    101,048,035   967105           24/01/26           C=24/01/26
+R=24/01/26        
+Sensores    101,052,062   977133           19/02/26           C=19/02/26
+R=19/02/26        
+Sensores    101,034,099   964909           16/01/26           C=16/01/26
+R=16/01/26        
+Sensores    101,040,021   96837           16/01/26           C=16/01/26
+R=16/01/26        
+Sensores    101,044,054   965300           16/01/26           C=16/01/26
+R=16/01/26        
+Sensores    101,047,115   965299           20/04/26           C=20/04/26
+R=20/04/26        
+Sensores    101,047,066   965,251          16/01/26           C=16/01/26
+R=16/01/26        
+PCF       60,101       968,395
+Sensores    ?          967,103          24/01/26           C=24/01/26
+R=24/01/26        
+----------------Page (24) Break----------------
+Bombas      1859         966309
+Sensores    101,048,023   ?              20/01/26           C=20/04/26
+R=20/04/26        
+Sensores    101,045,098   973481           20/01/26           C=20/04/26
+R=20/04/26        
+Sensores    101,048,032   971398           20/01/26           C=20/04/26
+R=20/04/26        
+Bombas      84449       966306           20/01/26           C=20/02/25
+R=20/02/26        
+Sensores    127,147,105   965300           16/01/26           C=16/01/26
+R=12/01/26        
+Hidrante    X          946132
+Porta 
+imã       X          966102           25/01/26          C=25/01/27
+ELETRO                                            R=2501/26        
+Sensores    101,044,080   967110           24/01/26          C=24/01/26
+R=2401/26        
+Jockey      84449       ?
+Bomba 
+Eletro imã   X          973576           20/02/26           C=20/02/25
+R=20/02/26        
+Sensores    101,049,078   ?              08/02/26           C=08/02/26
+R=08/02/26        
+Sensores    101,049,036   973,483          20/02/26           C=20/02/25
+R=20/02/26        
+----------------Page (25) Break----------------
+Sensores    101,050,056   965282
+Sensores    101,052,036   963894           16/01/26           C=16/01/26
+R=16/01/26        
+101,047,084
+Sensores    101,045,098   975767
+Sensores    101,048,038   975764
+Sensores    101,048,032   975756
+Sensores    101,048,103   975745
+Sensores    101,048,104   975743
+Sensores    101,044,112   970613
+Sensores    101,051,089   ?              1/2/26            C=01/02/26
+R=01/02/26        
+Sensores    101,046,046   970642
+Sensores    101,078,077   970605
+Sensores    101,043,101   970603
+Sensores    101,044,124   970602
+Sensores    101,048,038   971888           09/02/26           C=09/02/26
+R=09/02/26        
+Sensores    101,045,069   967104           16/01/26           C=16/02/26
+R=16/02/26        
+Sensores    ?          965299           16/01/26           C=16/02/26
+R=16/02/26        
+----------------Page (26) Break----------------
+Roteadores   x          966375
+Sensores    101,050,100   974568           18/02/26           C=18/02/26
+R=18/02/26        
+Bomba      1858         966311
+Chave 
+Cópia 
+Cirurgia 1   101,049,061
+Sala 
+de Bomba    84426
+Disparos 
+Sensores    101,050,086   967108           24/01/26           C=24/01/26
+R=24/01/26        
+Sensores    101,053,022
+Chave PCF   X          966312
+Cópia 
+Bombas      84445       966311
+Sensores    101,052,036   965281           16/01            C=16/01/26
+R=16/01/26        
+Sensores    ?          965290           16/01/26           C=16/01/26
+R=16/01/26        
+Sensores    101,052,081   968540           26/01/26           C=26/01/26
+R=26/01/26        
+Sensores    101,051,115   965290
+PCF       X          966319           24/01/26           C=24/01/26
+R=24/01/26        
+Sensores    101,052,126   965284           16/01/26           C=16/01/26
+R=16/01/26        
+----------------Page (27) Break----------------
+Sensores    101,052,041   970624           2/2/26            C=02/02/26
+R=02/02/26        
+Sensores    101,045,022   970608
+Sensores    101,051,110   960694
+Sensores    101,051,110   970594
+Sensores    101,051,061   974563           19/2/26           C=19/02/26
+R=19/02/26        
+----------------Page (28) Break----------------
+Nilton
+Nilton
+Nilton
+Nilton
+Nilton
+Nilton
+Nilton
+Nilton
+Nilton
+Nilton
+Nilton
+Nilton
+Nilton
+Nilton
+QUEM           DISPOSITIV
+PROFISSIONA    DATA DO 
+----------------Page (29) Break----------------
+Nilton
+Nilton
+Nilton
+Nilton
+Nilton
+Nilton
+Nilton
+Nilton
+----------------Page (30) Break----------------
+Nilton
+Nilton
+Nilton
+Nilton
+Nilton
+Nilton
+Nilton
+Nilton
+Nilton
+Nilton
+----------------Page (31) Break----------------
+Nilton
+Nilton
+Nilton
+Nilton
+Nilton
+Nilton
+Nilton
+Nilton
+Nilton
+Nilton
+----------------Page (32) Break----------------
+Nilton
+Nilton
+Nilton
+Nilton
+Nilton
+----------------Page (33) Break----------------
+Nilton
+Nilton
+Nilton
+Nilton
+Nilton
+Nilton
+Nilton
+Nilton
+----------------Page (34) Break----------------
+Nilton
+Nilton
+----------------Page (35) Break----------------
