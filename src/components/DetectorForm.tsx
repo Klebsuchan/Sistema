@@ -36,12 +36,12 @@ export function DetectorForm({ initialData, onSave, onCancel }: DetectorFormProp
   };
 
   return (
-    <div className="bg-white rounded-xl shadow-sm border border-blue-200 overflow-hidden">
-      <div className="border-b border-blue-200 px-4 sm:px-6 py-4 flex justify-between items-center bg-brand-light/50">
+    <div className="bg-white rounded-xl shadow-sm border border-brand-light overflow-hidden">
+      <div className="border-b border-brand-light px-4 sm:px-6 py-4 flex justify-between items-center bg-brand-light/50">
         <h3 className="font-semibold text-brand-blue">
           {initialData ? 'EDITAR DETECTOR/ACIONADOR' : 'NOVO DETECTOR/ACIONADOR'}
         </h3>
-        <button onClick={onCancel} className="text-blue-400 hover:text-blue-600 transition-colors">
+        <button onClick={onCancel} className="text-brand-blue hover:text-brand-blue transition-colors">
           <X className="w-5 h-5" />
         </button>
       </div>
@@ -54,7 +54,7 @@ export function DetectorForm({ initialData, onSave, onCancel }: DetectorFormProp
             <input
               type="text"
               required
-              className="w-full px-3 py-2 border border-blue-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500"
+              className="w-full px-3 py-2 border border-brand-light rounded-md focus:outline-none focus:ring-2 focus:ring-brand-blue"
               value={formData.numero} 
               onChange={e => setFormData({...formData, numero: e.target.value})}
             />
@@ -65,7 +65,7 @@ export function DetectorForm({ initialData, onSave, onCancel }: DetectorFormProp
             <input
               type="text"
               required
-              className="w-full px-3 py-2 border border-blue-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500"
+              className="w-full px-3 py-2 border border-brand-light rounded-md focus:outline-none focus:ring-2 focus:ring-brand-blue"
               value={formData.endereco_mac} 
               onChange={e => setFormData({...formData, endereco_mac: e.target.value})}
             />
@@ -76,7 +76,7 @@ export function DetectorForm({ initialData, onSave, onCancel }: DetectorFormProp
             <input
               type="text"
               required
-              className="w-full px-3 py-2 border border-blue-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500"
+              className="w-full px-3 py-2 border border-brand-light rounded-md focus:outline-none focus:ring-2 focus:ring-brand-blue"
               value={formData.tipo} 
               onChange={e => setFormData({...formData, tipo: e.target.value})}
             />
@@ -85,7 +85,7 @@ export function DetectorForm({ initialData, onSave, onCancel }: DetectorFormProp
           <div className="space-y-2">
             <label className="text-sm font-medium text-brand-blue">Prédio</label>
             <select
-              className="w-full px-3 py-2 border border-blue-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500"
+              className="w-full px-3 py-2 border border-brand-light rounded-md focus:outline-none focus:ring-2 focus:ring-brand-blue"
               value={formData.predio}
               onChange={e => setFormData({...formData, predio: e.target.value})}
             >
@@ -101,7 +101,7 @@ export function DetectorForm({ initialData, onSave, onCancel }: DetectorFormProp
             <input
               type="text"
               required
-              className="w-full px-3 py-2 border border-blue-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500"
+              className="w-full px-3 py-2 border border-brand-light rounded-md focus:outline-none focus:ring-2 focus:ring-brand-blue"
               value={formData.localizacao} 
               onChange={e => setFormData({...formData, localizacao: e.target.value})}
             />
@@ -113,13 +113,13 @@ export function DetectorForm({ initialData, onSave, onCancel }: DetectorFormProp
           <button
             type="button"
             onClick={onCancel}
-            className="px-4 py-2 border border-blue-300 text-brand-blue rounded-md hover:bg-brand-light font-medium transition-colors"
+            className="px-4 py-2 border border-brand-light text-brand-blue rounded-md hover:bg-brand-light font-medium transition-colors"
           >
             Cancelar
           </button>
           <button
             type="submit"
-            className="px-4 py-2 bg-brand-blue text-white rounded-md hover:bg-blue-800 font-medium flex items-center gap-2 transition-colors"
+            className="px-4 py-2 bg-brand-blue text-white rounded-md hover:bg-brand-blue font-medium flex items-center gap-2 transition-colors"
           >
             <Save className="w-4 h-4" />
             Salvar

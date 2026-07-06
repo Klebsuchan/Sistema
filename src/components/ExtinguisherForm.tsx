@@ -59,13 +59,13 @@ export function ExtinguisherForm({ initialData, onSave, onCancel }: Extinguisher
   const BUILDINGS = ['CD', 'RAD', 'PA', 'CDR', 'CES'];
 
   return (
-    <div className="bg-white p-6 rounded-2xl shadow-sm border border-blue-100 max-w-4xl mx-auto">
-      <div className="flex items-center justify-between mb-6 border-b border-blue-100 pb-4">
+    <div className="bg-white p-6 rounded-2xl shadow-sm border border-brand-light max-w-4xl mx-auto">
+      <div className="flex items-center justify-between mb-6 border-b border-brand-light pb-4">
         <h3 className="text-xl font-bold text-brand-blue flex items-center gap-2">
-          <Flame className="h-5 w-5 text-blue-600" />
+          <Flame className="h-5 w-5 text-brand-blue" />
           {initialData ? 'Editar Extintor' : 'Novo Extintor'}
         </h3>
-        <button onClick={onCancel} className="text-blue-400 hover:text-blue-600 transition-colors">
+        <button onClick={onCancel} className="text-brand-blue hover:text-brand-blue transition-colors">
           <X className="h-6 w-6" />
         </button>
       </div>
@@ -75,19 +75,19 @@ export function ExtinguisherForm({ initialData, onSave, onCancel }: Extinguisher
           <div className="space-y-2">
             <label className="text-sm font-semibold text-brand-blue">Patrimônio</label>
             <input required type="text" value={formData.patrim} onChange={e => setFormData({ ...formData, patrim: e.target.value })}
-              className="w-full px-4 py-2 bg-brand-light border border-blue-200 rounded-xl focus:ring-2 focus:ring-blue-500 focus:border-transparent outline-none" />
+              className="w-full px-4 py-2 bg-brand-light border border-brand-light rounded-xl focus:ring-2 focus:ring-brand-blue focus:border-transparent outline-none" />
           </div>
           
           <div className="space-y-2">
             <label className="text-sm font-semibold text-brand-blue">Nº Extintor</label>
             <input required type="text" value={formData.num_extintor} onChange={e => setFormData({ ...formData, num_extintor: e.target.value })}
-              className="w-full px-4 py-2 bg-brand-light border border-blue-200 rounded-xl focus:ring-2 focus:ring-blue-500 focus:border-transparent outline-none" />
+              className="w-full px-4 py-2 bg-brand-light border border-brand-light rounded-xl focus:ring-2 focus:ring-brand-blue focus:border-transparent outline-none" />
           </div>
 
           <div className="space-y-2">
             <label className="text-sm font-semibold text-brand-blue">Prédio</label>
             <select required value={formData.predio} onChange={e => setFormData({ ...formData, predio: e.target.value })}
-              className="w-full px-4 py-2 bg-brand-light border border-blue-200 rounded-xl focus:ring-2 focus:ring-blue-500 focus:border-transparent outline-none">
+              className="w-full px-4 py-2 bg-brand-light border border-brand-light rounded-xl focus:ring-2 focus:ring-brand-blue focus:border-transparent outline-none">
               <option value="" disabled>Selecione...</option>
               {BUILDINGS.map(b => <option key={b} value={b}>{b}</option>)}
             </select>
@@ -96,13 +96,13 @@ export function ExtinguisherForm({ initialData, onSave, onCancel }: Extinguisher
           <div className="space-y-2">
             <label className="text-sm font-semibold text-brand-blue">Localização (Setor)</label>
             <input required type="text" value={formData.localizacao} onChange={e => setFormData({ ...formData, localizacao: e.target.value })}
-              className="w-full px-4 py-2 bg-brand-light border border-blue-200 rounded-xl focus:ring-2 focus:ring-blue-500 focus:border-transparent outline-none" />
+              className="w-full px-4 py-2 bg-brand-light border border-brand-light rounded-xl focus:ring-2 focus:ring-brand-blue focus:border-transparent outline-none" />
           </div>
 
           <div className="space-y-2">
             <label className="text-sm font-semibold text-brand-blue">Tipo</label>
             <select value={formData.tipo} onChange={e => setFormData({ ...formData, tipo: e.target.value })}
-              className="w-full px-4 py-2 bg-brand-light border border-blue-200 rounded-xl focus:ring-2 focus:ring-blue-500 focus:border-transparent outline-none">
+              className="w-full px-4 py-2 bg-brand-light border border-brand-light rounded-xl focus:ring-2 focus:ring-brand-blue focus:border-transparent outline-none">
               <option value="ABC">ABC</option>
               <option value="CO2">CO2</option>
               <option value="AP">AP</option>
@@ -113,75 +113,75 @@ export function ExtinguisherForm({ initialData, onSave, onCancel }: Extinguisher
           <div className="space-y-2">
             <label className="text-sm font-semibold text-brand-blue">Capacidade</label>
             <input required type="text" value={formData.cap} onChange={e => setFormData({ ...formData, cap: e.target.value })}
-              className="w-full px-4 py-2 bg-brand-light border border-blue-200 rounded-xl focus:ring-2 focus:ring-blue-500 focus:border-transparent outline-none" />
+              className="w-full px-4 py-2 bg-brand-light border border-brand-light rounded-xl focus:ring-2 focus:ring-brand-blue focus:border-transparent outline-none" />
           </div>
 
           <div className="space-y-2">
             <label className="text-sm font-semibold text-brand-blue">Próx. Recarga</label>
             <input required type="text" placeholder="MM/AAAA" value={formData.prox_recarga} onChange={e => setFormData({ ...formData, prox_recarga: e.target.value })}
-              className="w-full px-4 py-2 bg-brand-light border border-blue-200 rounded-xl focus:ring-2 focus:ring-blue-500 focus:border-transparent outline-none" />
+              className="w-full px-4 py-2 bg-brand-light border border-brand-light rounded-xl focus:ring-2 focus:ring-brand-blue focus:border-transparent outline-none" />
           </div>
 
           <div className="space-y-2">
             <label className="text-sm font-semibold text-brand-blue">Próx. Teste Hidro</label>
             <input required type="text" placeholder="AAAA" value={formData.prox_teste} onChange={e => setFormData({ ...formData, prox_teste: e.target.value })}
-              className="w-full px-4 py-2 bg-brand-light border border-blue-200 rounded-xl focus:ring-2 focus:ring-blue-500 focus:border-transparent outline-none" />
+              className="w-full px-4 py-2 bg-brand-light border border-brand-light rounded-xl focus:ring-2 focus:ring-brand-blue focus:border-transparent outline-none" />
           </div>
 
           <div className="space-y-2">
             <label className="text-sm font-semibold text-brand-blue">Selo INMETRO</label>
             <input type="text" value={formData.selo} onChange={e => setFormData({ ...formData, selo: e.target.value })}
-              className="w-full px-4 py-2 bg-brand-light border border-blue-200 rounded-xl focus:ring-2 focus:ring-blue-500 focus:border-transparent outline-none" />
+              className="w-full px-4 py-2 bg-brand-light border border-brand-light rounded-xl focus:ring-2 focus:ring-brand-blue focus:border-transparent outline-none" />
           </div>
         </div>
 
-        <div className="border-t border-blue-100 pt-6">
+        <div className="border-t border-brand-light pt-6">
           <h4 className="text-sm font-semibold text-brand-blue mb-4 flex items-center gap-2">
-            <ShieldCheck className="h-4 w-4 text-blue-600" /> Checks & Status
+            <ShieldCheck className="h-4 w-4 text-brand-blue" /> Checks & Status
           </h4>
           
           <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4">
-            <label className="flex items-center gap-2 cursor-pointer p-3 bg-brand-light rounded-lg border border-blue-100 hover:bg-brand-light transition-colors">
+            <label className="flex items-center gap-2 cursor-pointer p-3 bg-brand-light rounded-lg border border-brand-light hover:bg-brand-light transition-colors">
               <input type="checkbox" checked={formData.retiradoParaRecarga} onChange={e => setFormData({ ...formData, retiradoParaRecarga: e.target.checked })}
-                className="w-4 h-4 rounded text-blue-600 focus:ring-blue-500" />
+                className="w-4 h-4 rounded text-brand-blue focus:ring-brand-blue" />
               <span className="text-sm text-brand-blue font-medium">Retirado (Recarga)</span>
             </label>
             
-            <label className="flex items-center gap-2 cursor-pointer p-3 bg-brand-light rounded-lg border border-blue-100 hover:bg-brand-light transition-colors">
+            <label className="flex items-center gap-2 cursor-pointer p-3 bg-brand-light rounded-lg border border-brand-light hover:bg-brand-light transition-colors">
               <input type="checkbox" checked={formData.coberturaNoLocal} onChange={e => setFormData({ ...formData, coberturaNoLocal: e.target.checked })}
-                className="w-4 h-4 rounded text-blue-600 focus:ring-blue-500" />
+                className="w-4 h-4 rounded text-brand-blue focus:ring-brand-blue" />
               <span className="text-sm text-brand-blue font-medium">Cobertura no Local</span>
             </label>
 
-            <label className="flex items-center gap-2 cursor-pointer p-3 bg-brand-light rounded-lg border border-blue-100 hover:bg-brand-light transition-colors">
+            <label className="flex items-center gap-2 cursor-pointer p-3 bg-brand-light rounded-lg border border-brand-light hover:bg-brand-light transition-colors">
               <input type="checkbox" checked={formData.checkLacre} onChange={e => setFormData({ ...formData, checkLacre: e.target.checked })}
-                className="w-4 h-4 rounded text-blue-600 focus:ring-blue-500" />
+                className="w-4 h-4 rounded text-brand-blue focus:ring-brand-blue" />
               <span className="text-sm text-brand-blue font-medium">Lacre OK</span>
             </label>
 
-            <label className="flex items-center gap-2 cursor-pointer p-3 bg-brand-light rounded-lg border border-blue-100 hover:bg-brand-light transition-colors">
+            <label className="flex items-center gap-2 cursor-pointer p-3 bg-brand-light rounded-lg border border-brand-light hover:bg-brand-light transition-colors">
               <input type="checkbox" checked={formData.checkPressurizacao} onChange={e => setFormData({ ...formData, checkPressurizacao: e.target.checked })}
-                className="w-4 h-4 rounded text-blue-600 focus:ring-blue-500" />
+                className="w-4 h-4 rounded text-brand-blue focus:ring-brand-blue" />
               <span className="text-sm text-brand-blue font-medium">Pressurização OK</span>
             </label>
 
-            <label className="flex items-center gap-2 cursor-pointer p-3 bg-brand-light rounded-lg border border-blue-100 hover:bg-brand-light transition-colors">
+            <label className="flex items-center gap-2 cursor-pointer p-3 bg-brand-light rounded-lg border border-brand-light hover:bg-brand-light transition-colors">
               <input type="checkbox" checked={formData.checkAnel} onChange={e => setFormData({ ...formData, checkAnel: e.target.checked })}
-                className="w-4 h-4 rounded text-blue-600 focus:ring-blue-500" />
+                className="w-4 h-4 rounded text-brand-blue focus:ring-brand-blue" />
               <span className="text-sm text-brand-blue font-medium">Anel OK</span>
             </label>
 
-            <label className="flex items-center gap-2 cursor-pointer p-3 bg-brand-light rounded-lg border border-blue-100 hover:bg-brand-light transition-colors">
+            <label className="flex items-center gap-2 cursor-pointer p-3 bg-brand-light rounded-lg border border-brand-light hover:bg-brand-light transition-colors">
               <input type="checkbox" checked={formData.checkPino} onChange={e => setFormData({ ...formData, checkPino: e.target.checked })}
-                className="w-4 h-4 rounded text-blue-600 focus:ring-blue-500" />
+                className="w-4 h-4 rounded text-brand-blue focus:ring-brand-blue" />
               <span className="text-sm text-brand-blue font-medium">Pino OK</span>
             </label>
           </div>
         </div>
 
-        <div className="flex justify-end gap-3 pt-6 border-t border-blue-100">
+        <div className="flex justify-end gap-3 pt-6 border-t border-brand-light">
           <button type="button" onClick={onCancel}
-            className="px-6 py-2.5 text-sm font-semibold text-blue-600 bg-blue-100 hover:bg-blue-200 rounded-xl transition-colors">
+            className="px-6 py-2.5 text-sm font-semibold text-brand-blue bg-brand-light hover:bg-brand-light rounded-xl transition-colors">
             Cancelar
           </button>
           <button type="submit"

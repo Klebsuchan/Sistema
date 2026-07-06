@@ -23,15 +23,24 @@ const files = walkSync('./src');
 files.forEach(file => {
   let content = fs.readFileSync(file, 'utf8');
   
-  // Replace colors
-  content = content.replace(/\b(text|bg|border|ring|fill|stroke|shadow|divide)-(gray|neutral|slate|zinc|stone|emerald|green|amber|yellow|orange|teal|cyan|sky|indigo|violet|purple|fuchsia|pink|rose)-/g, function(match, prefix, color) {
-    if (['emerald', 'green', 'teal', 'cyan', 'sky', 'indigo', 'violet', 'purple', 'fuchsia', 'pink', 'rose'].includes(color)) return `${prefix}-blue-`;
-    if (['gray', 'neutral', 'slate', 'zinc', 'stone'].includes(color)) return `${prefix}-blue-`;
-    if (['amber', 'yellow', 'orange'].includes(color)) return `${prefix}-red-`;
-    return match;
+  content = content.replace(/\b(text|bg|border|ring|fill|stroke|shadow|divide)-(blue)-([0-9]+)(\/[0-9]+)?\b/g, function(match, prefix, color, shade, alpha) {
+    alpha = alpha || '';
+    shade = parseInt(shade);
+    if (shade < 400 && prefix === 'bg') return `${prefix}-brand-light${alpha}`;
+    if (shade < 400 && prefix === 'border') return `${prefix}-brand-light${alpha}`;
+    if (shade < 400 && prefix === 'divide') return `${prefix}-brand-light${alpha}`;
+    if (shade === 50 || shade === 100) return `${prefix}-brand-light${alpha}`;
+    return `${prefix}-brand-blue${alpha}`;
+  });
+
+  content = content.replace(/\b(text|bg|border|ring|fill|stroke|shadow|divide)-(red)-([0-9]+)(\/[0-9]+)?\b/g, function(match, prefix, color, shade, alpha) {
+    alpha = alpha || '';
+    shade = parseInt(shade);
+    if (shade < 300 && prefix === 'bg') return `${prefix}-brand-light${alpha}`;
+    if (shade < 300 && prefix === 'border') return `${prefix}-brand-light${alpha}`;
+    return `${prefix}-brand-red${alpha}`;
   });
 
   fs.writeFileSync(file, content);
 });
-
-console.log("Colors replaced!");
+console.log("Colors updated!");

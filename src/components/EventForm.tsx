@@ -72,9 +72,9 @@ export function EventForm({ onSave, initialData, onCancel }: EventFormProps) {
   };
 
   return (
-    <form onSubmit={handleSubmit} className="bg-white p-6 rounded-2xl shadow-sm border border-blue-100 max-w-4xl mx-auto">
-      <div className="flex items-center gap-2 mb-8 border-b border-blue-100 pb-4">
-        <Activity className="h-6 w-6 text-blue-600" />
+    <form onSubmit={handleSubmit} className="bg-white p-6 rounded-2xl shadow-sm border border-brand-light max-w-4xl mx-auto">
+      <div className="flex items-center gap-2 mb-8 border-b border-brand-light pb-4">
+        <Activity className="h-6 w-6 text-brand-blue" />
         <h2 className="text-xl font-bold text-brand-blue">
           {initialData ? 'Editar Evento Crítico' : 'Registrar Novo Evento'}
         </h2>
@@ -84,29 +84,29 @@ export function EventForm({ onSave, initialData, onCancel }: EventFormProps) {
         {/* Date / Time */}
         <div className="space-y-2">
           <label className="text-sm font-semibold text-brand-blue flex items-center gap-2">
-            <Calendar className="h-4 w-4 text-blue-400" /> Data
+            <Calendar className="h-4 w-4 text-brand-blue" /> Data
           </label>
           <input required type="date" value={date} onChange={(e) => setDate(e.target.value)}
-            className="w-full px-4 py-2.5 bg-brand-light border border-blue-200 rounded-xl focus:ring-2 focus:ring-blue-500 focus:border-transparent transition-all outline-none"
+            className="w-full px-4 py-2.5 bg-brand-light border border-brand-light rounded-xl focus:ring-2 focus:ring-brand-blue focus:border-transparent transition-all outline-none"
           />
         </div>
 
         <div className="space-y-2">
           <label className="text-sm font-semibold text-brand-blue flex items-center gap-2">
-            <Clock className="h-4 w-4 text-blue-400" /> Hora
+            <Clock className="h-4 w-4 text-brand-blue" /> Hora
           </label>
           <input required type="time" value={time} onChange={(e) => setTime(e.target.value)}
-            className="w-full px-4 py-2.5 bg-brand-light border border-blue-200 rounded-xl focus:ring-2 focus:ring-blue-500 focus:border-transparent transition-all outline-none"
+            className="w-full px-4 py-2.5 bg-brand-light border border-brand-light rounded-xl focus:ring-2 focus:ring-brand-blue focus:border-transparent transition-all outline-none"
           />
         </div>
 
         {/* Location */}
         <div className="space-y-2">
           <label className="text-sm font-semibold text-brand-blue flex items-center gap-2">
-            <Building className="h-4 w-4 text-blue-400" /> Prédio
+            <Building className="h-4 w-4 text-brand-blue" /> Prédio
           </label>
           <select required value={building} onChange={(e) => setBuilding(e.target.value)}
-            className="w-full px-4 py-2.5 bg-brand-light border border-blue-200 rounded-xl focus:ring-2 focus:ring-blue-500 focus:border-transparent transition-all outline-none"
+            className="w-full px-4 py-2.5 bg-brand-light border border-brand-light rounded-xl focus:ring-2 focus:ring-brand-blue focus:border-transparent transition-all outline-none"
           >
             <option value="" disabled>Selecione um prédio...</option>
             {BUILDINGS.map(b => <option key={b} value={b}>{b}</option>)}
@@ -115,27 +115,27 @@ export function EventForm({ onSave, initialData, onCancel }: EventFormProps) {
 
         <div className="space-y-2">
           <label className="text-sm font-semibold text-brand-blue flex items-center gap-2">
-            <MapPin className="h-4 w-4 text-blue-400" /> Andar
+            <MapPin className="h-4 w-4 text-brand-blue" /> Andar
           </label>
           <input required type="text" placeholder="Ex: 3º Andar" value={floor} onChange={(e) => setFloor(e.target.value)}
-            className="w-full px-4 py-2.5 bg-brand-light border border-blue-200 rounded-xl focus:ring-2 focus:ring-blue-500 focus:border-transparent transition-all outline-none"
+            className="w-full px-4 py-2.5 bg-brand-light border border-brand-light rounded-xl focus:ring-2 focus:ring-brand-blue focus:border-transparent transition-all outline-none"
           />
         </div>
 
         <div className="space-y-2">
           <label className="text-sm font-semibold text-brand-blue">Setor</label>
           <input required type="text" placeholder="Ex: Oncologia" value={sector} onChange={(e) => setSector(e.target.value)}
-            className="w-full px-4 py-2.5 bg-brand-light border border-blue-200 rounded-xl focus:ring-2 focus:ring-blue-500 focus:border-transparent transition-all outline-none"
+            className="w-full px-4 py-2.5 bg-brand-light border border-brand-light rounded-xl focus:ring-2 focus:ring-brand-blue focus:border-transparent transition-all outline-none"
           />
         </div>
 
         {/* Details */}
         <div className="space-y-2">
           <label className="text-sm font-semibold text-brand-blue flex items-center gap-2">
-            <AlertCircle className="h-4 w-4 text-blue-400" /> Motivo
+            <AlertCircle className="h-4 w-4 text-brand-blue" /> Motivo
           </label>
           <select required value={reason} onChange={(e) => setReason(e.target.value)}
-            className="w-full px-4 py-2.5 bg-brand-light border border-blue-200 rounded-xl focus:ring-2 focus:ring-blue-500 focus:border-transparent transition-all outline-none"
+            className="w-full px-4 py-2.5 bg-brand-light border border-brand-light rounded-xl focus:ring-2 focus:ring-brand-blue focus:border-transparent transition-all outline-none"
           >
             <option value="" disabled>Selecione um motivo...</option>
             {REASONS.map(r => <option key={r} value={r}>{r}</option>)}
@@ -145,7 +145,7 @@ export function EventForm({ onSave, initialData, onCancel }: EventFormProps) {
         <div className="space-y-2">
           <label className="text-sm font-semibold text-brand-blue">Prioridade</label>
           <select value={priority} onChange={(e) => setPriority(e.target.value as any)}
-            className="w-full px-4 py-2.5 bg-brand-light border border-blue-200 rounded-xl focus:ring-2 focus:ring-blue-500 focus:border-transparent transition-all outline-none"
+            className="w-full px-4 py-2.5 bg-brand-light border border-brand-light rounded-xl focus:ring-2 focus:ring-brand-blue focus:border-transparent transition-all outline-none"
           >
             <option value="Baixa">Baixa</option>
             <option value="Média">Média</option>
@@ -157,10 +157,10 @@ export function EventForm({ onSave, initialData, onCancel }: EventFormProps) {
         {/* O.S Info */}
         <div className="space-y-2">
           <label className="text-sm font-semibold text-brand-blue flex items-center gap-2">
-            <FileText className="h-4 w-4 text-blue-400" /> Status O.S
+            <FileText className="h-4 w-4 text-brand-blue" /> Status O.S
           </label>
           <select value={osStatus} onChange={(e) => setOsStatus(e.target.value as any)}
-            className="w-full px-4 py-2.5 bg-brand-light border border-blue-200 rounded-xl focus:ring-2 focus:ring-blue-500 focus:border-transparent transition-all outline-none"
+            className="w-full px-4 py-2.5 bg-brand-light border border-brand-light rounded-xl focus:ring-2 focus:ring-brand-blue focus:border-transparent transition-all outline-none"
           >
             {OS_STATUSES.map(os => <option key={os} value={os}>{os}</option>)}
           </select>
@@ -169,45 +169,45 @@ export function EventForm({ onSave, initialData, onCancel }: EventFormProps) {
         <div className="space-y-2">
           <label className="text-sm font-semibold text-brand-blue">Nº de O.S</label>
           <input type="text" placeholder="Ex: OS-12345" value={numeroOS} onChange={(e) => setNumeroOS(e.target.value)}
-            className="w-full px-4 py-2.5 bg-brand-light border border-blue-200 rounded-xl focus:ring-2 focus:ring-blue-500 focus:border-transparent transition-all outline-none"
+            className="w-full px-4 py-2.5 bg-brand-light border border-brand-light rounded-xl focus:ring-2 focus:ring-brand-blue focus:border-transparent transition-all outline-none"
           />
         </div>
 
         <div className="space-y-2 md:col-span-2">
           <label className="text-sm font-semibold text-brand-blue">Atendimento Final</label>
           <textarea placeholder="Descrição do atendimento e resolução..." rows={3} value={atendimentoFinal} onChange={(e) => setAtendimentoFinal(e.target.value)}
-            className="w-full px-4 py-2.5 bg-brand-light border border-blue-200 rounded-xl focus:ring-2 focus:ring-blue-500 focus:border-transparent transition-all outline-none resize-none"
+            className="w-full px-4 py-2.5 bg-brand-light border border-brand-light rounded-xl focus:ring-2 focus:ring-brand-blue focus:border-transparent transition-all outline-none resize-none"
           />
         </div>
 
         {/* Toggles */}
         <div className="md:col-span-2 grid grid-cols-2 gap-4 mt-2">
-          <label className="flex items-center gap-3 p-4 border border-blue-100 rounded-xl cursor-pointer hover:bg-brand-light transition-colors">
+          <label className="flex items-center gap-3 p-4 border border-brand-light rounded-xl cursor-pointer hover:bg-brand-light transition-colors">
             <input type="checkbox" checked={isFalseAlarm} onChange={(e) => setIsFalseAlarm(e.target.checked)}
-              className="w-5 h-5 rounded border-blue-300 text-blue-600 focus:ring-blue-500"
+              className="w-5 h-5 rounded border-brand-light text-brand-blue focus:ring-brand-blue"
             />
             <span className="font-medium text-brand-blue flex items-center gap-2">
-              <HelpCircle className="h-4 w-4 text-blue-400" />
+              <HelpCircle className="h-4 w-4 text-brand-blue" />
               Alarme Falso
             </span>
           </label>
 
-          <label className="flex items-center gap-3 p-4 border border-blue-100 rounded-xl cursor-pointer hover:bg-brand-light transition-colors">
+          <label className="flex items-center gap-3 p-4 border border-brand-light rounded-xl cursor-pointer hover:bg-brand-light transition-colors">
             <input type="checkbox" checked={attended} onChange={(e) => setAttended(e.target.checked)}
-              className="w-5 h-5 rounded border-blue-300 text-blue-600 focus:ring-blue-500"
+              className="w-5 h-5 rounded border-brand-light text-brand-blue focus:ring-brand-blue"
             />
             <span className="font-medium text-brand-blue flex items-center gap-2">
-              <ShieldCheck className="h-4 w-4 text-blue-500" />
+              <ShieldCheck className="h-4 w-4 text-brand-blue" />
               Atendido / Verificado
             </span>
           </label>
         </div>
       </div>
 
-      <div className="mt-8 flex justify-end gap-3 pt-6 border-t border-blue-100">
+      <div className="mt-8 flex justify-end gap-3 pt-6 border-t border-brand-light">
         {onCancel && (
           <button type="button" onClick={onCancel}
-            className="px-6 py-2.5 text-sm font-semibold text-blue-600 hover:text-brand-blue bg-blue-100 hover:bg-blue-200 rounded-xl transition-colors"
+            className="px-6 py-2.5 text-sm font-semibold text-brand-blue hover:text-brand-blue bg-brand-light hover:bg-brand-light rounded-xl transition-colors"
           >
             Cancelar
           </button>

@@ -139,38 +139,38 @@ export function Dashboard({ eventsData }: DashboardProps) {
     <div className="space-y-6">
 
       {/* Filtros de Data */}
-      <div className="bg-white p-5 rounded-2xl shadow-sm border border-blue-100 flex flex-col sm:flex-row sm:items-center justify-between gap-4">
+      <div className="bg-white p-5 rounded-2xl shadow-sm border border-brand-light flex flex-col sm:flex-row sm:items-center justify-between gap-4">
         <div className="flex items-center gap-3 text-brand-blue">
-          <div className="p-2 bg-blue-100 rounded-lg">
-            <CalendarIcon className="h-5 w-5 text-blue-600" />
+          <div className="p-2 bg-brand-light rounded-lg">
+            <CalendarIcon className="h-5 w-5 text-brand-blue" />
           </div>
           <span className="font-medium text-sm">Filtro de Período (Dia, Mês, Ano)</span>
         </div>
         
         <div className="flex flex-col sm:flex-row items-center gap-3">
           <div className="flex items-center gap-2 w-full sm:w-auto">
-            <label className="text-xs font-medium text-blue-500 uppercase tracking-wider">Início</label>
+            <label className="text-xs font-medium text-brand-blue uppercase tracking-wider">Início</label>
             <input 
               type="date" 
               value={startDate}
               onChange={(e) => setStartDate(e.target.value)}
-              className="px-3 py-1.5 bg-brand-light border border-blue-200 rounded-lg text-sm text-brand-blue focus:outline-none focus:ring-2 focus:ring-blue-500 flex-1"
+              className="px-3 py-1.5 bg-brand-light border border-brand-light rounded-lg text-sm text-brand-blue focus:outline-none focus:ring-2 focus:ring-brand-blue flex-1"
             />
           </div>
           <div className="flex items-center gap-2 w-full sm:w-auto">
-            <label className="text-xs font-medium text-blue-500 uppercase tracking-wider">Fim</label>
+            <label className="text-xs font-medium text-brand-blue uppercase tracking-wider">Fim</label>
             <input 
               type="date" 
               value={endDate}
               onChange={(e) => setEndDate(e.target.value)}
-              className="px-3 py-1.5 bg-brand-light border border-blue-200 rounded-lg text-sm text-brand-blue focus:outline-none focus:ring-2 focus:ring-blue-500 flex-1"
+              className="px-3 py-1.5 bg-brand-light border border-brand-light rounded-lg text-sm text-brand-blue focus:outline-none focus:ring-2 focus:ring-brand-blue flex-1"
             />
           </div>
           
           {(startDate || endDate) && (
             <button 
               onClick={clearFilters}
-              className="flex items-center gap-1.5 px-3 py-1.5 text-sm font-medium text-blue-600 bg-brand-light rounded-lg hover:bg-blue-100 transition-colors w-full sm:w-auto justify-center"
+              className="flex items-center gap-1.5 px-3 py-1.5 text-sm font-medium text-brand-blue bg-brand-light rounded-lg hover:bg-brand-light transition-colors w-full sm:w-auto justify-center"
             >
               <FilterX className="h-4 w-4" />
               Limpar
@@ -181,48 +181,48 @@ export function Dashboard({ eventsData }: DashboardProps) {
       
       {/* KPI Cards */}
       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
-        <div className="bg-white p-6 rounded-2xl shadow-sm border border-blue-100 flex flex-col justify-between">
+        <div className="bg-white p-6 rounded-2xl shadow-sm border border-brand-light flex flex-col justify-between">
           <div className="flex items-center justify-between mb-4">
-            <span className="text-sm font-medium text-blue-500">Total de Eventos</span>
-            <div className="p-2 bg-brand-light rounded-lg text-blue-600">
+            <span className="text-sm font-medium text-brand-blue">Total de Eventos</span>
+            <div className="p-2 bg-brand-light rounded-lg text-brand-blue">
               <Activity className="h-5 w-5" />
             </div>
           </div>
           <div>
             <h3 className="text-3xl font-bold text-brand-blue">{totalEvents}</h3>
-            <p className="text-sm text-blue-600 font-medium mt-1">Registros no sistema</p>
+            <p className="text-sm text-brand-blue font-medium mt-1">Registros no sistema</p>
           </div>
         </div>
 
-        <div className="bg-white p-6 rounded-2xl shadow-sm border border-blue-100 flex flex-col justify-between">
+        <div className="bg-white p-6 rounded-2xl shadow-sm border border-brand-light flex flex-col justify-between">
           <div className="flex items-center justify-between mb-4">
-            <span className="text-sm font-medium text-blue-500">Taxa Fumaça vs Bateria</span>
-            <div className={`p-2 rounded-lg bg-red-50 text-brand-red`}>
+            <span className="text-sm font-medium text-brand-blue">Taxa Fumaça vs Bateria</span>
+            <div className={`p-2 rounded-lg bg-brand-light text-brand-red`}>
               <Flame className="h-5 w-5" />
             </div>
           </div>
           <div className="flex flex-col gap-1 mt-1">
             <div className="flex justify-between items-center text-sm">
-              <span className="text-blue-500">Fumaça</span>
+              <span className="text-brand-blue">Fumaça</span>
               <span className="font-semibold text-brand-blue">{fumacaRate.toFixed(1)}% ({fumacaEvents})</span>
             </div>
             <div className="flex justify-between items-center text-sm">
-              <span className="text-blue-500">Bateria Baixa</span>
+              <span className="text-brand-blue">Bateria Baixa</span>
               <span className="font-semibold text-brand-blue">{bateriaBaixaRate.toFixed(1)}% ({bateriaBaixaEvents})</span>
             </div>
           </div>
         </div>
 
-        <div className="bg-white p-6 rounded-2xl shadow-sm border border-blue-100 flex flex-col justify-between">
+        <div className="bg-white p-6 rounded-2xl shadow-sm border border-brand-light flex flex-col justify-between">
           <div className="flex items-center justify-between mb-4">
-            <span className="text-sm font-medium text-blue-500">Status O.S (Atendimento)</span>
-            <div className={`p-2 rounded-lg bg-brand-light text-blue-600`}>
+            <span className="text-sm font-medium text-brand-blue">Status O.S (Atendimento)</span>
+            <div className={`p-2 rounded-lg bg-brand-light text-brand-blue`}>
               <CheckCircle className="h-5 w-5" />
             </div>
           </div>
           <div className="flex flex-col gap-1 mt-1">
             <div className="flex justify-between items-center text-xs">
-              <span className="text-blue-600 font-medium">Concluída</span>
+              <span className="text-brand-blue font-medium">Concluída</span>
               <span className="font-semibold">{osConcluida}</span>
             </div>
             <div className="flex justify-between items-center text-xs">
@@ -230,29 +230,29 @@ export function Dashboard({ eventsData }: DashboardProps) {
               <span className="font-semibold">{osNaoConcluida}</span>
             </div>
             <div className="flex justify-between items-center text-xs">
-              <span className="text-blue-400 font-medium">Não Aberta</span>
+              <span className="text-brand-blue font-medium">Não Aberta</span>
               <span className="font-semibold">{osNaoAberta}</span>
             </div>
           </div>
         </div>
 
-        <div className="bg-white p-6 rounded-2xl shadow-sm border border-blue-100 flex flex-col justify-between">
+        <div className="bg-white p-6 rounded-2xl shadow-sm border border-brand-light flex flex-col justify-between">
           <div className="flex items-center justify-between mb-4">
-            <span className="text-sm font-medium text-blue-500">Prédios Afetados</span>
-            <div className="p-2 bg-brand-light rounded-lg text-blue-600">
+            <span className="text-sm font-medium text-brand-blue">Prédios Afetados</span>
+            <div className="p-2 bg-brand-light rounded-lg text-brand-blue">
               <Building className="h-5 w-5" />
             </div>
           </div>
           <div>
             <h3 className="text-3xl font-bold text-brand-blue">{buildingData.length}</h3>
-            <p className="text-sm text-blue-600 font-medium mt-1">Mapeamento Individual</p>
+            <p className="text-sm text-brand-blue font-medium mt-1">Mapeamento Individual</p>
           </div>
         </div>
       </div>
 
       {/* Alertas Críticos Segregados */}
       {criticalEvents.length > 0 && (
-        <div className="bg-white p-6 rounded-2xl shadow-sm border border-red-200 bg-red-50/30">
+        <div className="bg-white p-6 rounded-2xl shadow-sm border border-brand-light bg-brand-light/30">
           <div className="flex items-center gap-3 mb-4 text-brand-red">
             <AlertCircle className="h-6 w-6" />
             <h4 className="text-lg font-bold">Atenção: Eventos Críticos Detalhados ({criticalEvents.length})</h4>
@@ -260,18 +260,18 @@ export function Dashboard({ eventsData }: DashboardProps) {
           
           <div className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-4">
             {criticalEvents.map((evt, idx) => (
-              <div key={idx} className="bg-white p-4 rounded-xl border border-red-100 shadow-sm flex flex-col">
+              <div key={idx} className="bg-white p-4 rounded-xl border border-brand-light shadow-sm flex flex-col">
                 <div className="flex justify-between items-start mb-2">
-                  <span className="font-mono text-xs text-blue-500 bg-blue-100 px-2 py-1 rounded">{evt.id}</span>
-                  <span className="text-xs font-semibold px-2 py-1 rounded-full bg-red-100 text-brand-red uppercase tracking-wider">
+                  <span className="font-mono text-xs text-brand-blue bg-brand-light px-2 py-1 rounded">{evt.id}</span>
+                  <span className="text-xs font-semibold px-2 py-1 rounded-full bg-brand-light text-brand-red uppercase tracking-wider">
                     {evt.priority}
                   </span>
                 </div>
                 <h5 className="font-bold text-brand-blue">{evt.reason}</h5>
-                <p className="text-sm text-blue-600 mt-1">{evt.building} - {evt.floor} - {evt.sector}</p>
-                <div className="mt-3 pt-3 border-t border-blue-100 flex justify-between text-xs text-blue-500">
+                <p className="text-sm text-brand-blue mt-1">{evt.building} - {evt.floor} - {evt.sector}</p>
+                <div className="mt-3 pt-3 border-t border-brand-light flex justify-between text-xs text-brand-blue">
                   <span>{evt.date} às {evt.time}</span>
-                  <span className={evt.osStatus === 'Aberta e Concluída' ? 'text-blue-600' : 'text-brand-red'}>
+                  <span className={evt.osStatus === 'Aberta e Concluída' ? 'text-brand-blue' : 'text-brand-red'}>
                     OS: {evt.osStatus || 'Não Aberta'}
                   </span>
                 </div>
@@ -285,7 +285,7 @@ export function Dashboard({ eventsData }: DashboardProps) {
       <div className="grid grid-cols-1 lg:grid-cols-2 gap-6">
         
         {/* Gráfico O.S */}
-        <div className="bg-white p-6 rounded-2xl shadow-sm border border-blue-100">
+        <div className="bg-white p-6 rounded-2xl shadow-sm border border-brand-light">
           <h4 className="text-base font-semibold text-brand-blue mb-6">Taxa de Atendimento (O.S)</h4>
           <div className="h-64">
             <ResponsiveContainer width="100%" height="100%">
@@ -313,7 +313,7 @@ export function Dashboard({ eventsData }: DashboardProps) {
         </div>
 
         {/* Gráfico Distribuição Prédio */}
-        <div className="bg-white p-6 rounded-2xl shadow-sm border border-blue-100">
+        <div className="bg-white p-6 rounded-2xl shadow-sm border border-brand-light">
           <h4 className="text-base font-semibold text-brand-blue mb-6">Mapeamento Individual por Prédio</h4>
           <div className="h-64">
             <ResponsiveContainer width="100%" height="100%">
@@ -332,7 +332,7 @@ export function Dashboard({ eventsData }: DashboardProps) {
         </div>
 
         {/* Motivos */}
-        <div className="bg-white p-6 rounded-2xl shadow-sm border border-blue-100">
+        <div className="bg-white p-6 rounded-2xl shadow-sm border border-brand-light">
           <h4 className="text-base font-semibold text-brand-blue mb-6">Eventos por Motivo</h4>
           <div className="h-64">
             <ResponsiveContainer width="100%" height="100%">
@@ -351,7 +351,7 @@ export function Dashboard({ eventsData }: DashboardProps) {
         </div>
 
         {/* Prioridades Segregadas */}
-        <div className="bg-white p-6 rounded-2xl shadow-sm border border-blue-100">
+        <div className="bg-white p-6 rounded-2xl shadow-sm border border-brand-light">
           <h4 className="text-base font-semibold text-brand-blue mb-6">Eventos por Prioridade (Segregados)</h4>
           <div className="h-64">
             <ResponsiveContainer width="100%" height="100%">

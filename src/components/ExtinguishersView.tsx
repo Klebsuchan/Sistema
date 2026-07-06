@@ -66,7 +66,7 @@ export function ExtinguishersView({ extinguishers, onAdd, onEdit, onDelete, onEx
   return (
     <div className="space-y-6">
       <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-        <div className="bg-white rounded-2xl shadow-sm border border-blue-100 p-6">
+        <div className="bg-white rounded-2xl shadow-sm border border-brand-light p-6">
           <h3 className="text-sm font-semibold text-brand-blue mb-4">Extintores por Prédio</h3>
           <div className="h-64">
             {metrics.predioData.length > 0 ? (
@@ -90,11 +90,11 @@ export function ExtinguishersView({ extinguishers, onAdd, onEdit, onDelete, onEx
                 </PieChart>
               </ResponsiveContainer>
             ) : (
-              <div className="h-full flex items-center justify-center text-blue-400 text-sm">Sem dados</div>
+              <div className="h-full flex items-center justify-center text-brand-blue text-sm">Sem dados</div>
             )}
           </div>
         </div>
-        <div className="bg-white rounded-2xl shadow-sm border border-blue-100 p-6">
+        <div className="bg-white rounded-2xl shadow-sm border border-brand-light p-6">
           <h3 className="text-sm font-semibold text-brand-blue mb-4">Extintores por Tipo</h3>
           <div className="h-64">
             {metrics.typeData.length > 0 ? (
@@ -118,29 +118,29 @@ export function ExtinguishersView({ extinguishers, onAdd, onEdit, onDelete, onEx
                 </PieChart>
               </ResponsiveContainer>
             ) : (
-              <div className="h-full flex items-center justify-center text-blue-400 text-sm">Sem dados</div>
+              <div className="h-full flex items-center justify-center text-brand-blue text-sm">Sem dados</div>
             )}
           </div>
         </div>
       </div>
 
-      <div className="bg-white rounded-2xl shadow-sm border border-blue-100 overflow-hidden flex flex-col">
-        <div className="p-4 border-b border-blue-100 flex flex-col sm:flex-row gap-4 justify-between items-center bg-brand-light/50">
+      <div className="bg-white rounded-2xl shadow-sm border border-brand-light overflow-hidden flex flex-col">
+        <div className="p-4 border-b border-brand-light flex flex-col sm:flex-row gap-4 justify-between items-center bg-brand-light/50">
           <div className="flex items-center gap-2 w-full sm:w-auto">
             <div className="relative flex-1 sm:w-80">
-              <Search className="absolute left-3 top-1/2 -translate-y-1/2 h-4 w-4 text-blue-400" />
+              <Search className="absolute left-3 top-1/2 -translate-y-1/2 h-4 w-4 text-brand-blue" />
               <input
                 type="text"
                 placeholder="Buscar extintor..."
                 value={searchTerm}
                 onChange={(e) => setSearchTerm(e.target.value)}
-                className="w-full pl-10 pr-4 py-2 bg-white border border-blue-200 rounded-xl focus:ring-2 focus:ring-blue-500 focus:border-transparent outline-none text-sm transition-all shadow-sm"
+                className="w-full pl-10 pr-4 py-2 bg-white border border-brand-light rounded-xl focus:ring-2 focus:ring-brand-blue focus:border-transparent outline-none text-sm transition-all shadow-sm"
               />
             </div>
             <select 
               value={filterPredio}
               onChange={(e) => setFilterPredio(e.target.value)}
-              className="bg-white border border-blue-200 rounded-xl px-4 py-2 text-sm focus:ring-2 focus:ring-blue-500 focus:border-transparent outline-none shadow-sm"
+              className="bg-white border border-brand-light rounded-xl px-4 py-2 text-sm focus:ring-2 focus:ring-brand-blue focus:border-transparent outline-none shadow-sm"
             >
               <option value="TODOS">Todos os Prédios</option>
               {uniquePredios.map(p => <option key={p} value={p}>{p}</option>)}
@@ -150,7 +150,7 @@ export function ExtinguishersView({ extinguishers, onAdd, onEdit, onDelete, onEx
           <div className="flex gap-2 w-full sm:w-auto justify-end">
             <button
               onClick={() => onExport(filtered)}
-              className="flex items-center justify-center gap-2 px-4 py-2 bg-white border border-blue-200 text-brand-blue rounded-xl hover:bg-brand-light transition-colors shadow-sm text-sm font-medium"
+              className="flex items-center justify-center gap-2 px-4 py-2 bg-white border border-brand-light text-brand-blue rounded-xl hover:bg-brand-light transition-colors shadow-sm text-sm font-medium"
             >
               <Download className="h-4 w-4" />
               <span className="hidden sm:inline">Exportar</span>
@@ -168,7 +168,7 @@ export function ExtinguishersView({ extinguishers, onAdd, onEdit, onDelete, onEx
         <div className="overflow-x-auto">
           <table className="w-full text-left border-collapse text-sm">
             <thead>
-              <tr className="bg-brand-light border-b border-blue-100 text-blue-500">
+              <tr className="bg-brand-light border-b border-brand-light text-brand-blue">
                 <th className="px-6 py-4 font-medium whitespace-nowrap">Nº / Patrimônio</th>
                 <th className="px-6 py-4 font-medium whitespace-nowrap">Prédio / Localização</th>
                 <th className="px-6 py-4 font-medium whitespace-nowrap">Tipo / Cap.</th>
@@ -178,51 +178,51 @@ export function ExtinguishersView({ extinguishers, onAdd, onEdit, onDelete, onEx
                 <th className="px-6 py-4 font-medium text-right whitespace-nowrap">Ações</th>
               </tr>
             </thead>
-            <tbody className="divide-y divide-blue-100">
+            <tbody className="divide-y divide-brand-light">
               {filtered.map((ext) => (
                 <tr key={ext.id} className="hover:bg-brand-light/50 transition-colors">
                   <td className="px-6 py-4">
                     <div className="font-semibold text-brand-blue">{ext.num_extintor}</div>
-                    <div className="text-xs text-blue-500 mt-0.5">{ext.patrim}</div>
+                    <div className="text-xs text-brand-blue mt-0.5">{ext.patrim}</div>
                   </td>
                   <td className="px-6 py-4">
                     <div className="font-medium text-brand-blue">{ext.predio || '-'}</div>
-                    <div className="text-xs text-blue-500 mt-0.5">{ext.localizacao}</div>
+                    <div className="text-xs text-brand-blue mt-0.5">{ext.localizacao}</div>
                   </td>
                   <td className="px-6 py-4">
                     <div className="font-medium text-brand-blue">{ext.tipo}</div>
-                    <div className="text-xs text-blue-500 mt-0.5">{ext.cap}</div>
+                    <div className="text-xs text-brand-blue mt-0.5">{ext.cap}</div>
                   </td>
                   <td className="px-6 py-4">
-                    <div className="text-brand-blue"><span className="text-xs text-blue-400">Recarga:</span> {ext.prox_recarga}</div>
-                    <div className="text-brand-blue mt-0.5"><span className="text-xs text-blue-400">Teste:</span> {ext.prox_teste}</div>
+                    <div className="text-brand-blue"><span className="text-xs text-brand-blue">Recarga:</span> {ext.prox_recarga}</div>
+                    <div className="text-brand-blue mt-0.5"><span className="text-xs text-brand-blue">Teste:</span> {ext.prox_teste}</div>
                   </td>
                   <td className="px-6 py-4">
                     <div className="flex flex-col gap-1">
-                      {ext.retiradoParaRecarga && <span className="inline-block px-2 py-0.5 rounded text-[10px] font-bold bg-red-100 text-red-800">Recarga (Retirado)</span>}
-                      {ext.coberturaNoLocal && <span className="inline-block px-2 py-0.5 rounded text-[10px] font-bold bg-blue-100 text-brand-blue">Cobertura Ativa</span>}
+                      {ext.retiradoParaRecarga && <span className="inline-block px-2 py-0.5 rounded text-[10px] font-bold bg-brand-light text-brand-red">Recarga (Retirado)</span>}
+                      {ext.coberturaNoLocal && <span className="inline-block px-2 py-0.5 rounded text-[10px] font-bold bg-brand-light text-brand-blue">Cobertura Ativa</span>}
                     </div>
                   </td>
                   <td className="px-6 py-4">
                     <div className="flex items-center gap-1">
-                      <span className={`w-2 h-2 rounded-full ${ext.checkLacre ? 'bg-blue-500' : 'bg-blue-500'}`} title="Lacre"></span>
-                      <span className={`w-2 h-2 rounded-full ${ext.checkPressurizacao ? 'bg-blue-500' : 'bg-blue-500'}`} title="Pressurização"></span>
-                      <span className={`w-2 h-2 rounded-full ${ext.checkAnel ? 'bg-blue-500' : 'bg-blue-500'}`} title="Anel"></span>
-                      <span className={`w-2 h-2 rounded-full ${ext.checkPino ? 'bg-blue-500' : 'bg-blue-500'}`} title="Pino"></span>
+                      <span className={`w-2 h-2 rounded-full ${ext.checkLacre ? 'bg-brand-blue' : 'bg-brand-blue'}`} title="Lacre"></span>
+                      <span className={`w-2 h-2 rounded-full ${ext.checkPressurizacao ? 'bg-brand-blue' : 'bg-brand-blue'}`} title="Pressurização"></span>
+                      <span className={`w-2 h-2 rounded-full ${ext.checkAnel ? 'bg-brand-blue' : 'bg-brand-blue'}`} title="Anel"></span>
+                      <span className={`w-2 h-2 rounded-full ${ext.checkPino ? 'bg-brand-blue' : 'bg-brand-blue'}`} title="Pino"></span>
                     </div>
                   </td>
                   <td className="px-6 py-4 text-right">
                     <div className="flex items-center justify-end gap-2">
                       <button 
                         onClick={() => onEdit(ext)}
-                        className="p-1.5 text-blue-600 hover:bg-brand-light rounded-lg transition-colors"
+                        className="p-1.5 text-brand-blue hover:bg-brand-light rounded-lg transition-colors"
                         title="Editar"
                       >
                         <Pencil className="w-4 h-4" />
                       </button>
                       <button 
                         onClick={() => onDelete(ext.id)}
-                        className="p-1.5 text-blue-600 hover:bg-brand-light rounded-lg transition-colors"
+                        className="p-1.5 text-brand-blue hover:bg-brand-light rounded-lg transition-colors"
                         title="Excluir"
                       >
                         <Trash2 className="w-4 h-4" />
@@ -233,7 +233,7 @@ export function ExtinguishersView({ extinguishers, onAdd, onEdit, onDelete, onEx
               ))}
               {filtered.length === 0 && (
                 <tr>
-                  <td colSpan={7} className="px-6 py-8 text-center text-blue-500">
+                  <td colSpan={7} className="px-6 py-8 text-center text-brand-blue">
                     Nenhum extintor encontrado com os filtros atuais.
                   </td>
                 </tr>
@@ -242,7 +242,7 @@ export function ExtinguishersView({ extinguishers, onAdd, onEdit, onDelete, onEx
           </table>
         </div>
         
-        <div className="p-4 border-t border-blue-100 bg-brand-light flex items-center justify-between text-xs text-blue-500">
+        <div className="p-4 border-t border-brand-light bg-brand-light flex items-center justify-between text-xs text-brand-blue">
           <div>Total filtrado: <span className="font-semibold text-brand-blue">{filtered.length}</span> extintores</div>
           <div className="flex gap-2">
              <span>Lacre</span>

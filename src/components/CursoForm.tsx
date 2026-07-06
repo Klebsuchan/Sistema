@@ -32,12 +32,12 @@ export function CursoForm({ initialData, onSave, onCancel }: CursoFormProps) {
   };
 
   return (
-    <div className="bg-white rounded-xl shadow-sm border border-blue-200 overflow-hidden max-w-2xl mx-auto">
-      <div className="p-4 border-b border-blue-200 bg-brand-light flex justify-between items-center">
+    <div className="bg-white rounded-xl shadow-sm border border-brand-light overflow-hidden max-w-2xl mx-auto">
+      <div className="p-4 border-b border-brand-light bg-brand-light flex justify-between items-center">
         <h3 className="text-lg font-semibold text-brand-blue">
           {initialData ? 'Editar Agenda de Curso' : 'Nova Agenda de Curso'}
         </h3>
-        <button onClick={onCancel} className="text-blue-400 hover:text-blue-600 transition-colors">
+        <button onClick={onCancel} className="text-brand-blue hover:text-brand-blue transition-colors">
           <X className="h-5 w-5" />
         </button>
       </div>
@@ -48,20 +48,20 @@ export function CursoForm({ initialData, onSave, onCancel }: CursoFormProps) {
             <label className="block text-sm font-medium text-brand-blue">Quantidade (ID)</label>
             <input
               type="text"
-              className="w-full px-3 py-2 border border-blue-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500"
+              className="w-full px-3 py-2 border border-brand-light rounded-md focus:outline-none focus:ring-2 focus:ring-brand-blue"
               value={formData.qtd}
               onChange={e => setFormData({ ...formData, qtd: e.target.value })}
             />
           </div>
 
-          <div className="border-t border-blue-100 pt-4 grid grid-cols-1 md:grid-cols-2 gap-4">
+          <div className="border-t border-brand-light pt-4 grid grid-cols-1 md:grid-cols-2 gap-4">
             <h4 className="md:col-span-2 text-sm font-bold text-brand-blue">Integração</h4>
             <div className="space-y-2">
               <label className="block text-sm font-medium text-brand-blue">Data Integração</label>
               <input
                 type="text"
                 placeholder="Ex: 07/01/2026"
-                className="w-full px-3 py-2 border border-blue-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500"
+                className="w-full px-3 py-2 border border-brand-light rounded-md focus:outline-none focus:ring-2 focus:ring-brand-blue"
                 value={formData.data_integ}
                 onChange={e => setFormData({ ...formData, data_integ: e.target.value })}
               />
@@ -71,20 +71,20 @@ export function CursoForm({ initialData, onSave, onCancel }: CursoFormProps) {
               <input
                 type="text"
                 placeholder="Ex: Quarta-feira"
-                className="w-full px-3 py-2 border border-blue-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500"
+                className="w-full px-3 py-2 border border-brand-light rounded-md focus:outline-none focus:ring-2 focus:ring-brand-blue"
                 value={formData.dia_integ}
                 onChange={e => setFormData({ ...formData, dia_integ: e.target.value })}
               />
             </div>
           </div>
 
-          <div className="border-t border-blue-100 pt-4 grid grid-cols-1 md:grid-cols-3 gap-4">
+          <div className="border-t border-brand-light pt-4 grid grid-cols-1 md:grid-cols-3 gap-4">
             <h4 className="md:col-span-3 text-sm font-bold text-brand-blue">Brigada</h4>
             <div className="space-y-2">
               <label className="block text-sm font-medium text-brand-blue">Data Brigada</label>
               <input
                 type="text"
-                className="w-full px-3 py-2 border border-blue-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500"
+                className="w-full px-3 py-2 border border-brand-light rounded-md focus:outline-none focus:ring-2 focus:ring-brand-blue"
                 value={formData.data_brigada}
                 onChange={e => setFormData({ ...formData, data_brigada: e.target.value })}
               />
@@ -93,7 +93,7 @@ export function CursoForm({ initialData, onSave, onCancel }: CursoFormProps) {
               <label className="block text-sm font-medium text-brand-blue">Dia Brigada</label>
               <input
                 type="text"
-                className="w-full px-3 py-2 border border-blue-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500"
+                className="w-full px-3 py-2 border border-brand-light rounded-md focus:outline-none focus:ring-2 focus:ring-brand-blue"
                 value={formData.dia_brigada}
                 onChange={e => setFormData({ ...formData, dia_brigada: e.target.value })}
               />
@@ -102,20 +102,20 @@ export function CursoForm({ initialData, onSave, onCancel }: CursoFormProps) {
               <label className="block text-sm font-medium text-brand-blue">Turno Brigada</label>
               <input
                 type="text"
-                className="w-full px-3 py-2 border border-blue-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500"
+                className="w-full px-3 py-2 border border-brand-light rounded-md focus:outline-none focus:ring-2 focus:ring-brand-blue"
                 value={formData.turno_brigada}
                 onChange={e => setFormData({ ...formData, turno_brigada: e.target.value })}
               />
             </div>
           </div>
 
-          <div className="border-t border-blue-100 pt-4 grid grid-cols-1 md:grid-cols-3 gap-4">
+          <div className="border-t border-brand-light pt-4 grid grid-cols-1 md:grid-cols-3 gap-4">
             <h4 className="md:col-span-3 text-sm font-bold text-brand-blue">Primeiros Socorros</h4>
             <div className="space-y-2">
               <label className="block text-sm font-medium text-brand-blue">Data 1º Socorros</label>
               <input
                 type="text"
-                className="w-full px-3 py-2 border border-blue-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500"
+                className="w-full px-3 py-2 border border-brand-light rounded-md focus:outline-none focus:ring-2 focus:ring-brand-blue"
                 value={formData.data_socorros}
                 onChange={e => setFormData({ ...formData, data_socorros: e.target.value })}
               />
@@ -124,7 +124,7 @@ export function CursoForm({ initialData, onSave, onCancel }: CursoFormProps) {
               <label className="block text-sm font-medium text-brand-blue">Dia 1º Socorros</label>
               <input
                 type="text"
-                className="w-full px-3 py-2 border border-blue-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500"
+                className="w-full px-3 py-2 border border-brand-light rounded-md focus:outline-none focus:ring-2 focus:ring-brand-blue"
                 value={formData.dia_socorros}
                 onChange={e => setFormData({ ...formData, dia_socorros: e.target.value })}
               />
@@ -133,7 +133,7 @@ export function CursoForm({ initialData, onSave, onCancel }: CursoFormProps) {
               <label className="block text-sm font-medium text-brand-blue">Turno 1º Socorros</label>
               <input
                 type="text"
-                className="w-full px-3 py-2 border border-blue-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500"
+                className="w-full px-3 py-2 border border-brand-light rounded-md focus:outline-none focus:ring-2 focus:ring-brand-blue"
                 value={formData.turno_socorros}
                 onChange={e => setFormData({ ...formData, turno_socorros: e.target.value })}
               />
@@ -141,17 +141,17 @@ export function CursoForm({ initialData, onSave, onCancel }: CursoFormProps) {
           </div>
         </div>
 
-        <div className="flex justify-end gap-3 pt-6 border-t border-blue-200">
+        <div className="flex justify-end gap-3 pt-6 border-t border-brand-light">
           <button
             type="button"
             onClick={onCancel}
-            className="px-4 py-2 border border-blue-300 text-brand-blue rounded-md hover:bg-brand-light transition-colors"
+            className="px-4 py-2 border border-brand-light text-brand-blue rounded-md hover:bg-brand-light transition-colors"
           >
             Cancelar
           </button>
           <button
             type="submit"
-            className="px-4 py-2 bg-brand-blue text-white rounded-md hover:bg-blue-800 transition-colors flex items-center gap-2"
+            className="px-4 py-2 bg-brand-blue text-white rounded-md hover:bg-brand-blue transition-colors flex items-center gap-2"
           >
             <Save className="h-4 w-4" />
             Salvar Registro

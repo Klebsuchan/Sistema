@@ -59,7 +59,7 @@ export function DetectorsView({ detectors, onAdd, onEdit, onDelete, onExport }: 
     <div className="space-y-6">
       
       <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-        <div className="bg-white p-6 rounded-xl border border-blue-200 shadow-sm">
+        <div className="bg-white p-6 rounded-xl border border-brand-light shadow-sm">
           <h3 className="text-sm font-semibold text-brand-blue mb-4">Itens por Prédio (Total)</h3>
           <div className="h-64">
             {statsByPredio.length > 0 ? (
@@ -70,17 +70,17 @@ export function DetectorsView({ detectors, onAdd, onEdit, onDelete, onExport }: 
                       <Cell key={`cell-${index}`} fill={COLORS[index % COLORS.length]} />
                     ))}
                   </Pie>
-                  <Tooltip wrapperClassName="text-sm bg-white border border-blue-200 shadow-sm rounded-lg" />
+                  <Tooltip wrapperClassName="text-sm bg-white border border-brand-light shadow-sm rounded-lg" />
                   <Legend iconType="circle" wrapperStyle={{ fontSize: '12px' }} />
                 </PieChart>
               </ResponsiveContainer>
             ) : (
-              <div className="h-full flex items-center justify-center text-blue-400 text-sm">Nenhum dado</div>
+              <div className="h-full flex items-center justify-center text-brand-blue text-sm">Nenhum dado</div>
             )}
           </div>
         </div>
 
-        <div className="bg-white p-6 rounded-xl border border-blue-200 shadow-sm">
+        <div className="bg-white p-6 rounded-xl border border-brand-light shadow-sm">
           <h3 className="text-sm font-semibold text-brand-blue mb-4">Itens por Tipo (Filtro Atual)</h3>
           <div className="h-64">
             {statsByTipo.length > 0 ? (
@@ -91,26 +91,26 @@ export function DetectorsView({ detectors, onAdd, onEdit, onDelete, onExport }: 
                       <Cell key={`cell-${index}`} fill={COLORS[index % COLORS.length]} />
                     ))}
                   </Pie>
-                  <Tooltip wrapperClassName="text-sm bg-white border border-blue-200 shadow-sm rounded-lg" />
+                  <Tooltip wrapperClassName="text-sm bg-white border border-brand-light shadow-sm rounded-lg" />
                   <Legend iconType="circle" wrapperStyle={{ fontSize: '12px' }} />
                 </PieChart>
               </ResponsiveContainer>
             ) : (
-              <div className="h-full flex items-center justify-center text-blue-400 text-sm">Nenhum dado</div>
+              <div className="h-full flex items-center justify-center text-brand-blue text-sm">Nenhum dado</div>
             )}
           </div>
         </div>
       </div>
 
-      <div className="bg-white rounded-xl shadow-sm border border-blue-200 overflow-hidden">
-        <div className="p-4 border-b border-blue-200 bg-brand-light/50 flex flex-col sm:flex-row justify-between items-start sm:items-center gap-4">
+      <div className="bg-white rounded-xl shadow-sm border border-brand-light overflow-hidden">
+        <div className="p-4 border-b border-brand-light bg-brand-light/50 flex flex-col sm:flex-row justify-between items-start sm:items-center gap-4">
           <div className="flex items-center gap-2 text-brand-blue">
-            <Radio className="w-5 h-5 text-blue-600" />
+            <Radio className="w-5 h-5 text-brand-blue" />
             <h4 className="font-semibold text-brand-blue">Detectores e Acionadores</h4>
           </div>
           <div className="flex flex-wrap items-center gap-2 w-full sm:w-auto">
             <select
-              className="px-3 py-2 border border-blue-300 rounded-md text-sm focus:outline-none focus:ring-2 focus:ring-blue-500 bg-white"
+              className="px-3 py-2 border border-brand-light rounded-md text-sm focus:outline-none focus:ring-2 focus:ring-brand-blue bg-white"
               value={tipoFilter}
               onChange={(e) => setTipoFilter(e.target.value)}
             >
@@ -120,19 +120,19 @@ export function DetectorsView({ detectors, onAdd, onEdit, onDelete, onExport }: 
             </select>
             
             <div className="relative flex-grow sm:max-w-xs">
-              <Search className="w-4 h-4 absolute left-3 top-1/2 -tranneutral-y-1/2 text-blue-400" />
+              <Search className="w-4 h-4 absolute left-3 top-1/2 -tranneutral-y-1/2 text-brand-blue" />
               <input
                 type="text"
                 placeholder="Buscar por nº, mac ou local..."
                 value={searchTerm}
                 onChange={(e) => setSearchTerm(e.target.value)}
-                className="w-full pl-9 pr-4 py-2 border border-blue-300 rounded-md text-sm focus:outline-none focus:ring-2 focus:ring-blue-500"
+                className="w-full pl-9 pr-4 py-2 border border-brand-light rounded-md text-sm focus:outline-none focus:ring-2 focus:ring-brand-blue"
               />
             </div>
             
             <button
               onClick={() => onExport(filtered)}
-              className="flex items-center gap-2 px-3 py-2 bg-brand-blue text-white rounded-md hover:bg-blue-800 transition-colors text-sm font-medium whitespace-nowrap"
+              className="flex items-center gap-2 px-3 py-2 bg-brand-blue text-white rounded-md hover:bg-brand-blue transition-colors text-sm font-medium whitespace-nowrap"
             >
               <Download className="w-4 h-4" />
               Exportar PDF
@@ -149,7 +149,7 @@ export function DetectorsView({ detectors, onAdd, onEdit, onDelete, onExport }: 
 
         <div className="overflow-x-auto">
           <table className="w-full text-left text-sm">
-            <thead className="bg-brand-light text-blue-500 uppercase text-xs tracking-wider border-b border-blue-200">
+            <thead className="bg-brand-light text-brand-blue uppercase text-xs tracking-wider border-b border-brand-light">
               <tr>
                 <th className="px-6 py-4 font-semibold">Prédio</th>
                 <th className="px-6 py-4 font-semibold">Número</th>
@@ -159,24 +159,24 @@ export function DetectorsView({ detectors, onAdd, onEdit, onDelete, onExport }: 
                 <th className="px-6 py-4 font-semibold text-right">Ações</th>
               </tr>
             </thead>
-            <tbody className="divide-y divide-blue-100">
+            <tbody className="divide-y divide-brand-light">
               {filtered.map(det => (
                 <tr key={det.id} className="hover:bg-brand-light/50 transition-colors">
-                  <td className="px-6 py-4 whitespace-nowrap text-blue-500 font-medium">{det.predio}</td>
-                  <td className="px-6 py-4 whitespace-nowrap text-sm text-blue-600">{det.numero}</td>
+                  <td className="px-6 py-4 whitespace-nowrap text-brand-blue font-medium">{det.predio}</td>
+                  <td className="px-6 py-4 whitespace-nowrap text-sm text-brand-blue">{det.numero}</td>
                   <td className="px-6 py-4 whitespace-nowrap text-sm text-brand-blue font-mono tracking-tight">{det.endereco_mac}</td>
                   <td className="px-6 py-4 whitespace-nowrap">
-                    <span className="inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-medium bg-blue-100 text-brand-blue">
+                    <span className="inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-medium bg-brand-light text-brand-blue">
                       {det.tipo}
                     </span>
                   </td>
-                  <td className="px-6 py-4 text-sm text-blue-600 max-w-sm truncate">{det.localizacao}</td>
+                  <td className="px-6 py-4 text-sm text-brand-blue max-w-sm truncate">{det.localizacao}</td>
                   <td className="px-6 py-4 whitespace-nowrap text-right text-sm font-medium">
                     <div className="flex items-center justify-end gap-2">
-                      <button onClick={() => onEdit(det)} className="p-1.5 text-blue-400 hover:text-blue-600 hover:bg-blue-100 rounded transition-colors" title="Editar">
+                      <button onClick={() => onEdit(det)} className="p-1.5 text-brand-blue hover:text-brand-blue hover:bg-brand-light rounded transition-colors" title="Editar">
                         <Pencil className="w-4 h-4" />
                       </button>
-                      <button onClick={() => onDelete(det.id)} className="p-1.5 text-red-400 hover:text-brand-red hover:bg-brand-light rounded transition-colors" title="Excluir">
+                      <button onClick={() => onDelete(det.id)} className="p-1.5 text-brand-red hover:text-brand-red hover:bg-brand-light rounded transition-colors" title="Excluir">
                         <Trash2 className="w-4 h-4" />
                       </button>
                     </div>
@@ -186,7 +186,7 @@ export function DetectorsView({ detectors, onAdd, onEdit, onDelete, onExport }: 
               
               {filtered.length === 0 && (
                 <tr>
-                  <td colSpan={6} className="px-6 py-12 text-center text-blue-500">
+                  <td colSpan={6} className="px-6 py-12 text-center text-brand-blue">
                     Nenhum item encontrado com a busca.
                   </td>
                 </tr>
@@ -194,7 +194,7 @@ export function DetectorsView({ detectors, onAdd, onEdit, onDelete, onExport }: 
             </tbody>
           </table>
         </div>
-        <div className="px-6 py-3 border-t border-blue-200 bg-brand-light text-xs text-blue-500 text-right">
+        <div className="px-6 py-3 border-t border-brand-light bg-brand-light text-xs text-brand-blue text-right">
           Mostrando {filtered.length} de {detectors.length} itens
         </div>
       </div>
