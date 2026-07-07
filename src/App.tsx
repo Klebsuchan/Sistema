@@ -1,3 +1,5 @@
+import { Layout } from "./components/Layout";
+import { SettingsView } from "./components/SettingsView";
 import React, { useState, useEffect } from 'react';
 import logoHSVP from './logohsvp.png';
 import { Dashboard } from './components/Dashboard';
@@ -40,6 +42,14 @@ function safeSetItem(key: string, value: string) {
   try { localStorage.setItem(key, value); } catch (e) { /* ignore */ }
 }
 
+
+const defaultSettings = {
+  buildings: ['CD', 'Edifício Sede', 'Anexo', 'Geral'],
+  sectors: ['C.C', 'Recepção', 'UTI', 'Emergência', 'Patrimônio', 'S.S'],
+  reasons: ['Bateria Baixa', 'Fumaça', 'Teste', 'Manutenção'],
+  extinguisherTypes: ['AP', 'CO2', 'PQS'],
+  detectorTypes: ['Detector de Fumaça', 'Acionador Manual', 'Sirene']
+};
 export default function App() {
   const [isAuthenticated, setIsAuthenticated] = useState(false);
   const [loginPassword, setLoginPassword] = useState('');
@@ -56,6 +66,23 @@ export default function App() {
   const [editingInspecao, setEditingInspecao] = useState<InspecaoAntiga | null>(null);
   const [isMoreMenuOpen, setIsMoreMenuOpen] = useState(false);
   
+  
+  const [settings, setSettings] = useState(() => {
+    const saved = localStorage.getItem('hsvp_settings');
+    if (saved) return JSON.parse(saved);
+    return {
+      buildings: ['CD', 'Edifício Sede', 'Anexo', 'Geral'],
+      sectors: [],
+      reasons: ['Bateria Baixa', 'Fumaça', 'Teste', 'Manutenção', 'Equipamento Removido'],
+      detectorTypes: ['Acionador Manual', 'Detector de Fumaça', 'Sirene'],
+      extinguisherTypes: ['ABC', 'CO2', 'AP', 'BC']
+    };
+  });
+
+  useEffect(() => {
+    localStorage.setItem('hsvp_settings', JSON.stringify(settings));
+  }, [settings]);
+
   const [events, setEvents] = useState<EventData[]>(() => {
     const saved = safeGetItem('hospital_events_data_v2');
     if (saved) {
@@ -427,254 +454,62 @@ export default function App() {
     );
   }
 
+
+  const handleLogout = () => {
+    setIsAuthenticated(false);
+    setLoginPassword('');
+  };
+
+  const getTabTitle = () => {
+    switch(activeTab) {
+      case 'dashboard': return 'Painel Geral';
+      case 'data': return 'Lista de Ocorrências';
+      case 'register': return 'Registrar Ocorrência';
+      case 'extinguishers': case 'extinguisher_form': return 'Extintores';
+      case 'hoses': case 'hose_form': return 'Mangueiras';
+      case 'detectors': case 'detector_form': return 'Detectores';
+      case 'amplifiers': case 'amplifier_form': return 'Amplificadores';
+      case 'inspecoes_antigas': case 'inspecao_form': return 'Histórico de Inspeções';
+      case 'brigada': case 'brigada_form': return 'Brigada EAD 2026';
+      case 'faltas_cursos': case 'falta_form': case 'curso_form': return 'Cursos e Faltas (2026)';
+      case 'settings': return 'Configurações do Sistema';
+      default: return 'Painel de Ocorrências';
+    }
+  };
+
+  const getTabDescription = () => {
+    switch(activeTab) {
+      case 'dashboard': return 'Análise estatística e acompanhamento.';
+      case 'data': return 'Verifique informações detalhadas.';
+      case 'register': return 'Preencha os dados da nova ocorrência.';
+      case 'extinguishers': case 'extinguisher_form': return 'Gestão de extintores.';
+      case 'settings': return 'Gerencie as opções de seleção do sistema.';
+      default: return '';
+    }
+  };
+
   return (
-    <div className="min-h-screen bg-brand-light font-sans text-brand-blue">
-      
-      {/* Top Header */}
-      <header className="bg-brand-blue border-b border-brand-red sticky top-0 z-20 shadow-sm">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          
-          {/* Top Row: Title & Actions */}
-          <div className="flex items-center justify-between py-3 h-auto sm:h-auto">
-            <div className="flex items-center gap-3">
-              <div className="bg-white p-1 rounded-lg shadow-sm"><img src={logoHSVP} alt="HSVP" className="h-8 w-auto object-contain" /></div>
-              <h1 className="text-lg sm:text-2xl font-bold tracking-tight text-white drop-shadow-md truncate max-w-[180px] sm:max-w-none">Painel de Ocorrências</h1>
-            </div>
-            
-            <div className="flex items-center gap-2">
-              <label className="flex items-center gap-2 bg-brand-light hover:bg-brand-light text-brand-blue px-3 py-2 sm:py-2.5 rounded-lg text-sm font-semibold transition-colors cursor-pointer">
-                <Upload className="h-4 w-4" />
-                <span className="hidden sm:inline">Restaurar</span>
-                <input type="file" accept=".json" className="hidden" onChange={handleRestore} />
-              </label>
-              
-              <button
-                onClick={handleBackup}
-                className="flex items-center gap-2 bg-brand-blue hover:opacity-90 text-white px-3 py-2 sm:py-2.5 rounded-lg text-sm font-semibold transition-colors"
-              >
-                <Database className="h-4 w-4" />
-                <span className="hidden sm:inline">Backup</span>
-              </button>
-
-              <button
-                onClick={handleExport}
-                disabled={isExporting}
-                className="flex items-center gap-2 bg-brand-red hover:opacity-90 text-white px-3 sm:px-5 py-2 sm:py-2.5 rounded-lg text-sm font-semibold transition-colors disabled:opacity-70"
-              >
-                <Download className={`h-4 w-4 ${isExporting ? 'animate-bounce' : ''}`} />
-                <span className="hidden lg:inline">{isExporting ? 'Montando Excel...' : 'Exportar Planilha Excel'}</span>
-                <span className="hidden sm:inline lg:hidden">{isExporting ? 'Montando...' : 'Exportar'}</span>
-              </button>
-            </div>
-          </div>
-          
-          {/* Bottom Row: Navigation Tabs */}
-          <div className="hidden sm:flex justify-center pb-3">
-            <div className="flex items-center gap-2 bg-brand-blue/60 p-1.5 rounded-xl border border-brand-blue/30">
-              <button
-                onClick={() => setActiveTab('dashboard')}
-                className={`flex items-center gap-2 px-4 py-2 rounded-md text-sm font-medium transition-all ${
-                  activeTab === 'dashboard' ? 'bg-white shadow-sm text-brand-red' : 'text-brand-light hover:text-white hover:bg-brand-light/20'
-                }`}
-              >
-                <LayoutDashboard className="h-4 w-4" />
-                Indicadores
-              </button>
-              <button
-                onClick={() => setActiveTab('data')}
-                className={`flex items-center gap-2 px-4 py-2 rounded-md text-sm font-medium transition-all ${
-                  activeTab === 'data' ? 'bg-white shadow-sm text-brand-red' : 'text-brand-light hover:text-white hover:bg-brand-light/20'
-                }`}
-              >
-                <TableProperties className="h-4 w-4" />
-                Tabela
-              </button>
-              <button
-                onClick={() => setActiveTab('extinguishers')}
-                className={`flex items-center gap-2 px-4 py-2 rounded-md text-sm font-medium transition-all ${
-                  (activeTab === 'extinguishers' || activeTab === 'extinguisher_form') ? 'bg-white shadow-sm text-brand-red' : 'text-brand-light hover:text-white hover:bg-brand-light/20'
-                }`}
-              >
-                <Flame className="h-4 w-4" />
-                Extintores
-              </button>
-              <button
-                onClick={() => { setActiveTab('register'); setIsMoreMenuOpen(false); }}
-                className={`flex items-center gap-2 px-4 py-2 rounded-md text-sm font-medium transition-all ${
-                  activeTab === 'register' ? 'bg-white shadow-sm text-brand-red' : 'text-brand-light hover:text-white hover:bg-brand-light/20'
-                }`}
-              >
-                <PlusCircle className="h-4 w-4" />
-                Registrar
-              </button>
-              
-              <div className="relative">
-                <button
-                  onClick={() => setIsMoreMenuOpen(!isMoreMenuOpen)}
-                  className={`flex items-center gap-2 px-3 py-2 rounded-md text-sm font-medium transition-all ${
-                    ['hoses', 'hose_form', 'detectors', 'detector_form', 'amplifiers', 'amplifier_form', 'inspecoes_antigas', 'brigada', 'faltas_cursos', 'falta_form'].includes(activeTab) ? 'bg-white shadow-sm text-brand-red' : 'text-brand-light hover:text-white hover:bg-brand-light/20'
-                  }`}
-                >
-                  <MoreHorizontal className="h-4 w-4" />
-                  Mais
-                </button>
-                {isMoreMenuOpen && (
-                  <>
-                    <div className="fixed inset-0 z-10" onClick={() => setIsMoreMenuOpen(false)} />
-                    <div className="absolute right-0 mt-2 w-56 bg-white rounded-md shadow-lg border border-brand-light z-20 py-2 flex flex-col gap-1">
-                      <button
-                        onClick={() => { setActiveTab('hoses'); setIsMoreMenuOpen(false); }}
-                        className={`w-full flex items-center gap-2 px-4 py-2 text-sm transition-colors ${
-                          (activeTab === 'hoses' || activeTab === 'hose_form') ? 'bg-brand-light text-brand-red font-medium' : 'text-brand-gray hover:bg-brand-light hover:text-brand-red'
-                        }`}
-                      >
-                        <Box className="h-4 w-4" /> Mangueiras
-                      </button>
-                      <button
-                        onClick={() => { setActiveTab('detectors'); setIsMoreMenuOpen(false); }}
-                        className={`w-full flex items-center gap-2 px-4 py-2 text-sm transition-colors ${
-                          (activeTab === 'detectors' || activeTab === 'detector_form') ? 'bg-brand-light text-brand-red font-medium' : 'text-brand-gray hover:bg-brand-light hover:text-brand-red'
-                        }`}
-                      >
-                        <Radio className="h-4 w-4" /> Detectores
-                      </button>
-                      <button
-                        onClick={() => { setActiveTab('amplifiers'); setIsMoreMenuOpen(false); }}
-                        className={`w-full flex items-center gap-2 px-4 py-2 text-sm transition-colors ${
-                          (activeTab === 'amplifiers' || activeTab === 'amplifier_form') ? 'bg-brand-light text-brand-red font-medium' : 'text-brand-gray hover:bg-brand-light hover:text-brand-red'
-                        }`}
-                      >
-                        <Speaker className="h-4 w-4" /> Amplificadores
-                      </button>
-                      <button
-                        onClick={() => { setActiveTab('inspecoes_antigas'); setIsMoreMenuOpen(false); }}
-                        className={`w-full flex items-center gap-2 px-4 py-2 text-sm transition-colors ${
-                          activeTab === 'inspecoes_antigas' ? 'bg-brand-light text-brand-red font-medium' : 'text-brand-gray hover:bg-brand-light hover:text-brand-red'
-                        }`}
-                      >
-                        <ClipboardList className="h-4 w-4" /> Histórico Inspeções
-                      </button>
-                      <button
-                        onClick={() => { setActiveTab('brigada'); setIsMoreMenuOpen(false); }}
-                        className={`w-full flex items-center gap-2 px-4 py-2 text-sm transition-colors ${
-                          activeTab === 'brigada' ? 'bg-brand-light text-brand-red font-medium' : 'text-brand-gray hover:bg-brand-light hover:text-brand-red'
-                        }`}
-                      >
-                        <Users className="h-4 w-4" /> Brigada EAD
-                      </button>
-                      <button
-                        onClick={() => { setActiveTab('faltas_cursos'); setIsMoreMenuOpen(false); }}
-                        className={`w-full flex items-center gap-2 px-4 py-2 text-sm transition-colors ${
-                          (activeTab === 'faltas_cursos' || activeTab === 'falta_form') ? 'bg-brand-light text-brand-red font-medium' : 'text-brand-gray hover:bg-brand-light hover:text-brand-red'
-                        }`}
-                      >
-                        <CalendarClock className="h-4 w-4" /> Cursos e Faltas
-                      </button>
-                    </div>
-                  </>
-                )}
-              </div>
-            </div>
-          </div>
-        </div>
-      </header>
-
-      {/* Correção para mobile tabs */}
-      <div className="sm:hidden mt-4 px-4 flex gap-2 overflow-x-auto relative pb-2">
-        <button
-          onClick={() => { setActiveTab('dashboard'); setIsMoreMenuOpen(false); }}
-          className={`flex-1 flex justify-center items-center gap-2 px-4 py-3 rounded-lg text-sm font-medium transition-all min-w-[max-content] ${
-            activeTab === 'dashboard' ? 'bg-brand-blue shadow-sm text-white' : 'bg-transparent text-brand-gray hover:opacity-80'
-          }`}
-        >
-          <LayoutDashboard className="h-4 w-4" />
-          Métricas
-        </button>
-        <button
-          onClick={() => { setActiveTab('data'); setIsMoreMenuOpen(false); }}
-          className={`flex-1 flex justify-center items-center gap-2 px-4 py-3 rounded-lg text-sm font-medium transition-all min-w-[max-content] ${
-            activeTab === 'data' ? 'bg-brand-blue shadow-sm text-white' : 'bg-transparent text-brand-gray hover:opacity-80'
-          }`}
-        >
-          <TableProperties className="h-4 w-4" />
-          Dados
-        </button>
-        <button
-          onClick={() => { setActiveTab('extinguishers'); setIsMoreMenuOpen(false); }}
-          className={`flex-1 flex justify-center items-center gap-2 px-4 py-3 rounded-lg text-sm font-medium transition-all min-w-[max-content] ${
-            (activeTab === 'extinguishers' || activeTab === 'extinguisher_form') ? 'bg-brand-blue shadow-sm text-white' : 'bg-transparent text-brand-gray hover:opacity-80'
-          }`}
-        >
-          <Flame className="h-4 w-4" />
-          Extintores
-        </button>
-        <button
-          onClick={() => { setActiveTab('register'); setIsMoreMenuOpen(false); }}
-          className={`flex-1 flex justify-center items-center gap-2 px-4 py-3 rounded-lg text-sm font-medium transition-all min-w-[max-content] ${
-            activeTab === 'register' ? 'bg-brand-blue shadow-sm text-white' : 'bg-transparent text-brand-gray hover:opacity-80'
-          }`}
-        >
-          <PlusCircle className="h-4 w-4" />
-          Novo
-        </button>
-        
-        <div className="relative">
-          <button
-            onClick={() => setIsMoreMenuOpen(!isMoreMenuOpen)}
-            className={`flex-1 flex justify-center items-center gap-2 px-4 py-3 rounded-lg text-sm font-medium transition-all min-w-[max-content] ${
-              ['hoses', 'hose_form', 'detectors', 'detector_form', 'amplifiers', 'amplifier_form', 'inspecoes_antigas', 'brigada', 'faltas_cursos', 'falta_form'].includes(activeTab) ? 'bg-brand-blue shadow-sm text-white' : 'bg-transparent text-brand-gray hover:opacity-80'
-            }`}
-          >
-            <MoreHorizontal className="h-4 w-4" />
-            Mais
-          </button>
-        </div>
-      </div>
-
-      {/* Main Content */}
-      <main className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
-        
-        {/* Header Texto */}
-        <div className="mb-8">
-          <h2 className="text-2xl font-bold tracking-tight sm:text-3xl">
-            {activeTab === 'dashboard' && 'Dashboard de Eventos e Segurança'}
-            {activeTab === 'data' && 'Planilha de Eventos e Disparos'}
-            {activeTab === 'extinguishers' && 'Controle de Extintores'}
-            {activeTab === 'extinguisher_form' && (editingExtinguisher ? 'Editar Extintor' : 'Cadastrar Extintor')}
-            {activeTab === 'hoses' && 'Controle de Mangueiras'}
-            {activeTab === 'hose_form' && (editingHose ? 'Editar Mangueira' : 'Cadastrar Mangueira')}
-            {activeTab === 'detectors' && 'Controle de Detectores e Acionadores'}
-            {activeTab === 'detector_form' && (editingDetector ? 'Editar Item' : 'Cadastrar Item')}
-            {activeTab === 'amplifiers' && 'Controle de Amplificadores'}
-            {activeTab === 'amplifier_form' && (editingAmplifier ? 'Editar Amplificador' : 'Cadastrar Amplificador')}
-            {activeTab === 'inspecoes_antigas' && 'Histórico de Inspeções'}
-            {activeTab === 'brigada' && 'Participantes Brigada EAD (2026)'}
-            {activeTab === 'faltas_cursos' && 'Agenda e Faltas dos Cursos (2026)'}
-            {activeTab === 'falta_form' && (editingFalta ? 'Editar Registro de Falta/Curso' : 'Novo Registro de Falta/Curso')}
-            {activeTab === 'register' && 'Cadastrar Nova Ocorrência'}
-          </h2>
-          <p className="mt-2 text-brand-gray">
-            {activeTab === 'dashboard' && 'Análise estatística e acompanhamento de chamados baseado na sua Planilha de Eventos.'}
-            {activeTab === 'data' && 'Verifique as informações tabulares exportáveis que refletem a aba original do seu PDF / Excel.'}
-            {activeTab === 'extinguishers' && 'Verifique a listagem e os vencimentos dos extintores mapeados no hospital.'}
-            {activeTab === 'extinguisher_form' && 'Preencha os dados do extintor e salve para manter os registros atualizados.'}
-            {activeTab === 'hoses' && 'Verifique a listagem e os testes das mangueiras mapeadas no hospital.'}
-            {activeTab === 'hose_form' && 'Preencha os dados da mangueira e salve para manter os registros atualizados.'}
-            {activeTab === 'detectors' && 'Verifique a listagem de detectores e acionadores mapeados no hospital.'}
-            {activeTab === 'detector_form' && 'Preencha os dados de identificação do item e salve para manter os registros atualizados.'}
-            {activeTab === 'amplifiers' && 'Verifique o status de sincronização dos amplificadores mapeados no hospital.'}
-            {activeTab === 'amplifier_form' && 'Preencha os dados de identificação do amplificador e salve para manter os registros atualizados.'}
-            {activeTab === 'inspecoes_antigas' && 'Visualize o relatório do histórico de inspeções (2024-2025).'}
-            {activeTab === 'brigada' && 'Visualização da lista de participantes formatados no curso da Brigada de Incêndio de 2026.'}
-            {activeTab === 'faltas_cursos' && 'Agenda do ano e lista de colaboradores que faltaram ao Curso da Brigada de Incêndio de 2026.'}
-            {activeTab === 'falta_form' && 'Preencha as informações do colaborador, data de remarcação e status.'}
-            {activeTab === 'register' && 'Preecha os dados abaixo. Após salvar, o app sincroniza o dashboard e o sistema de exportação do Excel.'}
-          </p>
-        </div>
-
-        {/* Render Tab Content */}
+    <Layout
+      activeTab={activeTab}
+      setActiveTab={setActiveTab}
+      onRestore={handleRestore}
+      onBackup={handleBackup}
+      onExport={handleExport}
+      onLogout={handleLogout}
+      isExporting={isExporting}
+      title={getTabTitle()}
+      description={getTabDescription()}
+    >
         {activeTab === 'dashboard' && <Dashboard eventsData={events} />}
         {activeTab === 'data' && <DataView eventsData={events} onEdit={setEditingEvent} onDelete={handleDeleteEvent} onClearAll={handleClearAllEvents} onClearHistory={handleClearHistory} auditLogs={auditLogs} />}
+        {activeTab === 'register' && <EventForm 
+                 initialData={editingEvent} 
+                 onSave={handleAddOrUpdateEvent} 
+                 onCancel={() => setEditingEvent(null)} 
+                 settings={settings}
+               />}
+        {activeTab === 'settings' && <SettingsView settings={settings} onSave={(newSettings) => { setSettings(newSettings); alert('Configurações salvas com sucesso!'); }} />}
+        
         {activeTab === 'extinguishers' && (
           <ExtinguishersView 
             extinguishers={extinguishers} 
@@ -686,22 +521,30 @@ export default function App() {
               setEditingExtinguisher(ext);
               setActiveTab('extinguisher_form');
             }}
-            onDelete={handleDeleteExtinguisher}
-            onExport={handleExportPDF}
+            onDelete={(id) => {
+              if (window.confirm('Tem certeza que deseja excluir?')) {
+                setExtinguishers(prev => prev.filter(e => e.num_extintor !== id));
+                safeAlert('Excluído com sucesso');
+              }
+            }}
+            onExport={(exts) => exportToStructuredExcel(events, exts, hoses, detectors, amplifiers, inspecoes, brigadistas, auditLogs, faltas, cursoDatas)}
           />
         )}
         {activeTab === 'extinguisher_form' && (
-          <ExtinguisherForm
-            initialData={editingExtinguisher}
-            onSave={handleAddOrUpdateExtinguisher}
-            onCancel={() => {
-              setEditingExtinguisher(null);
-              setActiveTab('extinguishers');
-            }}
-          />
+          <ExtinguisherForm settings={settings} initialData={editingExtinguisher} onSave={(ext) => {
+            setExtinguishers(prev => {
+              if (editingExtinguisher) {
+                return prev.map(e => e.num_extintor === ext.num_extintor ? ext : e);
+              }
+              return [...prev, ext];
+            });
+            setActiveTab('extinguishers');
+            safeAlert('Salvo com sucesso!');
+          }} onCancel={() => setActiveTab('extinguishers')} />
         )}
+        
         {activeTab === 'hoses' && (
-          <HosesView
+          <HosesView 
             hoses={hoses}
             onAdd={() => {
               setEditingHose(null);
@@ -712,33 +555,27 @@ export default function App() {
               setActiveTab('hose_form');
             }}
             onDelete={(id) => {
-              setHoses(prev => prev.filter(e => e.id !== id));
+              if (window.confirm('Excluir mangueira?')) {
+                setHoses(prev => prev.filter(h => h.id !== id));
+                safeAlert('Excluído com sucesso');
+              }
             }}
-            onExport={(hosesToExport) => {
-              exportHosesToPDF(hosesToExport);
-            }}
+            onExport={(h) => exportToStructuredExcel(events, extinguishers, h, detectors, amplifiers, inspecoes, brigadistas, auditLogs, faltas, cursoDatas)}
           />
         )}
         {activeTab === 'hose_form' && (
-          <HoseForm
-            initialData={editingHose}
-            onSave={(hose) => {
-              if (editingHose) {
-                setHoses(prev => prev.map(e => e.id === hose.id ? hose : e));
-              } else {
-                setHoses(prev => [hose, ...prev]);
-              }
-              setActiveTab('hoses');
-              setEditingHose(null);
-            }}
-            onCancel={() => {
-              setEditingHose(null);
-              setActiveTab('hoses');
-            }}
-          />
+          <HoseForm settings={settings} initialData={editingHose} onSave={(hose) => {
+            setHoses(prev => {
+              if (editingHose) return prev.map(h => h.id === hose.id ? hose : h);
+              return [...prev, hose];
+            });
+            setActiveTab('hoses');
+            safeAlert('Salvo com sucesso!');
+          }} onCancel={() => setActiveTab('hoses')} />
         )}
+
         {activeTab === 'detectors' && (
-          <DetectorsView
+          <DetectorsView 
             detectors={detectors}
             onAdd={() => {
               setEditingDetector(null);
@@ -749,33 +586,27 @@ export default function App() {
               setActiveTab('detector_form');
             }}
             onDelete={(id) => {
-              setDetectors(prev => prev.filter(e => e.id !== id));
+              if (window.confirm('Excluir item?')) {
+                setDetectors(prev => prev.filter(d => d.id !== id));
+                safeAlert('Excluído com sucesso');
+              }
             }}
-            onExport={(detectorsToExport) => {
-              exportDetectorsToPDF(detectorsToExport);
-            }}
+            onExport={(d) => exportToStructuredExcel(events, extinguishers, hoses, d, amplifiers, inspecoes, brigadistas, auditLogs, faltas, cursoDatas)}
           />
         )}
         {activeTab === 'detector_form' && (
-          <DetectorForm
-            initialData={editingDetector}
-            onSave={(det) => {
-              if (editingDetector) {
-                setDetectors(prev => prev.map(e => e.id === det.id ? det : e));
-              } else {
-                setDetectors(prev => [det, ...prev]);
-              }
-              setActiveTab('detectors');
-              setEditingDetector(null);
-            }}
-            onCancel={() => {
-              setEditingDetector(null);
-              setActiveTab('detectors');
-            }}
-          />
+          <DetectorForm settings={settings} initialData={editingDetector} onSave={(det) => {
+            setDetectors(prev => {
+              if (editingDetector) return prev.map(d => d.id === det.id ? det : d);
+              return [...prev, det];
+            });
+            setActiveTab('detectors');
+            safeAlert('Salvo com sucesso!');
+          }} onCancel={() => setActiveTab('detectors')} />
         )}
+
         {activeTab === 'amplifiers' && (
-          <AmplifiersView
+          <AmplifiersView 
             amplifiers={amplifiers}
             onAdd={() => {
               setEditingAmplifier(null);
@@ -786,34 +617,28 @@ export default function App() {
               setActiveTab('amplifier_form');
             }}
             onDelete={(id) => {
-              setAmplifiers(prev => prev.filter(e => e.id !== id));
+              if (window.confirm('Excluir amplificador?')) {
+                setAmplifiers(prev => prev.filter(a => a.id !== id));
+                safeAlert('Excluído com sucesso');
+              }
             }}
-            onExport={(amplifiersToExport) => {
-              exportAmplifiersToPDF(amplifiersToExport);
-            }}
+            onExport={(amps) => exportToStructuredExcel(events, extinguishers, hoses, detectors, amps, inspecoes, brigadistas, auditLogs, faltas, cursoDatas)}
           />
         )}
         {activeTab === 'amplifier_form' && (
-          <AmplifierForm
-            initialData={editingAmplifier}
-            onSave={(amp) => {
-              if (editingAmplifier) {
-                setAmplifiers(prev => prev.map(e => e.id === amp.id ? amp : e));
-              } else {
-                setAmplifiers(prev => [amp, ...prev]);
-              }
-              setActiveTab('amplifiers');
-              setEditingAmplifier(null);
-            }}
-            onCancel={() => {
-              setEditingAmplifier(null);
-              setActiveTab('amplifiers');
-            }}
-          />
+          <AmplifierForm settings={settings} initialData={editingAmplifier} onSave={(amp) => {
+            setAmplifiers(prev => {
+              if (editingAmplifier) return prev.map(a => a.id === amp.id ? amp : a);
+              return [...prev, amp];
+            });
+            setActiveTab('amplifiers');
+            safeAlert('Salvo com sucesso!');
+          }} onCancel={() => setActiveTab('amplifiers')} />
         )}
+
         {activeTab === 'inspecoes_antigas' && (
           <InspecoesAntigasView 
-            inspecoes={inspecoes} 
+            inspecoes={inspecoes}
             onAdd={() => {
               setEditingInspecao(null);
               setActiveTab('inspecao_form');
@@ -823,9 +648,9 @@ export default function App() {
               setActiveTab('inspecao_form');
             }}
             onDelete={(id) => {
-              if (window.confirm('Excluir inspeção?')) {
+              if(window.confirm('Excluir inspeção?')) {
                 setInspecoes(prev => prev.filter(i => i.id !== id));
-                safeAlert('Inspeção excluída com sucesso!');
+                safeAlert('Excluído');
               }
             }}
             onExport={(insps) => exportToStructuredExcel(events, extinguishers, hoses, detectors, amplifiers, insps, brigadistas, auditLogs, faltas, cursoDatas)}
@@ -833,19 +658,16 @@ export default function App() {
         )}
         
         {activeTab === 'inspecao_form' && (
-          <InspecaoForm 
-            initialData={editingInspecao}
-            onSave={(insp) => {
-              setInspecoes(prev => {
-                if (editingInspecao) return prev.map(i => i.id === insp.id ? insp : i);
-                return [insp, ...prev];
-              });
-              setActiveTab('inspecoes_antigas');
-              safeAlert('Inspeção salva!');
-            }}
-            onCancel={() => setActiveTab('inspecoes_antigas')}
-          />
+          <InspecaoForm settings={settings} initialData={editingInspecao} onSave={(insp) => {
+            setInspecoes(prev => {
+              if (editingInspecao) return prev.map(i => i.id === insp.id ? insp : i);
+              return [insp, ...prev];
+            });
+            setActiveTab('inspecoes_antigas');
+            safeAlert('Inspeção salva!');
+          }} onCancel={() => setActiveTab('inspecoes_antigas')} />
         )}
+
         {activeTab === 'brigada' && (
           <BrigadaView 
             items={brigadistas} 
@@ -884,6 +706,7 @@ export default function App() {
             onCancel={() => setActiveTab('brigada')}
           />
         )}
+
         {activeTab === 'faltas_cursos' && (
           <FaltasDatasView 
             faltas={faltas} 
@@ -908,6 +731,7 @@ export default function App() {
             onDeleteCurso={handleDeleteCurso}
           />
         )}
+
         {activeTab === 'curso_form' && (
           <CursoForm
             initialData={editingCurso}
@@ -918,6 +742,7 @@ export default function App() {
             }}
           />
         )}
+
         {activeTab === 'falta_form' && (
           <FaltaForm
             initialData={editingFalta}
@@ -928,96 +753,20 @@ export default function App() {
             }}
           />
         )}
-        {activeTab === 'register' && <EventForm onSave={handleAddOrUpdateEvent} />}
         
         {/* Modais */}
-        {editingEvent && (
+        {editingEvent && activeTab !== 'register' && (
           <div className="fixed inset-0 bg-black/80 backdrop-blur-sm z-50 flex items-center justify-center p-4 overflow-y-auto">
             <div className="relative w-full max-w-3xl my-8">
               <EventForm 
-                initialData={editingEvent} 
-                onSave={handleAddOrUpdateEvent} 
-                onCancel={() => setEditingEvent(null)} 
-              />
+                 initialData={editingEvent} 
+                 onSave={handleAddOrUpdateEvent} 
+                 onCancel={() => setEditingEvent(null)} 
+                 settings={settings}
+               />
             </div>
           </div>
         )}
-      </main>
-
-      <footer className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8 mt-12 border-t border-brand-light">
-        <div className="flex flex-col items-center justify-center gap-2">
-          <a 
-            href="https://portfolio-braian-three.vercel.app/" 
-            target="_blank" 
-            rel="noopener noreferrer"
-            className="text-brand-gray hover:text-brand-red text-sm font-medium transition-colors"
-          >
-            Desenvolvedor Braian Kmdc
-          </a>
-          <p className="text-xs text-brand-gray">© 2026 FireSafe Hub - Sistema de Gestão de Prevenção</p>
-        </div>
-      </footer>
-
-      {/* Mobile More Menu Overlay (Rendered outside overflow containers) */}
-      {isMoreMenuOpen && (
-        <div className="md:hidden">
-          <div className="fixed inset-0 z-40 bg-black/20 backdrop-blur-sm" onClick={() => setIsMoreMenuOpen(false)} />
-          <div className="fixed bottom-0 left-0 right-0 bg-white rounded-t-2xl shadow-2xl border-t border-brand-light z-50 py-2 px-3 pb-8 flex flex-col gap-1 max-h-[85vh] overflow-y-auto">
-            <div className="flex justify-center pt-2 pb-4 w-full" onClick={() => setIsMoreMenuOpen(false)}>
-              <div className="w-12 h-1.5 bg-brand-light rounded-full" />
-            </div>
-            <button
-              onClick={() => { setActiveTab('hoses'); setIsMoreMenuOpen(false); }}
-              className={`w-full flex items-center gap-3 px-4 py-3.5 text-base rounded-xl transition-colors ${
-                (activeTab === 'hoses' || activeTab === 'hose_form') ? 'bg-brand-light text-brand-blue font-medium' : 'text-brand-blue hover:bg-brand-light hover:opacity-80'
-              }`}
-            >
-              <Box className="h-5 w-5" /> Mangueiras
-            </button>
-            <button
-              onClick={() => { setActiveTab('detectors'); setIsMoreMenuOpen(false); }}
-              className={`w-full flex items-center gap-3 px-4 py-3.5 text-base rounded-xl transition-colors ${
-                (activeTab === 'detectors' || activeTab === 'detector_form') ? 'bg-brand-light text-brand-blue font-medium' : 'text-brand-blue hover:bg-brand-light hover:opacity-80'
-              }`}
-            >
-              <Radio className="h-5 w-5" /> Detectores
-            </button>
-            <button
-              onClick={() => { setActiveTab('amplifiers'); setIsMoreMenuOpen(false); }}
-              className={`w-full flex items-center gap-3 px-4 py-3.5 text-base rounded-xl transition-colors ${
-                (activeTab === 'amplifiers' || activeTab === 'amplifier_form') ? 'bg-brand-light text-brand-blue font-medium' : 'text-brand-blue hover:bg-brand-light hover:opacity-80'
-              }`}
-            >
-              <Speaker className="h-5 w-5" /> Amplificadores
-            </button>
-            <button
-              onClick={() => { setActiveTab('inspecoes_antigas'); setIsMoreMenuOpen(false); }}
-              className={`w-full flex items-center gap-3 px-4 py-3.5 text-base rounded-xl transition-colors ${
-                activeTab === 'inspecoes_antigas' ? 'bg-brand-light text-brand-blue font-medium' : 'text-brand-blue hover:bg-brand-light hover:opacity-80'
-              }`}
-            >
-              <ClipboardList className="h-5 w-5" /> Histórico Inspeções
-            </button>
-            <button
-              onClick={() => { setActiveTab('brigada'); setIsMoreMenuOpen(false); }}
-              className={`w-full flex items-center gap-3 px-4 py-3.5 text-base rounded-xl transition-colors ${
-                activeTab === 'brigada' ? 'bg-brand-light text-brand-blue font-medium' : 'text-brand-blue hover:bg-brand-light hover:opacity-80'
-              }`}
-            >
-              <Users className="h-5 w-5" /> Brigada EAD
-            </button>
-            <button
-              onClick={() => { setActiveTab('faltas_cursos'); setIsMoreMenuOpen(false); }}
-              className={`w-full flex items-center gap-3 px-4 py-3.5 text-base rounded-xl transition-colors ${
-                (activeTab === 'faltas_cursos' || activeTab === 'falta_form') ? 'bg-brand-light text-brand-blue font-medium' : 'text-brand-blue hover:bg-brand-light hover:opacity-80'
-              }`}
-            >
-              <CalendarClock className="h-5 w-5" /> Cursos e Faltas
-            </button>
-          </div>
-        </div>
-      )}
-    </div>
+    </Layout>
   );
 }
-

@@ -3,12 +3,13 @@ import { Hose } from '../data_hoses';
 import { Save, X, ShieldCheck, Droplet } from 'lucide-react';
 
 interface HoseFormProps {
+  settings?: any;
   initialData?: Hose | null;
   onSave: (hose: Hose) => void;
   onCancel: () => void;
 }
 
-export function HoseForm({ initialData, onSave, onCancel }: HoseFormProps) {
+export function HoseForm({ settings, initialData, onSave, onCancel }: HoseFormProps) {
   const [formData, setFormData] = useState<Partial<Hose>>({
     patrim: '',
     num_mangueira: '',
@@ -56,7 +57,7 @@ export function HoseForm({ initialData, onSave, onCancel }: HoseFormProps) {
     onSave(newHose);
   };
 
-  const BUILDINGS = ['CD', 'RAD', 'PA', 'CDR', 'CES'];
+  
 
   return (
     <div className="bg-white p-6 rounded-2xl shadow-sm border border-brand-light max-w-4xl mx-auto">
@@ -89,7 +90,7 @@ export function HoseForm({ initialData, onSave, onCancel }: HoseFormProps) {
             <select required value={formData.predio} onChange={e => setFormData({ ...formData, predio: e.target.value })}
               className="w-full px-4 py-2 bg-brand-light border border-brand-light rounded-xl focus:ring-2 focus:ring-brand-blue focus:border-transparent outline-none">
               <option value="" disabled>Selecione...</option>
-              {BUILDINGS.map(b => <option key={b} value={b}>{b}</option>)}
+              {(settings?.buildings || ['CD', 'Edifício Sede', 'Anexo', 'Geral']).map(b => <option key={b} value={b}>{b}</option>)}
             </select>
           </div>
 

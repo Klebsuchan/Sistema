@@ -3,12 +3,13 @@ import { Extinguisher } from '../data_extintores';
 import { Save, X, CheckSquare, ShieldCheck, Flame } from 'lucide-react';
 
 interface ExtinguisherFormProps {
+  settings?: any;
   initialData?: Extinguisher | null;
   onSave: (extinguisher: Extinguisher) => void;
   onCancel: () => void;
 }
 
-export function ExtinguisherForm({ initialData, onSave, onCancel }: ExtinguisherFormProps) {
+export function ExtinguisherForm({ settings, initialData, onSave, onCancel }: ExtinguisherFormProps) {
   const [formData, setFormData] = useState<Partial<Extinguisher>>({
     patrim: '',
     num_extintor: '',
@@ -56,7 +57,7 @@ export function ExtinguisherForm({ initialData, onSave, onCancel }: Extinguisher
     onSave(newExtinguisher);
   };
 
-  const BUILDINGS = ['CD', 'RAD', 'PA', 'CDR', 'CES'];
+  
 
   return (
     <div className="bg-white p-6 rounded-2xl shadow-sm border border-brand-light max-w-4xl mx-auto">
@@ -89,7 +90,7 @@ export function ExtinguisherForm({ initialData, onSave, onCancel }: Extinguisher
             <select required value={formData.predio} onChange={e => setFormData({ ...formData, predio: e.target.value })}
               className="w-full px-4 py-2 bg-brand-light border border-brand-light rounded-xl focus:ring-2 focus:ring-brand-blue focus:border-transparent outline-none">
               <option value="" disabled>Selecione...</option>
-              {BUILDINGS.map(b => <option key={b} value={b}>{b}</option>)}
+              {(settings?.buildings || ['CD', 'Edifício Sede', 'Anexo', 'Geral']).map(b => <option key={b} value={b}>{b}</option>)}
             </select>
           </div>
 
@@ -103,10 +104,7 @@ export function ExtinguisherForm({ initialData, onSave, onCancel }: Extinguisher
             <label className="text-sm font-semibold text-brand-blue">Tipo</label>
             <select value={formData.tipo} onChange={e => setFormData({ ...formData, tipo: e.target.value })}
               className="w-full px-4 py-2 bg-brand-light border border-brand-light rounded-xl focus:ring-2 focus:ring-brand-blue focus:border-transparent outline-none">
-              <option value="ABC">ABC</option>
-              <option value="CO2">CO2</option>
-              <option value="AP">AP</option>
-              <option value="BC">BC</option>
+              {(settings?.extinguisherTypes || ['ABC', 'CO2', 'AP', 'BC']).map((t: string) => <option key={t} value={t}>{t}</option>)}
             </select>
           </div>
 

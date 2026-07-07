@@ -3,12 +3,13 @@ import { Amplifier } from '../data_amplificadores';
 import { Save, X, Radio } from 'lucide-react';
 
 interface AmplifierFormProps {
+  settings?: any;
   initialData?: Amplifier | null;
   onSave: (amp: Amplifier) => void;
   onCancel: () => void;
 }
 
-export function AmplifierForm({ initialData, onSave, onCancel }: AmplifierFormProps) {
+export function AmplifierForm({ settings, initialData, onSave, onCancel }: AmplifierFormProps) {
   const [formData, setFormData] = useState<Partial<Amplifier>>({
     codigo_mac: '',
     status: 'online/sincronizado',

@@ -3,12 +3,13 @@ import { Detector } from '../data_detectors';
 import { Save, X } from 'lucide-react';
 
 interface DetectorFormProps {
+  settings?: any;
   initialData?: Detector | null;
   onSave: (detector: Detector) => void;
   onCancel: () => void;
 }
 
-export function DetectorForm({ initialData, onSave, onCancel }: DetectorFormProps) {
+export function DetectorForm({ settings, initialData, onSave, onCancel }: DetectorFormProps) {
   const [formData, setFormData] = useState<Partial<Detector>>({
     numero: '',
     endereco_mac: '',
@@ -89,10 +90,7 @@ export function DetectorForm({ initialData, onSave, onCancel }: DetectorFormProp
               value={formData.predio}
               onChange={e => setFormData({...formData, predio: e.target.value})}
             >
-              <option value="Geral">Geral</option>
-              <option value="CD">CD</option>
-              <option value="RAD">RAD</option>
-              <option value="PA">PA</option>
+              {(settings?.buildings || ['Geral', 'CD', 'Edifício Sede']).map((b: string) => <option key={b} value={b}>{b}</option>)}
             </select>
           </div>
 

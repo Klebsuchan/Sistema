@@ -3,12 +3,13 @@ import { InspecaoAntiga } from '../data_inspecoes';
 import { Save, X, ClipboardList } from 'lucide-react';
 
 interface InspecaoFormProps {
+  settings?: any;
   initialData?: InspecaoAntiga | null;
   onSave: (insp: InspecaoAntiga) => void;
   onCancel: () => void;
 }
 
-export function InspecaoForm({ initialData, onSave, onCancel }: InspecaoFormProps) {
+export function InspecaoForm({ settings, initialData, onSave, onCancel }: InspecaoFormProps) {
   const [formData, setFormData] = useState<Partial<InspecaoAntiga>>({
     sheet: 'CD',
     predio: '',
@@ -44,7 +45,7 @@ export function InspecaoForm({ initialData, onSave, onCancel }: InspecaoFormProp
     onSave(newInsp);
   };
 
-  const BUILDINGS = ['CD', 'RAD', 'PA', 'CDR', 'CES'];
+  
 
   return (
     <div className="bg-white p-6 rounded-2xl shadow-sm border border-brand-light max-w-4xl mx-auto">
@@ -72,7 +73,7 @@ export function InspecaoForm({ initialData, onSave, onCancel }: InspecaoFormProp
             <select required value={formData.sheet} onChange={e => setFormData({ ...formData, sheet: e.target.value, predio: e.target.value })}
               className="w-full px-4 py-2 bg-brand-light border border-brand-light rounded-xl focus:ring-2 focus:ring-brand-blue focus:border-transparent outline-none">
               <option value="" disabled>Selecione...</option>
-              {BUILDINGS.map(b => <option key={b} value={b}>{b}</option>)}
+              {(settings?.buildings || ['CD', 'Edifício Sede', 'Anexo', 'Geral']).map(b => <option key={b} value={b}>{b}</option>)}
             </select>
           </div>
 

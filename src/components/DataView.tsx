@@ -13,17 +13,28 @@ interface DataViewProps {
 
 export function DataView({ eventsData, onEdit, onDelete, onClearAll, onClearHistory, auditLogs = [] }: DataViewProps) {
   const [searchTerm, setSearchTerm] = useState('');
+  const [selectedBuilding, setSelectedBuilding] = useState('Todos');
 
   const filteredEvents = useMemo(() => {
-    if (!searchTerm) return eventsData;
+    let filtered = eventsData;
+    if (selectedBuilding !== 'Todos') {
+      filtered = filtered.filter(event => event.building === selectedBuilding);
+    }
+    if (!searchTerm) return filtered;
     const lowerTerm = searchTerm.toLowerCase();
-    return eventsData.filter(event => 
+    return filtered.filter(event => 
       (event.building && event.building.toLowerCase().includes(lowerTerm)) ||
       (event.atendimentoFinal && event.atendimentoFinal.toLowerCase().includes(lowerTerm)) ||
       (event.reason && event.reason.toLowerCase().includes(lowerTerm)) ||
       (event.sector && event.sector.toLowerCase().includes(lowerTerm))
     );
-  }, [eventsData, searchTerm]);
+  }, [eventsData, searchTerm, selectedBuilding]);
+  
+  const uniqueBuildings = useMemo(() => {
+    const buildings = new Set(eventsData.map(e => e.building).filter(Boolean));
+    return Array.from(buildings).sort();
+  }, [eventsData]);
+    
   return (
     <div className="space-y-8">
       
@@ -49,6 +60,18 @@ export function DataView({ eventsData, onEdit, onDelete, onClearAll, onClearHist
             <h4 className="font-semibold text-brand-blue whitespace-nowrap">Visualização de Dados</h4>
           </div>
           <div className="flex flex-col sm:flex-row items-stretch sm:items-center gap-3 w-full md:w-auto">
+            <div className="flex items-center gap-2 w-full sm:w-auto">
+              <select
+                value={selectedBuilding}
+                onChange={(e) => setSelectedBuilding(e.target.value)}
+                className="px-3 py-2 bg-brand-light border border-brand-light rounded-lg text-sm text-brand-blue focus:outline-none focus:ring-2 focus:ring-brand-blue"
+              >
+                <option value="Todos">Todos os Locais</option>
+                {uniqueBuildings.map(b => (
+                  <option key={b} value={b}>{b}</option>
+                ))}
+              </select>
+            </div>
             <div className="relative w-full sm:w-72">
               <Search className="absolute left-3 top-1/2 -translate-y-1/2 h-4 w-4 text-brand-gray" />
               <input

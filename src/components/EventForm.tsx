@@ -3,12 +3,13 @@ import { EventData } from '../data';
 import { AlertCircle, Calendar, Clock, MapPin, Building, ShieldCheck, HelpCircle, Activity, FileText } from 'lucide-react';
 
 interface EventFormProps {
+  settings?: any;
   onSave: (event: EventData) => void;
   initialData?: EventData;
   onCancel?: () => void;
 }
 
-export function EventForm({ onSave, initialData, onCancel }: EventFormProps) {
+export function EventForm({ settings, onSave, initialData, onCancel }: EventFormProps) {
   // Converte data pt-BR para yyyy-mm-dd apenas para popular o input=date
   const parseInitialDate = (dt: string) => {
     if (!dt) return '';
@@ -41,8 +42,8 @@ export function EventForm({ onSave, initialData, onCancel }: EventFormProps) {
   const [atividade, setAtividade] = useState(initialData?.atividade || '');
   const [resultado, setResultado] = useState(initialData?.resultado || '');
 
-  const BUILDINGS = ['CD', 'RAD', 'PA', 'CDR', 'CES'];
-  const REASONS = ['Bateria Baixa', 'Equipamento Removido', 'Fumaça', 'Teste'];
+  
+  
   const OS_STATUSES = ['Aberta e Concluída', 'Aberta e Não Concluída', 'Não Aberta'];
 
   const handleSubmit = (e: React.FormEvent) => {
@@ -109,7 +110,7 @@ export function EventForm({ onSave, initialData, onCancel }: EventFormProps) {
             className="w-full px-4 py-2.5 bg-brand-light border border-brand-light rounded-xl focus:ring-2 focus:ring-brand-blue focus:border-transparent transition-all outline-none"
           >
             <option value="" disabled>Selecione um prédio...</option>
-            {BUILDINGS.map(b => <option key={b} value={b}>{b}</option>)}
+            {(settings?.buildings || ['CD', 'Edifício Sede', 'Anexo', 'Geral']).map(b => <option key={b} value={b}>{b}</option>)}
           </select>
         </div>
 
@@ -124,9 +125,12 @@ export function EventForm({ onSave, initialData, onCancel }: EventFormProps) {
 
         <div className="space-y-2">
           <label className="text-sm font-semibold text-brand-blue">Setor</label>
-          <input required type="text" placeholder="Ex: Oncologia" value={sector} onChange={(e) => setSector(e.target.value)}
+          <input required type="text" list="sectors-list" placeholder="Ex: Oncologia" value={sector} onChange={(e) => setSector(e.target.value)}
             className="w-full px-4 py-2.5 bg-brand-light border border-brand-light rounded-xl focus:ring-2 focus:ring-brand-blue focus:border-transparent transition-all outline-none"
           />
+          <datalist id="sectors-list">
+            {(settings?.sectors || []).map((s: string) => <option key={s} value={s} />)}
+          </datalist>
         </div>
 
         {/* Details */}
@@ -138,7 +142,7 @@ export function EventForm({ onSave, initialData, onCancel }: EventFormProps) {
             className="w-full px-4 py-2.5 bg-brand-light border border-brand-light rounded-xl focus:ring-2 focus:ring-brand-blue focus:border-transparent transition-all outline-none"
           >
             <option value="" disabled>Selecione um motivo...</option>
-            {REASONS.map(r => <option key={r} value={r}>{r}</option>)}
+            {(settings?.reasons || ['Bateria Baixa', 'Fumaça', 'Teste', 'Manutenção']).map(r => <option key={r} value={r}>{r}</option>)}
           </select>
         </div>
 

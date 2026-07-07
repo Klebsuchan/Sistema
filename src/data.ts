@@ -295,3 +295,21 @@ export const eventsData: EventData[] = [
   { id: 'EV-R243', date: '02/06/2026', time: '10h48', building: 'CD', floor: 'Sub.Solo', sector: 'ARM.INTERNA', reason: 'Bateria Baixa', isFalseAlarm: true, attended: false, priority: 'Baixa' },
   { id: 'EV-R244', date: '02/06/2026', time: '11h02', building: 'RAD', floor: 'Sub.Solo', sector: 'ARQUIVO RAIOX', reason: 'Bateria Baixa', isFalseAlarm: true, attended: false, priority: 'Baixa' },
 ];
+
+export interface AppSettings {
+  buildings: string[];
+  reasons: string[];
+  osStatuses: string[];
+  priorities: string[];
+  extinguisherTypes: string[];
+  amplifierStatuses: string[];
+}
+
+export const defaultSettings: AppSettings = {
+  buildings: ['CD', 'RAD', 'PA', 'CDR', 'CES'],
+  reasons: ['Bateria Baixa', 'Equipamento Removido', 'Fumaça', 'Teste'],
+  osStatuses: ['Aberta e Concluída', 'Aberta e Não Concluída', 'Não Aberta'],
+  priorities: ['Baixa', 'Média', 'Alta', 'Crítica'],
+  extinguisherTypes: ['ABC', 'CO2', 'AP', 'BC'],
+  amplifierStatuses: ['Online / Sincronizado', 'Offline', 'Erro']
+};

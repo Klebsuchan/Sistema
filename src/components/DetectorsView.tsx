@@ -16,6 +16,7 @@ const COLORS = ['#0f172a', '#1B2042', '#A51D1A', '#757B8B', '#A51D1A', '#8b5cf6'
 export function DetectorsView({ detectors, onAdd, onEdit, onDelete, onExport }: DetectorsViewProps) {
   const [searchTerm, setSearchTerm] = useState('');
   const [tipoFilter, setTipoFilter] = useState('Todos');
+  const [filterPredio, setFilterPredio] = useState('TODOS');
 
   const filtered = useMemo(() => {
     return detectors.filter(det => {
@@ -26,10 +27,16 @@ export function DetectorsView({ detectors, onAdd, onEdit, onDelete, onExport }: 
         det.localizacao.toLowerCase().includes(searchLower);
       
       const matchesTipo = tipoFilter === 'Todos' || det.tipo === tipoFilter;
+      const matchesPredio = filterPredio === 'TODOS' || det.predio === filterPredio;
       
-      return matchesSearch && matchesTipo;
+      return matchesSearch && matchesTipo && matchesPredio;
     });
   }, [detectors, searchTerm, tipoFilter]);
+
+  const uniquePredios = useMemo(() => {
+    const list = Array.from(new Set(detectors.map(e => e.predio).filter(Boolean))) as string[];
+    return list.sort();
+  }, [detectors]);
 
   const uniqueTipos = useMemo(() => {
     const tipos = new Set(detectors.map(e => e.tipo).filter(Boolean));
