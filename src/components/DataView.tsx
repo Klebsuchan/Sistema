@@ -1,6 +1,7 @@
 import React, { useState, useMemo } from 'react';
 import { EventData, AuditLog } from '../data';
-import { FileText, Database, Edit, Trash2, History, Clock, Search } from 'lucide-react';
+import { FileText, Database, Edit, Trash2, History, Clock, Search, Download } from 'lucide-react';
+import { exportEventsToExcel, exportEventsToPDF } from '../lib/exportUtils';
 
 interface DataViewProps {
   eventsData: EventData[];
@@ -64,7 +65,7 @@ export function DataView({ eventsData, onEdit, onDelete, onClearAll, onClearHist
               <select
                 value={selectedBuilding}
                 onChange={(e) => setSelectedBuilding(e.target.value)}
-                className="px-3 py-2 bg-brand-light border border-brand-light rounded-lg text-sm text-brand-blue focus:outline-none focus:ring-2 focus:ring-brand-blue"
+                className="w-full sm:w-auto px-3 py-2 bg-brand-light border border-brand-light rounded-lg text-sm text-brand-blue focus:outline-none focus:ring-2 focus:ring-brand-blue"
               >
                 <option value="Todos">Todos os Locais</option>
                 {uniqueBuildings.map(b => (
@@ -82,6 +83,8 @@ export function DataView({ eventsData, onEdit, onDelete, onClearAll, onClearHist
                 className="w-full pl-9 pr-4 py-2 bg-brand-light border border-brand-light rounded-lg text-sm text-brand-blue focus:outline-none focus:ring-2 focus:ring-brand-blue"
               />
             </div>
+            <button onClick={() => exportEventsToPDF(filteredEvents)} className="px-3 py-2 text-sm font-medium text-brand-blue border border-brand-light hover:bg-brand-light rounded-lg transition-colors flex items-center justify-center gap-1.5 whitespace-nowrap"><Download className="w-4 h-4"/> PDF</button>
+            <button onClick={() => exportEventsToExcel(filteredEvents)} className="px-3 py-2 text-sm font-medium text-brand-blue border border-brand-light hover:bg-brand-light rounded-lg transition-colors flex items-center justify-center gap-1.5 whitespace-nowrap"><Download className="w-4 h-4"/> Excel</button>
             {eventsData.length > 0 && (
               <button 
                 onClick={onClearAll}
@@ -94,7 +97,7 @@ export function DataView({ eventsData, onEdit, onDelete, onClearAll, onClearHist
           </div>
         </div>
         
-        <div className="overflow-x-auto">
+        <div className="hidden md:block overflow-x-auto">
           <table className="w-full text-left border-collapse min-w-[1000px]">
             <thead>
               <tr className="bg-brand-light border-b border-brand-light text-brand-blue text-sm">

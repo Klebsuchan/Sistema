@@ -80,7 +80,15 @@ export function FaltasDatasView({ faltas, cursoDatas, onAddFalta, onEditFalta, o
               ))}
               {cursoDatas.length === 0 && (
                 <tr>
-                  <td colSpan={6} className="px-6 py-8 text-center text-brand-blue">Nenhum agendamento encontrado.</td>
+                  <td colSpan={10} className="px-6 py-12 text-center">
+                    <div className="flex flex-col items-center justify-center">
+                      <div className="w-12 h-12 bg-brand-light rounded-full flex items-center justify-center mb-3 text-brand-blue">
+                        <span className="text-xl">🔍</span>
+                      </div>
+                      <h3 className="text-base font-semibold text-brand-blue mb-1">Nenhum registro encontrado</h3>
+                      <p className="text-brand-gray text-sm">Não foram encontrados dados com os filtros atuais.</p>
+                    </div>
+                  </td>
                 </tr>
               )}
             </tbody>
@@ -150,7 +158,15 @@ export function FaltasDatasView({ faltas, cursoDatas, onAddFalta, onEditFalta, o
               ))}
               {faltas.length === 0 && (
                 <tr>
-                  <td colSpan={6} className="px-6 py-8 text-center text-brand-blue">Nenhuma falta registrada.</td>
+                  <td colSpan={10} className="px-6 py-12 text-center">
+                    <div className="flex flex-col items-center justify-center">
+                      <div className="w-12 h-12 bg-brand-light rounded-full flex items-center justify-center mb-3 text-brand-blue">
+                        <span className="text-xl">🔍</span>
+                      </div>
+                      <h3 className="text-base font-semibold text-brand-blue mb-1">Nenhum registro encontrado</h3>
+                      <p className="text-brand-gray text-sm">Não foram encontrados dados com os filtros atuais.</p>
+                    </div>
+                  </td>
                 </tr>
               )}
             </tbody>

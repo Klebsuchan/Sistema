@@ -8,3 +8,9 @@
   --color-brand-light: #F4E9E9;
   --color-brand-gray: #757B8B;
 }
+
+@media (max-width: 768px) {
+  input, select, textarea {
+    font-size: 16px !important;
+  }
+}

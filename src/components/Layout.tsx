@@ -40,7 +40,7 @@ export function Layout({
       <aside className={`fixed lg:sticky top-0 h-screen w-64 bg-white border-r border-brand-light shadow-xl lg:shadow-none z-50 transition-transform duration-300 ease-in-out ${isSidebarOpen ? 'translate-x-0' : '-translate-x-full lg:translate-x-0'} flex flex-col`}>
         <div className="p-4 border-b border-brand-light flex items-center justify-between">
           <img src={logoHSVP} alt="HSVP" className="h-10 w-auto object-contain" />
-          <button className="lg:hidden p-2 text-brand-gray hover:text-brand-blue" onClick={() => setIsSidebarOpen(false)}>
+          <button className="lg:hidden p-2.5 text-brand-gray hover:text-brand-blue" onClick={() => setIsSidebarOpen(false)}>
             <X className="w-5 h-5" />
           </button>
         </div>
@@ -104,7 +104,7 @@ export function Layout({
       {/* Main Content */}
       <main className="flex-1 flex flex-col min-w-0 h-screen overflow-hidden">
         <header className="bg-white border-b border-brand-light px-4 py-3 flex items-center gap-4 sticky top-0 z-10 shrink-0">
-          <button className="lg:hidden p-2 text-brand-gray hover:text-brand-blue" onClick={() => setIsSidebarOpen(true)}>
+          <button className="lg:hidden p-2.5 -ml-2 text-brand-gray hover:text-brand-blue" onClick={() => setIsSidebarOpen(true)}>
             <Menu className="w-6 h-6" />
           </button>
           <div className="flex-1">

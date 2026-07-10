@@ -185,7 +185,7 @@ export function EventForm({ settings, onSave, initialData, onCancel }: EventForm
         </div>
 
         {/* Toggles */}
-        <div className="md:col-span-2 grid grid-cols-2 gap-4 mt-2">
+        <div className="md:col-span-2 grid grid-cols-1 sm:grid-cols-2 gap-4 mt-2">
           <label className="flex items-center gap-3 p-4 border border-brand-light rounded-xl cursor-pointer hover:bg-brand-light transition-colors">
             <input type="checkbox" checked={isFalseAlarm} onChange={(e) => setIsFalseAlarm(e.target.checked)}
               className="w-5 h-5 rounded border-brand-light text-brand-blue focus:ring-brand-blue"

@@ -409,7 +409,7 @@ export default function App() {
   if (!isAuthenticated) {
     return (
       <div className="min-h-screen bg-brand-light font-sans text-brand-blue flex items-center justify-center p-4">
-        <div className="bg-white p-8 rounded-2xl shadow-sm border border-brand-light max-w-md w-full">
+        <div className="bg-white p-6 sm:p-8 rounded-2xl shadow-sm border border-brand-light max-w-md w-full">
           <div className="flex justify-center mb-6">
             <img src={logoHSVP} alt="HSVP Logo" className="h-20 w-auto" />
           </div>
@@ -527,7 +527,7 @@ export default function App() {
                 safeAlert('Excluído com sucesso');
               }
             }}
-            onExport={(exts) => exportToStructuredExcel(events, exts, hoses, detectors, amplifiers, inspecoes, brigadistas, auditLogs, faltas, cursoDatas)}
+            
           />
         )}
         {activeTab === 'extinguisher_form' && (
@@ -560,7 +560,7 @@ export default function App() {
                 safeAlert('Excluído com sucesso');
               }
             }}
-            onExport={(h) => exportToStructuredExcel(events, extinguishers, h, detectors, amplifiers, inspecoes, brigadistas, auditLogs, faltas, cursoDatas)}
+            
           />
         )}
         {activeTab === 'hose_form' && (
@@ -591,7 +591,7 @@ export default function App() {
                 safeAlert('Excluído com sucesso');
               }
             }}
-            onExport={(d) => exportToStructuredExcel(events, extinguishers, hoses, d, amplifiers, inspecoes, brigadistas, auditLogs, faltas, cursoDatas)}
+            
           />
         )}
         {activeTab === 'detector_form' && (
@@ -622,7 +622,7 @@ export default function App() {
                 safeAlert('Excluído com sucesso');
               }
             }}
-            onExport={(amps) => exportToStructuredExcel(events, extinguishers, hoses, detectors, amps, inspecoes, brigadistas, auditLogs, faltas, cursoDatas)}
+            
           />
         )}
         {activeTab === 'amplifier_form' && (
@@ -653,7 +653,7 @@ export default function App() {
                 safeAlert('Excluído');
               }
             }}
-            onExport={(insps) => exportToStructuredExcel(events, extinguishers, hoses, detectors, amplifiers, insps, brigadistas, auditLogs, faltas, cursoDatas)}
+            
           />
         )}
         
@@ -685,7 +685,7 @@ export default function App() {
                 safeAlert('Excluído com sucesso');
               }
             }}
-            onExport={(items) => exportToStructuredExcel(events, extinguishers, hoses, detectors, amplifiers, inspecoes, items, auditLogs, faltas, cursoDatas)}
+            
           />
         )}
         

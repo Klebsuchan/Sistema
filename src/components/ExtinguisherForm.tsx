@@ -138,7 +138,7 @@ export function ExtinguisherForm({ settings, initialData, onSave, onCancel }: Ex
             <ShieldCheck className="h-4 w-4 text-brand-blue" /> Checks & Status
           </h4>
           
-          <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4">
+          <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4">
             <label className="flex items-center gap-2 cursor-pointer p-3 bg-brand-light rounded-lg border border-brand-light hover:bg-brand-light transition-colors">
               <input type="checkbox" checked={formData.retiradoParaRecarga} onChange={e => setFormData({ ...formData, retiradoParaRecarga: e.target.checked })}
                 className="w-4 h-4 rounded text-brand-blue focus:ring-brand-blue" />

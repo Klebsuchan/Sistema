@@ -1,4 +1,6 @@
 import React, { useState, useMemo } from 'react';
+import { exportAmplifiersToPDF } from '../lib/pdf';
+import { exportAmplifiersToExcel } from '../lib/exportUtils';
 import { Amplifier } from '../data_amplificadores';
 import { Search, Radio, Download, PlusCircle, Pencil, Trash2, Activity } from 'lucide-react';
 import { PieChart, Pie, Cell, Tooltip, Legend, ResponsiveContainer } from 'recharts';
@@ -8,12 +10,12 @@ interface AmplifiersViewProps {
   onAdd: () => void;
   onEdit: (amp: Amplifier) => void;
   onDelete: (id: string) => void;
-  onExport: (amps: Amplifier[]) => void;
+  
 }
 
 const COLORS = ['#10b981', '#ef4444', '#f59e0b', '#3b82f6'];
 
-export function AmplifiersView({ amplifiers, onAdd, onEdit, onDelete, onExport }: AmplifiersViewProps) {
+export function AmplifiersView({ amplifiers, onAdd, onEdit, onDelete }: AmplifiersViewProps) {
   const [searchTerm, setSearchTerm] = useState('');
   
   const filtered = useMemo(() => amplifiers.filter(amp => {
@@ -104,9 +106,19 @@ export function AmplifiersView({ amplifiers, onAdd, onEdit, onDelete, onExport }
           </div>
           
           <div className="flex gap-2 w-full sm:w-auto justify-end">
-            <button onClick={() => onExport(filtered)} className="flex items-center justify-center gap-2 px-4 py-2 bg-white border border-brand-light text-brand-blue rounded-xl hover:bg-brand-light transition-colors shadow-sm text-sm font-medium">
+            <button
+              onClick={() => exportAmplifiersToPDF(filtered)}
+              className="flex items-center justify-center gap-2 px-3 py-2 bg-white border border-brand-light text-brand-blue rounded-xl hover:bg-brand-light transition-colors shadow-sm text-sm font-medium whitespace-nowrap"
+            >
               <Download className="h-4 w-4" />
-              <span className="hidden sm:inline">Exportar</span>
+              <span className="hidden sm:inline">PDF</span>
+            </button>
+            <button
+              onClick={() => exportAmplifiersToExcel(filtered)}
+              className="flex items-center justify-center gap-2 px-3 py-2 bg-white border border-brand-light text-brand-blue rounded-xl hover:bg-brand-light transition-colors shadow-sm text-sm font-medium whitespace-nowrap"
+            >
+              <Download className="h-4 w-4" />
+              <span className="hidden sm:inline">Excel</span>
             </button>
             <button onClick={onAdd} className="flex items-center justify-center gap-2 px-4 py-2 bg-brand-blue text-white rounded-xl hover:bg-brand-blue transition-colors shadow-sm text-sm font-medium">
               <PlusCircle className="h-4 w-4" />
@@ -115,7 +127,53 @@ export function AmplifiersView({ amplifiers, onAdd, onEdit, onDelete, onExport }
           </div>
         </div>
 
-        <div className="overflow-x-auto">
+        <div className="md:hidden flex flex-col gap-4 p-4 bg-gray-50/50">
+          {filtered.length === 0 ? (
+            <div className="flex flex-col items-center justify-center p-8 bg-white rounded-xl border border-brand-light text-center">
+              <Search className="w-8 h-8 text-brand-blue mb-3 opacity-50" />
+              <h3 className="font-semibold text-brand-blue">Nenhum registro</h3>
+              <p className="text-sm text-brand-gray mt-1">Nenhum amplificador encontrado com os filtros atuais.</p>
+            </div>
+          ) : filtered.map((a) => (
+            <div key={a.id} className="bg-white p-4 rounded-xl shadow-sm border border-brand-light flex flex-col gap-3">
+              <div className="flex justify-between items-start">
+                <div>
+                  <div className="font-bold text-brand-blue text-lg">{a.codigo_mac}</div>
+                  <div className="text-sm text-brand-gray">Sincronização: {a.data_hora}</div>
+                </div>
+                <span className={`px-2 py-1 rounded text-xs font-bold ${a.status === 'Online' ? 'bg-green-100 text-green-700' : 'bg-red-100 text-red-700'}`}>
+                  {a.status}
+                </span>
+              </div>
+              
+              <div className="grid grid-cols-2 gap-2 text-sm bg-brand-light/30 p-2 rounded-lg">
+                <div className="flex flex-col">
+                  <span className="text-brand-gray text-xs uppercase tracking-wide">Grupo</span>
+                  <span className="font-medium text-brand-blue">{a.grupo}</span>
+                </div>
+                <div className="flex flex-col">
+                  <span className="text-brand-gray text-xs uppercase tracking-wide">Itens Associados</span>
+                  <span className="font-medium text-brand-blue">{a.quantidade_itens || '0'} itens</span>
+                </div>
+              </div>
+              
+              <div className="flex flex-col text-sm p-2">
+                <span className="text-brand-gray text-xs uppercase tracking-wide">Localização</span>
+                <span className="font-medium text-brand-blue">{a.localizacao}</span>
+              </div>
+
+              <div className="flex justify-end gap-2 pt-2 border-t border-brand-light mt-1">
+                <button onClick={() => onEdit(a)} className="p-2 text-brand-blue bg-brand-light hover:bg-brand-blue hover:text-white rounded-lg transition-colors">
+                  <Pencil className="w-4 h-4" />
+                </button>
+                <button onClick={() => onDelete(a.id)} className="p-2 text-brand-red bg-red-50 hover:bg-red-100 rounded-lg transition-colors">
+                  <Trash2 className="w-4 h-4" />
+                </button>
+              </div>
+            </div>
+          ))}
+        </div>
+        <div className="hidden md:block overflow-x-auto">
           <table className="w-full text-left border-collapse text-sm">
             <thead>
               <tr className="bg-brand-light border-b border-brand-light text-brand-blue">
