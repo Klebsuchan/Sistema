@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
-import { Save, Plus, Trash2, Settings, Building, MapPin, AlertTriangle, ShieldAlert } from 'lucide-react';
+import { Save, Plus, Trash2, Settings, Building, MapPin, AlertTriangle, ShieldAlert, BookOpen, Download } from 'lucide-react';
+import { exportManualPDF } from '../lib/manual';
 
 interface AppSettings {
   buildings: string[];
@@ -88,6 +89,26 @@ export function SettingsView({ settings, onSave }: SettingsViewProps) {
         >
           <Save className="w-4 h-4" />
           Salvar Tudo
+        </button>
+      </div>
+
+      
+      <div className="bg-white rounded-2xl shadow-sm border border-brand-light p-6">
+        <div className="flex items-center gap-3 mb-4">
+          <div className="bg-brand-light p-2 rounded-xl text-brand-blue">
+            <BookOpen className="w-6 h-6" />
+          </div>
+          <div>
+            <h2 className="text-lg font-bold text-brand-blue">Documentação do Sistema</h2>
+            <p className="text-brand-gray text-sm">Baixe o manual detalhado com todas as regras de negócio, conceitos e explicação das ferramentas.</p>
+          </div>
+        </div>
+        <button 
+          onClick={exportManualPDF}
+          className="flex items-center gap-2 px-6 py-2.5 bg-brand-blue text-white rounded-xl hover:opacity-90 transition-colors font-semibold"
+        >
+          <Download className="w-5 h-5" />
+          Baixar Manual em PDF
         </button>
       </div>
 

@@ -144,7 +144,7 @@ export function BrigadaView({ items, onAdd, onEdit, onDelete }: BrigadaViewProps
               <p className="text-sm text-brand-gray mt-1">Nenhum brigadista encontrado com os filtros atuais.</p>
             </div>
           ) : filtered.map((b) => (
-            <div key={b.id} className="bg-white p-4 rounded-xl shadow-sm border border-brand-light flex flex-col gap-3">
+            <div key={b.qtd} className="bg-white p-4 rounded-xl shadow-sm border border-brand-light flex flex-col gap-3">
               <div className="flex justify-between items-start">
                 <div>
                   <div className="font-bold text-brand-blue text-lg">{b.nome}</div>

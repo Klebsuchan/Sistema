@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { BrigadaItem } from '../data_brigada';
 import { Save, X, User } from 'lucide-react';
+import { Tooltip } from './Tooltip';
 
 interface BrigadaFormProps {
   initialData?: BrigadaItem | null;
@@ -68,7 +69,7 @@ export function BrigadaForm({ initialData, onSave, onCancel }: BrigadaFormProps)
           </div>
 
           <div className="space-y-2">
-            <label className="text-sm font-semibold text-brand-blue">Status Geral</label>
+            <label className="text-sm font-semibold text-brand-blue flex items-center">Status Geral <Tooltip content="Ativo: Continua na Brigada. Desligado: Saiu da empresa ou da equipe." /></label>
             <select value={formData.status} onChange={e => setFormData({ ...formData, status: e.target.value as any })}
               className="w-full px-4 py-2 bg-brand-light border border-brand-light rounded-xl focus:ring-2 focus:ring-brand-blue focus:border-transparent outline-none">
               <option value="ativo">Ativo</option>
@@ -119,7 +120,7 @@ export function BrigadaForm({ initialData, onSave, onCancel }: BrigadaFormProps)
           </div>
 
           <div className="space-y-2">
-            <label className="text-sm font-semibold text-brand-blue">Status Módulo</label>
+            <label className="text-sm font-semibold text-brand-blue flex items-center">Status Módulo <Tooltip content="Andamento do brigadista nos módulos de formação exigidos." /></label>
             <select value={formData.status_modulo} onChange={e => setFormData({ ...formData, status_modulo: e.target.value })}
               className="w-full px-4 py-2 bg-brand-light border border-brand-light rounded-xl focus:ring-2 focus:ring-brand-blue focus:border-transparent outline-none">
               <option value="CONCLUIDO">Concluído</option>
@@ -132,7 +133,7 @@ export function BrigadaForm({ initialData, onSave, onCancel }: BrigadaFormProps)
             <label className="flex items-center gap-2 cursor-pointer p-3 bg-brand-light rounded-lg border border-brand-light hover:bg-brand-light transition-colors w-fit">
               <input type="checkbox" checked={formData.modulesConcluded} onChange={e => setFormData({ ...formData, modulesConcluded: e.target.checked })}
                 className="w-4 h-4 rounded text-brand-blue focus:ring-brand-blue" />
-              <span className="text-sm text-brand-blue font-medium">Todos Módulos Concluídos (Mód 1 a 4)</span>
+              <span className="text-sm text-brand-blue font-medium flex items-center">Todos Módulos Concluídos (Mód 1 a 4) <Tooltip content="Marque apenas se o brigadista já finalizou todas as etapas da formação anual." /></span>
             </label>
           </div>
 

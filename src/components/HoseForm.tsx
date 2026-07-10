@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { Hose } from '../data_hoses';
 import { Save, X, ShieldCheck, Droplet } from 'lucide-react';
+import { Tooltip } from './Tooltip';
 
 interface HoseFormProps {
   settings?: any;
@@ -140,37 +141,37 @@ export function HoseForm({ settings, initialData, onSave, onCancel }: HoseFormPr
             <label className="flex items-center gap-2 cursor-pointer p-3 bg-brand-light rounded-lg border border-brand-light hover:bg-brand-light transition-colors">
               <input type="checkbox" checked={formData.retiradoParaRecarga} onChange={e => setFormData({ ...formData, retiradoParaRecarga: e.target.checked })}
                 className="w-4 h-4 rounded text-brand-blue focus:ring-brand-blue" />
-              <span className="text-sm text-brand-blue font-medium">Retirado (Teste/Manut)</span>
+              <span className="text-sm text-brand-blue font-medium flex items-center">Retirado (Teste/Manut) <Tooltip content="Marque se a mangueira foi enviada para teste hidrostático ou lavagem." /></span>
             </label>
             
             <label className="flex items-center gap-2 cursor-pointer p-3 bg-brand-light rounded-lg border border-brand-light hover:bg-brand-light transition-colors">
               <input type="checkbox" checked={formData.coberturaNoLocal} onChange={e => setFormData({ ...formData, coberturaNoLocal: e.target.checked })}
                 className="w-4 h-4 rounded text-brand-blue focus:ring-brand-blue" />
-              <span className="text-sm text-brand-blue font-medium">Cobertura no Local</span>
+              <span className="text-sm text-brand-blue font-medium flex items-center">Cobertura no Local <Tooltip content="Indica se uma mangueira reserva foi colocada no hidrante." /></span>
             </label>
 
             <label className="flex items-center gap-2 cursor-pointer p-3 bg-brand-light rounded-lg border border-brand-light hover:bg-brand-light transition-colors">
               <input type="checkbox" checked={formData.checkLacre} onChange={e => setFormData({ ...formData, checkLacre: e.target.checked })}
                 className="w-4 h-4 rounded text-brand-blue focus:ring-brand-blue" />
-              <span className="text-sm text-brand-blue font-medium">Acoplamento OK</span>
+              <span className="text-sm text-brand-blue font-medium flex items-center">Acoplamento OK <Tooltip content="As juntas de engate rápido (Storz) e borrachas estão em boas condições." /></span>
             </label>
 
             <label className="flex items-center gap-2 cursor-pointer p-3 bg-brand-light rounded-lg border border-brand-light hover:bg-brand-light transition-colors">
               <input type="checkbox" checked={formData.checkPressurizacao} onChange={e => setFormData({ ...formData, checkPressurizacao: e.target.checked })}
                 className="w-4 h-4 rounded text-brand-blue focus:ring-brand-blue" />
-              <span className="text-sm text-brand-blue font-medium">Esguicho OK</span>
+              <span className="text-sm text-brand-blue font-medium flex items-center">Esguicho OK <Tooltip content="O esguicho está presente, sem amassados e com fechamento operante." /></span>
             </label>
 
             <label className="flex items-center gap-2 cursor-pointer p-3 bg-brand-light rounded-lg border border-brand-light hover:bg-brand-light transition-colors">
               <input type="checkbox" checked={formData.checkAnel} onChange={e => setFormData({ ...formData, checkAnel: e.target.checked })}
                 className="w-4 h-4 rounded text-brand-blue focus:ring-brand-blue" />
-              <span className="text-sm text-brand-blue font-medium">Botoeira OK</span>
+              <span className="text-sm text-brand-blue font-medium flex items-center">Botoeira OK <Tooltip content="A botoeira de acionamento da bomba no abrigo está intacta." /></span>
             </label>
 
             <label className="flex items-center gap-2 cursor-pointer p-3 bg-brand-light rounded-lg border border-brand-light hover:bg-brand-light transition-colors">
               <input type="checkbox" checked={formData.checkPino} onChange={e => setFormData({ ...formData, checkPino: e.target.checked })}
                 className="w-4 h-4 rounded text-brand-blue focus:ring-brand-blue" />
-              <span className="text-sm text-brand-blue font-medium">Sinalização OK</span>
+              <span className="text-sm text-brand-blue font-medium flex items-center">Sinalização OK <Tooltip content="O abrigo está sinalizado, a porta abre fácil e está desobstruída." /></span>
             </label>
           </div>
         </div>

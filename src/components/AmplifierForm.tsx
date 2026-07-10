@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { Amplifier } from '../data_amplificadores';
 import { Save, X, Radio } from 'lucide-react';
+import { Tooltip } from './Tooltip';
 
 interface AmplifierFormProps {
   settings?: any;
@@ -58,7 +59,7 @@ export function AmplifierForm({ settings, initialData, onSave, onCancel }: Ampli
           </div>
           
           <div className="space-y-2">
-            <label className="text-sm font-semibold text-brand-blue">Status</label>
+            <label className="text-sm font-semibold text-brand-blue flex items-center">Status <Tooltip content="Online: Funcionando normalmente. Offline: Sem comunicação com a rede. Erro: Falha de tensão, bateria ou hardware." /></label>
             <select value={formData.status} onChange={e => setFormData({ ...formData, status: e.target.value })}
               className="w-full px-4 py-2 bg-brand-light border border-brand-light rounded-xl focus:ring-2 focus:ring-brand-blue focus:border-transparent outline-none">
               <option value="online/sincronizado">Online / Sincronizado</option>

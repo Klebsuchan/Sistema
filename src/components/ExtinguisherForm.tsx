@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { Extinguisher } from '../data_extintores';
 import { Save, X, CheckSquare, ShieldCheck, Flame } from 'lucide-react';
+import { Tooltip } from './Tooltip';
 
 interface ExtinguisherFormProps {
   settings?: any;
@@ -142,25 +143,25 @@ export function ExtinguisherForm({ settings, initialData, onSave, onCancel }: Ex
             <label className="flex items-center gap-2 cursor-pointer p-3 bg-brand-light rounded-lg border border-brand-light hover:bg-brand-light transition-colors">
               <input type="checkbox" checked={formData.retiradoParaRecarga} onChange={e => setFormData({ ...formData, retiradoParaRecarga: e.target.checked })}
                 className="w-4 h-4 rounded text-brand-blue focus:ring-brand-blue" />
-              <span className="text-sm text-brand-blue font-medium">Retirado (Recarga)</span>
+              <span className="text-sm text-brand-blue font-medium flex items-center">Retirado (Recarga) <Tooltip content="Marque se o extintor foi recolhido para manutenção/recarga." /></span>
             </label>
             
             <label className="flex items-center gap-2 cursor-pointer p-3 bg-brand-light rounded-lg border border-brand-light hover:bg-brand-light transition-colors">
               <input type="checkbox" checked={formData.coberturaNoLocal} onChange={e => setFormData({ ...formData, coberturaNoLocal: e.target.checked })}
                 className="w-4 h-4 rounded text-brand-blue focus:ring-brand-blue" />
-              <span className="text-sm text-brand-blue font-medium">Cobertura no Local</span>
+              <span className="text-sm text-brand-blue font-medium flex items-center">Cobertura no Local <Tooltip content="Marque se foi deixado um extintor reserva no mesmo ponto para não desproteger a área." /></span>
             </label>
 
             <label className="flex items-center gap-2 cursor-pointer p-3 bg-brand-light rounded-lg border border-brand-light hover:bg-brand-light transition-colors">
               <input type="checkbox" checked={formData.checkLacre} onChange={e => setFormData({ ...formData, checkLacre: e.target.checked })}
                 className="w-4 h-4 rounded text-brand-blue focus:ring-brand-blue" />
-              <span className="text-sm text-brand-blue font-medium">Lacre OK</span>
+              <span className="text-sm text-brand-blue font-medium flex items-center">Lacre OK <Tooltip content="Confirme se o lacre plástico de segurança está intacto." /></span>
             </label>
 
             <label className="flex items-center gap-2 cursor-pointer p-3 bg-brand-light rounded-lg border border-brand-light hover:bg-brand-light transition-colors">
               <input type="checkbox" checked={formData.checkPressurizacao} onChange={e => setFormData({ ...formData, checkPressurizacao: e.target.checked })}
                 className="w-4 h-4 rounded text-brand-blue focus:ring-brand-blue" />
-              <span className="text-sm text-brand-blue font-medium">Pressurização OK</span>
+              <span className="text-sm text-brand-blue font-medium flex items-center">Pressurização OK <Tooltip content="Verifique o manômetro: o ponteiro deve estar na área verde. Não aplicável a CO2." /></span>
             </label>
 
             <label className="flex items-center gap-2 cursor-pointer p-3 bg-brand-light rounded-lg border border-brand-light hover:bg-brand-light transition-colors">

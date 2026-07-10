@@ -184,36 +184,54 @@ export function InspecoesAntigasView({ inspecoes, onAdd, onEdit, onDelete }: Ins
               <div className="flex justify-between items-start">
                 <div>
                   <div className="font-bold text-brand-blue text-lg">Inspeção {i.id}</div>
-                  <div className="text-sm text-brand-gray">{i.data} • Turno {i.turno}</div>
+                  <div className="text-sm text-brand-gray">{i.data || 'Sem data'}</div>
                 </div>
               </div>
               
               <div className="grid grid-cols-2 gap-2 text-sm bg-brand-light/30 p-2 rounded-lg">
                 <div className="flex flex-col">
                   <span className="text-brand-gray text-xs uppercase tracking-wide">Prédio / Local</span>
-                  <span className="font-medium text-brand-blue">{i.predio}</span>
-                  <span className="text-xs text-brand-blue">{i.localizacao}</span>
+                  <span className="font-medium text-brand-blue">{i.sheet}</span>
+                  <span className="text-xs text-brand-blue">{i.local} (Andar: {i.andar})</span>
                 </div>
                 <div className="flex flex-col">
-                  <span className="text-brand-gray text-xs uppercase tracking-wide">Inspetor</span>
-                  <span className="font-medium text-brand-blue">{i.inspetor}</span>
+                  <span className="text-brand-gray text-xs uppercase tracking-wide">Operador</span>
+                  <span className="font-medium text-brand-blue">{i.operador || 'Não informado'}</span>
+                  <span className="text-xs text-brand-blue">Disp: {i.dispositivo || '-'}</span>
                 </div>
               </div>
 
               <div className="flex flex-col text-sm border border-brand-light rounded-lg p-2">
-                <span className="text-brand-gray text-xs uppercase tracking-wide mb-1">Checklist</span>
+                <span className="text-brand-gray text-xs uppercase tracking-wide mb-1">Status</span>
                 <div className="flex flex-wrap gap-2 mt-1">
-                  {['Extintor', 'Mangueira', 'Detector', 'Alarme'].map(item => (
-                    <span key={item} className={`px-2 py-0.5 rounded text-[10px] font-bold ${i.itens[item.toLowerCase()] ? 'bg-green-100 text-green-700' : 'bg-red-100 text-red-700'}`}>
-                      {item}
+                  {i.conforme && (
+                    <span className="inline-flex items-center gap-1 px-2 py-0.5 rounded text-[10px] font-bold bg-brand-light text-brand-blue">
+                      <CheckCircle className="w-3 h-3" /> Conforme
                     </span>
-                  ))}
+                  )}
+                  {i.nao_conforme && (
+                    <span className="inline-flex items-center gap-1 px-2 py-0.5 rounded text-[10px] font-bold bg-brand-light text-brand-blue">
+                      <XCircle className="w-3 h-3" /> Não Conforme
+                    </span>
+                  )}
+                  {i.status && (
+                    <span className="inline-flex px-2 py-0.5 rounded text-[10px] font-bold bg-brand-light text-brand-blue border border-brand-light">
+                      Status: {i.status}
+                    </span>
+                  )}
                 </div>
               </div>
 
               <div className="flex flex-col text-sm bg-brand-light/30 p-2 rounded-lg">
-                <span className="text-brand-gray text-xs uppercase tracking-wide mb-1">Observações</span>
-                <span className="text-brand-blue text-xs line-clamp-2">{i.observacoes || '-'}</span>
+                <span className="text-brand-gray text-xs uppercase tracking-wide mb-1">Observações / Falhas</span>
+                <span className="text-brand-blue text-xs line-clamp-2">
+                  <span className="font-semibold">Obs:</span> {i.observacao || '-'}
+                </span>
+                {i.falhas && (
+                  <span className="text-brand-blue text-xs mt-1 line-clamp-1">
+                    <span className="font-semibold">Falhas:</span> {i.falhas}
+                  </span>
+                )}
               </div>
 
               <div className="flex justify-end gap-2 pt-2 border-t border-brand-light mt-1">

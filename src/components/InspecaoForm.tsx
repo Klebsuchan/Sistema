@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { InspecaoAntiga } from '../data_inspecoes';
 import { Save, X, ClipboardList } from 'lucide-react';
+import { Tooltip } from './Tooltip';
 
 interface InspecaoFormProps {
   settings?: any;
@@ -96,7 +97,7 @@ export function InspecaoForm({ settings, initialData, onSave, onCancel }: Inspec
           </div>
 
           <div className="space-y-2">
-            <label className="text-sm font-semibold text-brand-blue">Dispositivo Testado</label>
+            <label className="text-sm font-semibold text-brand-blue flex items-center">Dispositivo Testado <Tooltip content="Descreva qual equipamento foi acionado (ex: Botoeira 3, Detector de Fumaça 12)." /></label>
             <input required type="text" value={formData.dispositivo} onChange={e => setFormData({ ...formData, dispositivo: e.target.value })}
               className="w-full px-4 py-2 bg-brand-light border border-brand-light rounded-xl focus:ring-2 focus:ring-brand-blue focus:border-transparent outline-none" />
           </div>
@@ -110,7 +111,7 @@ export function InspecaoForm({ settings, initialData, onSave, onCancel }: Inspec
           </div>
 
           <div className="space-y-2 lg:col-span-3">
-            <label className="text-sm font-semibold text-brand-blue">Quais falhas ocorreram?</label>
+            <label className="text-sm font-semibold text-brand-blue flex items-center">Quais falhas ocorreram? <Tooltip content="Anote se houve erro do operador durante a simulação ou se algo não funcionou corretamente." /></label>
             <input type="text" placeholder="Descreva falhas se houveram..." value={formData.falhas} onChange={e => setFormData({ ...formData, falhas: e.target.value })}
               className="w-full px-4 py-2 bg-brand-light border border-brand-light rounded-xl focus:ring-2 focus:ring-brand-blue focus:border-transparent outline-none" />
           </div>
@@ -122,7 +123,7 @@ export function InspecaoForm({ settings, initialData, onSave, onCancel }: Inspec
           </div>
           
           <div className="space-y-2">
-            <label className="text-sm font-semibold text-brand-blue">Conformidade</label>
+            <label className="text-sm font-semibold text-brand-blue flex items-center">Conformidade <Tooltip content="Conforme: Teste bem-sucedido e operador agiu bem. Não Conforme: Equipamento falhou ou operador não soube proceder." /></label>
             <div className="flex gap-4 items-center h-10">
               <label className="flex items-center gap-2 cursor-pointer">
                 <input type="radio" checked={formData.conforme} onChange={() => setFormData({ ...formData, conforme: true, nao_conforme: false })}
@@ -138,7 +139,7 @@ export function InspecaoForm({ settings, initialData, onSave, onCancel }: Inspec
           </div>
 
           <div className="space-y-2">
-            <label className="text-sm font-semibold text-brand-blue">Status O.S</label>
+            <label className="text-sm font-semibold text-brand-blue flex items-center">Status O.S <Tooltip content="Andamento do chamado caso o teste tenha apontado alguma falha." /></label>
             <input type="text" placeholder="Ex: Em andamento" value={formData.status} onChange={e => setFormData({ ...formData, status: e.target.value })}
               className="w-full px-4 py-2 bg-brand-light border border-brand-light rounded-xl focus:ring-2 focus:ring-brand-blue focus:border-transparent outline-none" />
           </div>

@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import { EventData } from '../data';
 import { AlertCircle, Calendar, Clock, MapPin, Building, ShieldCheck, HelpCircle, Activity, FileText } from 'lucide-react';
+import { Tooltip } from './Tooltip';
 
 interface EventFormProps {
   settings?: any;
@@ -136,7 +137,7 @@ export function EventForm({ settings, onSave, initialData, onCancel }: EventForm
         {/* Details */}
         <div className="space-y-2">
           <label className="text-sm font-semibold text-brand-blue flex items-center gap-2">
-            <AlertCircle className="h-4 w-4 text-brand-blue" /> Motivo
+            <AlertCircle className="h-4 w-4 text-brand-blue" /> Motivo <Tooltip content="O que gerou o alerta na central (ex: poeira, vapor, defeito). Se não tiver certeza, selecione o mais próximo." />
           </label>
           <select required value={reason} onChange={(e) => setReason(e.target.value)}
             className="w-full px-4 py-2.5 bg-brand-light border border-brand-light rounded-xl focus:ring-2 focus:ring-brand-blue focus:border-transparent transition-all outline-none"
@@ -147,7 +148,7 @@ export function EventForm({ settings, onSave, initialData, onCancel }: EventForm
         </div>
 
         <div className="space-y-2">
-          <label className="text-sm font-semibold text-brand-blue">Prioridade</label>
+          <label className="text-sm font-semibold text-brand-blue flex items-center">Prioridade <Tooltip content="Baixa: Sem risco imediato. Média: Exige atenção no mesmo dia. Alta: Risco considerável, verificar logo. Crítica: Risco iminente de fogo, agir imediatamente." /></label>
           <select value={priority} onChange={(e) => setPriority(e.target.value as any)}
             className="w-full px-4 py-2.5 bg-brand-light border border-brand-light rounded-xl focus:ring-2 focus:ring-brand-blue focus:border-transparent transition-all outline-none"
           >
@@ -161,7 +162,7 @@ export function EventForm({ settings, onSave, initialData, onCancel }: EventForm
         {/* O.S Info */}
         <div className="space-y-2">
           <label className="text-sm font-semibold text-brand-blue flex items-center gap-2">
-            <FileText className="h-4 w-4 text-brand-blue" /> Status O.S
+            <FileText className="h-4 w-4 text-brand-blue" /> Status O.S <Tooltip content="Andamento do chamado na manutenção. Use 'Não Aberta' se foi apenas um reset ou ação simples." />
           </label>
           <select value={osStatus} onChange={(e) => setOsStatus(e.target.value as any)}
             className="w-full px-4 py-2.5 bg-brand-light border border-brand-light rounded-xl focus:ring-2 focus:ring-brand-blue focus:border-transparent transition-all outline-none"
@@ -178,7 +179,7 @@ export function EventForm({ settings, onSave, initialData, onCancel }: EventForm
         </div>
 
         <div className="space-y-2 md:col-span-2">
-          <label className="text-sm font-semibold text-brand-blue">Atendimento Final</label>
+          <label className="text-sm font-semibold text-brand-blue flex items-center">Atendimento Final <Tooltip content="O que foi feito no local para normalizar a situação (ex: Limpeza do detector, reset do sistema, orientações à equipe)." /></label>
           <textarea placeholder="Descrição do atendimento e resolução..." rows={3} value={atendimentoFinal} onChange={(e) => setAtendimentoFinal(e.target.value)}
             className="w-full px-4 py-2.5 bg-brand-light border border-brand-light rounded-xl focus:ring-2 focus:ring-brand-blue focus:border-transparent transition-all outline-none resize-none"
           />
